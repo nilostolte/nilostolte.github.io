@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="canvas" width="400" height="400"
+style="background-color:rgba(0, 0, 0, 0)">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var w = canvas.width / 2;
+ctx.translate(w, w);
+var radius = w * 0.90;
+var rimgrad = rimGrad(ctx, radius);
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  var r = radius * 0.93;
+  drawNumbers(ctx, r);
+  drawTime(ctx, r);
+}
+
+function drawFace(ctx, radius) {
+  drawDial(ctx, radius *0.95);
+  drawRim(ctx, radius);
+  drawIntRim(ctx, radius);
+}
+
+function intRimGrad(ctx, radius) {
+	var grad = ctx.createLinearGradient(0, 0, 0, radius*0.9);
+	grad.addColorStop(0, "rgb(75,75,75)");
+	//grad.addColorStop(0.01, "rgb(100, 100, 100)");
+	//grad.addColorStop(0.4, "rgb(100, 100, 100)");
+	grad.addColorStop(1, "rgb(250,250,250)");
+	return grad;
+}
+
+function drawIntRim(ctx, radius) {
+	ctx.beginPath();
+	ctx.arc(0, 0, radius*0.9, 0, 2*Math.PI);
+	ctx.arc(0, 0, radius * 0.88, 0, 2*Math.PI, true);
+	ctx.fillStyle = intRimGrad(ctx,radius);
+	ctx.fill();
+}
+
+function rimGrad(ctx, radius) {
+	var grad = ctx.createLinearGradient(0, -radius/2, 0, radius);
+	grad.addColorStop(0, "rgb(196,196,196)");
+	grad.addColorStop(1, "rgb(75,75,75)");
+	return grad;
+}
+
+// division between ceiling specular reflexion and shadowed area
+function ceilingSpecular(ctx, r) {
+	ctx.arc(0,r*0.62,r*1.2,0,2*Math.PI, true);
+}
+
+function drawRim(ctx, radius) {
+	var r = radius*0.95;
+	ctx.beginPath();
+	ctx.arc(0, 0, radius, 0, 2*Math.PI);
+	ctx.arc(0, 0, radius*0.89, 0, 2*Math.PI, true);
+	var grad = ctx.createLinearGradient(0, -radius, 0, radius*0.7);
+	grad.addColorStop(0, "rgb(250,250,250)");
+	grad.addColorStop(0.1, "rgb(200,200,200)");
+	grad.addColorStop(1, "rgb(170, 170, 170)");
+	//ctx.fillStyle = "rgb(186, 186, 186)";
+	ctx.fillStyle = grad;
+	ctx.fill();
+	ctx.save();
+	ctx.beginPath();
+	ctx.arc(0, 0, radius, 0, 2*Math.PI);
+	ctx.arc(0, 0, radius*0.89, 0, 2*Math.PI, true);
+	ctx.clip();
+	ctx.beginPath();
+	ceilingSpecular(ctx, r);
+	ctx.fillStyle = rimgrad;
+	ctx.fill();
+	ctx.restore();
+}
+
+function drawDial(ctx, radius) {
+	ctx.beginPath();
+	ctx.arc(0, 0, radius, 0, 2*Math.PI);
+	ctx.fillStyle = 'rgb(226, 226, 226)';
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.fillStyle = 'rgb(216, 216, 216)';
+	// for intersection: "source-atop"
+	ctx.globalCompositeOperation = "source-atop";
+	ceilingSpecular(ctx, radius);
+	ctx.fill();
+	ctx.globalCompositeOperation = "source-over";
+}
+
+function drawNumbers(ctx, radius) {
+	var r = radius*0.75;
+	ctx.fillStyle = '#333';
+	drawHourMark(ctx, r);
+	drawMinMark(ctx, r, 0.5235987755982988731);
+	drawMinMark(ctx, r, 1.04719755119659775);
+}
+function drawMinMark(ctx, length, ang) {
+	var i;
+	var l = length * 1.16;
+	var l2 = length * 1.05;
+	var dx = length * 0.02;
+	ctx.save();
+	ctx.rotate(ang);
+	for (i = 0; i < 4; i++) {
+		ctx.beginPath();
+		ctx.moveTo(-dx,-l2);
+		ctx.lineTo(dx,-l2);
+		ctx.lineTo(dx,-l);
+		ctx.lineTo(-dx,-l);
+		ctx.closePath();
+		ctx.fill();
+		ctx.rotate(1.57079632679489662);
+	}
+	ctx.restore();
+}
+
+function drawHourMark(ctx, length) {
+	var i;
+	var l = length * 1.19;
+	var l2 = length * 0.98;
+	var dx = length * 0.02;
+	ctx.save();
+	for (i = 0; i < 4; i++) {
+		ctx.beginPath();
+		ctx.moveTo(-dx,-l2);
+		ctx.lineTo(dx,-l2);
+		ctx.lineTo(dx,-l);
+		ctx.lineTo(-dx,-l);
+		ctx.closePath();
+		ctx.fill();
+		ctx.rotate(1.57079632679489662);
+	}
+	ctx.restore();
+}
+
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+	var l = radius*0.75;
+
+    hour=hour%12;
+	var s = (second/60.0);
+    var m = (s/60.0) +  (minute/60.0);
+	var h = (m/12.) + (hour/12.);
+	//hour
+	drawHour(ctx, 6.283185307179586477 * h, l);
+    //minute
+    drawMin(ctx, 6.283185307179586477 * m, l);
+    // second
+    ctx.fillStyle = 'red';
+    drawSec(ctx,  6.283185307179586477 * s, l);
+    ctx.beginPath();
+    ctx.arc(0, 0, radius*0.06, 0, 2*Math.PI);
+    ctx.fillStyle = '#333';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(0, 0, radius*0.04, 0, 2*Math.PI);
+    ctx.fillStyle = 'rgb(216, 216, 216)';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(0, 0, radius*0.02, 0, 2*Math.PI);
+    ctx.fillStyle = 'red';
+    ctx.fill();
+}
+
+function drawHour(ctx, pos, length) {
+    var d1 = length * 0.038;
+	var d2 = length * 0.012;
+    var w = length  * 0.27;
+	var l = length * 0.75;
+    ctx.rotate(pos);
+    ctx.beginPath();
+    ctx.moveTo(-d1,w);
+    ctx.lineTo(d1,w);
+    ctx.lineTo(d2, -l);
+    ctx.lineTo(-d2, -l);
+    ctx.closePath();
+    ctx.fill();
+    ctx.rotate(-pos);
+}
+
+function drawMin(ctx, pos, length) {
+    var d1 = length * 0.038;
+	var d2 = length * 0.006;
+    var w = length  * 0.27;
+    ctx.rotate(pos);
+    ctx.beginPath();
+    ctx.moveTo(-d1,w);
+    ctx.lineTo(d1,w);
+    ctx.lineTo(d2, -length);
+    ctx.lineTo(-d2, -length);
+    ctx.closePath();
+    ctx.fill();
+    ctx.rotate(-pos);
+}
+
+function drawSec(ctx, pos, length) {
+    var dx = length * 0.019;
+    var w = length  * 0.22;
+    ctx.rotate(pos);
+    ctx.beginPath();
+    ctx.moveTo(-dx,w);
+    ctx.lineTo(dx,w);
+    ctx.lineTo(0, -length);
+    ctx.closePath();
+    ctx.fill();
+    ctx.rotate(-pos);
+}
+
+</script>
+
+</body>
+</html>
