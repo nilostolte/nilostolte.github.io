@@ -3,19 +3,34 @@
 <body>
 <img src="twitter-banner-upsized.svg" style="width:100%; height: 100%;" >
 <img src="bar.svg" style="width:100%; height: 100%;">
-<canvas id="canvas" width="400" height="400"
+<canvas id="canvas" width="200" height="200"
 style="background-color:rgba(0, 0, 0, 0)">
 </canvas>
 <img src="bar.svg" style="width:100%; height: 100%;">
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-var w = canvas.width / 2;
-ctx.translate(w, w);
-var radius = w * 0.90;
-var rimgrad = rimGrad(ctx, radius);
+	
+var size;
+var w;
+var radius;
+var rimgrad;
+
+resizeClock();
+window.addEventListener("resize", resizeClock);
 setInterval(drawClock, 1000);
 
+function resizeClock() {
+	size = document.getElementsByTagName('body')[0].clientWidth;
+	canvas.width = size / 5;
+	canvas.height = size / 5;
+	w = canvas.width / 2;
+	ctx.translate(w, w);
+	radius = w * 0.90;
+	rimgrad = rimGrad(ctx, radius);
+	drawClock();
+}
+	
 function drawClock() {
   drawFace(ctx, radius);
   var r = radius * 0.93;
