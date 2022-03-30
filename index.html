@@ -3,21 +3,34 @@
 <body>
 <img src="twitter-banner-upsized.svg" style="width:100%; height: 100%;" >
 <img src="bar.svg" style="width:100%; height: 100%;">
+<a href="https://twitter.com/nilostolte"><img src="twitter-logo.svg" style="width:3%; height: 3%; vertical-align: bottom; padding-left: 4%; padding-bottom: 0.15%; padding-right: 0.25%;"></a>
+<a href="https://github.com/nilostolte"><img src="github-logo.svg" style="width:3%; height: 3%; vertical-align: bottom; padding-top: 0.5%; padding-left: 0.25%; padding-right: 0.375%;"></a>
+<a href="https://dev.to/nilostolte"><img src="dev-logo.svg" style="width:3%; height: 3%; vertical-align: bottom; padding-left: 0.375%;"></a>
+<img src="bar.svg" style="width:100%; height: 100%;">
 <table>
+	<!-- <tr> -->
+		<!-- <th></th> -->
+		<!-- <th><img src="text-why.svg" style="width:90%; height: 90%;"></th> -->
+	<!-- </tr> -->
 	<tr>
-		<th></th>
-		<th><img src="text-why.svg" style="width:90%; height: 90%;"></th>
-	</tr>
-	<tr>
-		<th>
-			<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0)"></canvas>
+		<th style="vertical-align: bottom;">
+			<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
 		</th>
 		<th>
-			<img src="text-clock.svg" style="width:90%; height: 90%;" usemap="#clockmap">
-			<map name="clockmap">
-			  <area id="clockwidget" shape="rect" href="https://github.com/nilostolte/ClockWidget">
-			  <area id="freepik" shape="rect" href="https://www.freepik.com/">
-			  <area id="java" shape="rect" href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">
+			<img src="text-why.svg" style="width:90%; height: 90%;">
+			<img src="vector-art.svg" style="width:90%; height: 90%;" usemap="#vecrtdmap">
+			<img src="text-clk1.svg" style="width:90%; height: 90%;" usemap="#clkwidmap">
+			<img src="text-clk2.svg" style="width:90%; height: 90%;" usemap="#clkjsmap">
+			<map name="vecrtdmap">
+				<area id="vecart" shape="rect" href="https://github.com/nilostolte/Vector-Art#vector-art">
+				<area id="brexit" shape="rect" href="https://github.com/nilostolte/Vector-Art/tree/main/Selling%20England%20By%20The%20Pint#selling-england-by-the-pint">
+			</map>
+			<map name="clkwidmap">
+				<area id="clockwidget" shape="rect" href="https://github.com/nilostolte/ClockWidget">
+				<area id="freepik" shape="rect" href="https://www.freepik.com/">
+				<area id="java" shape="rect" href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">
+			</map>
+			<map name="clkjsmap">
 			  <area id="js1" shape="rect" href="https://github.com/nilostolte/nilostolte.github.io/blob/main/index.html">
 			  <area id="js2" shape="rect" href="https://github.com/nilostolte/nilostolte.github.io/blob/main/index.html">
 			</map>
@@ -27,6 +40,7 @@
 <img src="bar.svg" style="width:100%; height: 100%;">
 
 <script>
+<!-- document.body.style.transform = 'scale(' + window.screen.availHeight/800. + ')'; -->
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
@@ -37,22 +51,30 @@ var rimgrad;
 
 resizeWindow();
 window.addEventListener('resize', resizeWindow);
+
 setInterval(drawClock, 1000);
 
 function resizeWindow() {
+	size = window.innerWidth;
 	resizeClock();
-	var s = size / 1366.;
-	document.getElementById("clockwidget").coords = ""+(s*67)+",0,"+(s*206)+","+(s*26);
-	document.getElementById("freepik").coords = ""+(s*858)+",0,"+(s*945)+","+(s*24);
-	document.getElementById("java").coords = ""+(s*147)+","+ (s*30) +","+(s*198)+","+(s*59);
-	document.getElementById("js1").coords = ""+(s*686)+","+ (s*103) +","+(s*945)+","+(s*135);
-	document.getElementById("js2").coords = "0,"+ (s*138) +","+(s*420)+","+(s*166);
+	resizeTxtClock();
+}
+
+function resizeTxtClock() {
+	var s = size / screen.availWidth;
+	document.getElementById("vecart").coords = "0,0,"+(s*120)+","+(s*46);
+	document.getElementById("brexit").coords = ""+(s*140)+","+ (s*190) +","+(s*790)+","+(s*650);
+	document.getElementById("clockwidget").coords = "0,"+(s*10)+","+(s*150)+","+(s*46);
+	document.getElementById("freepik").coords = ""+(s*790)+","+(s*52)+","+(s*900)+","+(s*85);
+	document.getElementById("java").coords = ""+(s*95)+","+ (s*85) +","+(s*160)+","+(s*118);
+	document.getElementById("js1").coords = "0,"+ (s*40)+","+(s*125)+","+(s*75);
+	document.getElementById("js2").coords = ""+(s*180)+","+ (s*40) +","+(s*690)+","+(s*75);
 }
 
 function resizeClock() {
 	<!-- size = document.getElementsByTagName('body')[0].clientWidth; -->
-	size = window.innerWidth;
 	<!-- window.alert(size); -->
+	<!-- window.alert("test string"); -->
 	canvas.width = size / 5;
 	canvas.height = size / 5;
 	w = canvas.width / 2;
