@@ -4,7 +4,7 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="426.667" height="300.667" viewBox="0 -20 426.667 300.667" overflow="visible" enable-background="new 0 0 426.667 280.667" xml:space="preserve">
+<svg  version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="426.667" height="295.667" viewBox="0 -15 426.667 295.667" overflow="visible" enable-background="new 0 0 426.667 280.667" xml:space="preserve">
 <linearGradient id="XMLID_30_" gradientUnits="userSpaceOnUse" x1="390.167" y1="317.1675" x2="36.5004" y2="-36.4992">
 	<stop  offset="0" style="stop-color:#00ADD6"/>
 	<stop  offset="0.0921" style="stop-color:#009BC0"/>
