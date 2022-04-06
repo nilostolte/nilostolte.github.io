@@ -1,1 +1,4 @@
+This is a Brave Rewards publisher verification file.
 
+Domain: nilostolte.github.io
+Token: 524e6cfb4f813b2c0d445250e379f8e2a421a73f9e9bc00b2d9d823e6c14c8d1
