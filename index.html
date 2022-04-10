@@ -115,6 +115,15 @@ table {
 		</th>
 	</tr>
 	<tr>
+		<th></th>
+		<th><img src="text-basic.svg" style="width:90%; height: 90%;"></th>
+	</tr>
+
+	<tr>
+		<th></th>
+		<th style="padding-bottom: 2%; padding-top: 2%;"><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas></th>
+	</tr>
+	<tr>
 		<th colspan="2"><img src="bar.svg" style="width:100%; height: 100%;"></th>
 	</tr>
 	<tr>
@@ -162,7 +171,11 @@ table {
 <!-- document.body.style.transform = 'scale(' + window.screen.availHeight/800. + ')'; -->
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-
+var bezpt = -1;
+const bez = [ 55, 320, 150, 20, 350, 20, 630, 320 ];
+document.getElementById("bezier").addEventListener("mousedown", bezierPicking);
+document.getElementById("bezier").addEventListener("mouseup", bezierReset);
+document.getElementById("bezier").addEventListener("mousemove", bezierMove);
 var size;
 var w;
 var radius;
@@ -177,6 +190,84 @@ function resizeWindow() {
 	size = window.innerWidth;
 	resizeClock();
 	resizeTxtClock();
+	resizeBezier();
+}
+
+function bezierMove( e ) {
+	if (bezpt != -1) {
+		var s = screen.availWidth/size;
+		var canvas = document.getElementById("bezier");
+		var context = canvas.getContext("2d");
+		var rect = canvas.getBoundingClientRect();
+		bez[bezpt] = (e.clientX-rect.left)*s;
+		bez[bezpt+1] = (e.clientY-rect.top)*s;
+		<!-- context.clearRect(0, 0, 300, 40); -->
+		<!-- context.font = '10pt Calibri'; -->
+        <!-- context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25); -->
+		resizeBezier();
+	}
+}
+
+function bezierReset() {
+	bezpt = -1;
+}
+
+function bezierPicking( e ) {
+	var s = screen.availWidth/size;
+	var canvas = document.getElementById("bezier");
+	var rect = canvas.getBoundingClientRect();
+	var x = (e.clientX-rect.left)*s;
+	var y = (e.clientY-rect.top)*s;
+	<!-- window.alert("point: ("+x+", "+y); -->
+	var i;
+	for (i = 0; i < bez.length; i+=2) {
+		if ((Math.abs(x - bez[i]) < 4*s) && (Math.abs(y - bez[i+1]) < 4*s)) break;
+	}
+	bezpt = -1;
+	if (i < bez.length) {
+		bezpt = i;
+		<!-- window.alert("point: "+bezpt); -->
+	}
+	<!-- window.alert("point: "+bezpt); -->
+}
+
+function resizeBezier() {
+	var canvas = document.getElementById("bezier");
+	canvas.width = size / 2;
+	canvas.height = size / 4;
+	var s = size / screen.availWidth;
+	var ctx = canvas.getContext("2d");
+
+	ctx.beginPath();
+	ctx.moveTo(bez[0]*s, bez[1]*s);
+	ctx.bezierCurveTo(bez[2]*s, bez[3]*s, bez[4]*s, bez[5]*s, bez[6]*s, bez[7]*s);
+	ctx.stroke();
+	
+
+	ctx.fillStyle = "#FF0000";
+	ctx.beginPath();
+	ctx.arc(bez[2]*s, bez[3]*s, 4*s, 0, 2 * Math.PI);
+	ctx.fill();
+	ctx.beginPath();
+	ctx.arc(bez[4]*s, bez[5]*s, 4*s, 0, 2 * Math.PI);
+	ctx.fill();
+	ctx.strokeStyle = "#FF0000";
+	ctx.beginPath();
+	ctx.moveTo(bez[0]*s, bez[1]*s);
+	ctx.lineTo(bez[2]*s, bez[3]*s);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(bez[4]*s, bez[5]*s);
+	ctx.lineTo( bez[6]*s, bez[7]*s);
+	ctx.stroke();
+	ctx.fillStyle = "#000000";
+	ctx.beginPath();
+	ctx.arc(bez[0]*s, bez[1]*s, 4*s, 0, 2 * Math.PI);
+	ctx.fill();
+	ctx.beginPath();
+	ctx.arc(bez[6]*s, bez[7]*s, 4*s, 0, 2 * Math.PI);
+	ctx.fill();
+
 }
 
 function resizeTxtClock() {
