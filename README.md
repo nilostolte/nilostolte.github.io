@@ -1,9 +1,9 @@
-<img src="twitter-banner-upsized.svg" style="width:100%; height: 100%;" >
-<img src="bar.svg" style="width:100%; height: 100%;">
-<a href="https://twitter.com/nilostolte"><img src="twitter-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 4%; padding-bottom: 0.15%; padding-right: 0.25%;"></a>&nbsp;
-<a href="https://github.com/nilostolte"><img src="github-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-top: 0.5%; padding-left: 0.25%; padding-right: 0.375%;"></a>&nbsp;
-<a href="https://dev.to/nilostolte"><img src="dev-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 0.375%;"></a>
-<img src="bar.svg" style="width:100%; height: 100%;">
+<img src="vector/twitter-banner-upsized.svg" style="width:100%; height: 100%;" >
+<img src="vector/bar.svg" style="width:100%; height: 100%;">
+<a href="https://twitter.com/nilostolte"><img src="vector/twitter-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 4%; padding-bottom: 0.15%; padding-right: 0.25%;"></a>&nbsp;
+<a href="https://github.com/nilostolte"><img src="vector/github-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-top: 0.5%; padding-left: 0.25%; padding-right: 0.375%;"></a>&nbsp;
+<a href="https://dev.to/nilostolte"><img src="vector/dev-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 0.375%;"></a>
+<img src="vector/bar.svg" style="width:100%; height: 100%;">
 
 ## Why vector graphics?
 
@@ -22,7 +22,7 @@ designs gain popularity with the advent of digital vector art. Below is an examp
 used as beer label:
 
 <p align="center">
-<img src="selling-england.svg" style="width:60%; height: 60%;">
+<img src="vector/selling-england.svg" style="width:60%; height: 60%;">
 </p>
 
 ## Technical Illustrations
@@ -30,7 +30,7 @@ used as beer label:
 Vector graphics really excells in technical illustrations. Below the correspondence between the octree data structure and its representation in space is shown. The space is recursively subdivided in eight equal sized regions called octants. The octants are contiguously stored in arrays with eight positions as shown. If the octant is not empty it points to another array of eight positions and so forth until the last level is reached. Here the coordinates of the voxel nearer to the observer in a space with resolution 32³ are placed in a table to show how their bits are grouped to form an index in the array at each of its five levels. In this way one can convert indexes to coordinates and vice-versa.
 
 <p align="center">
-<img src="octree-struct.svg" style="width:90%; height: 90%;">
+<img src="vector/octree-struct.svg" style="width:90%; height: 90%;">
 </p>
 <br>
 
@@ -62,7 +62,7 @@ ClockWidget is a real time vector graphics clock inspired in a design found in
 This is an implementation working on desktops, automatically placed at the top right 
 side of the screen.
 
-The same analog vector graphics clock appearing [here](https://nilostolte.github.io/) 
+The same analog vector graphics clock appearing [here](https://nilostolte.github.io/examples) 
 is ClockWidget rewritten in 
 [**JavaScript**](https://github.com/nilostolte/nilostolte.github.io/blob/main/index.html) 
 using 
@@ -80,8 +80,8 @@ independently of size.
   <img src="https://user-images.githubusercontent.com/80269251/162779499-d5274b4e-4309-4899-83de-3c3e24b1bd88.png">
 </p>
 
-<img src="bar.svg" style="width:100%; height: 100%;">
+<img src="vector/bar.svg" style="width:100%; height: 100%;">
 
 ## [Research Work](https://github.com/nilostolte/Research-Work#research-work)
 
-<img src="bar.svg" style="width:100%; height: 100%;">
+<img src="vector/bar.svg" style="width:100%; height: 100%;">
