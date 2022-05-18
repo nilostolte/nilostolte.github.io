@@ -14,15 +14,109 @@ th {
 table {
     border-spacing: 0px;
 }
+@font-face {
+  font-family: normal;
+  src: url('Montserrat-SemiBold.otf')  format('opentype');
+}
+@font-face {
+  font-family: bold;
+  src: url('Montserrat-Bold.otf')  format('opentype');
+}
+
+
 </style>
 </head>
-<body style="margin: 0px 0px 0px 0px;">
-<p style="text-align:center">
-<img src="Title.svg" style="width:40%; height: 40%;">
-</p>
-<a href="research/index.html"><img src="Research.svg" style="width:45%; height: 45%; vertical-align: bottom; padding-left: 5%; padding-bottom: 0.15%; padding-right: 0%;"></a>
-<a href="vector/index.html"><img src="Idea.svg" style="width:45%; height: 45%; vertical-align: bottom;  padding-top: 0%; padding-left: 0%; padding-bottom: 0.15%; padding-right: 4%;"></a><br>
-<a href="examples/index.html"><img src="Aspiration.svg" style="width:45%; height: 45%; vertical-align: bottom; padding-left: 5%; padding-bottom: 0.15%; padding-right: 0%;"></a>
+<body style="margin: 0px 0px 0px 0px; ">
+
+<img src="Title.svg" style="width:40%; height: 40%; margin-left:30%; padding-top: 2%;">
+<a href="https://twitter.com/nilostolte"><img src="twitter-logo.svg" style="width:3.2%; height: 3.2%; vertical-align: top; padding-left: 0%; padding-bottom: 0%; padding-right: 0%; padding-top: 2.3%; margin-left: 14.5%;"></a><a href="https://github.com/nilostolte"><img src="github-logo.svg" style="width:3%; height: 3%; vertical-align: top; padding-top: 2%; padding-left: 0.6%; padding-right: 0.7%;"></a><a href="https://dev.to/nilostolte"><img src="dev-logo.svg" style="width:3%; height: 3%; vertical-align: top; padding-left: 0%;padding-right: 0%; padding-top: 2%;"></a>
+
+
+<div style="position: absolute; text-align: left; width:100%;">
+<a href="research/index.html"><img src="Research-no-text.svg" style="width:45%; height: 45%; margin-left: 5%;"></a>
+<div style=
+	"position: absolute;
+	 margin-left: 5%;
+	 top: 15.05%; left: 23.2%; 
+	 transform: translate(-50%, 0%);
+	 color: white;
+	 font-family: bold; 
+	 font-size: 4.2vw"
+>Research</div>
+<div style=
+	"position: absolute;
+	 margin-left: 5%;
+	 top: 21.1%; left: 9.2%; margin-right: 58.1%;
+	 color: rgb(239.52,255,211.65);
+	 text-align: justify;
+	 font-family: normal; 
+	 font-size: 1.25vw"
+>In this section, a list of previous selected research work in the area of computer graphics, published in scientific journals, books and international conferences is shown. This work is mainly in ray-tracing, implicit surfaces, interval arithmetic, robust voxelization,  3D rendering, point rendering, octree as well as parallel processing.</div>
+<div style=
+	"position: absolute; 
+	 margin-left: 5%;
+	 top: 35.9%; left: 9.2%; margin-right: 58.1%;
+	 color: rgb(239.52,255,211.65);
+	 text-align: justify;
+	 font-family: normal; 
+	 font-size: 1.25vw"
+>Recent research and development work in 2D vector graphics for Graphics User Interfaces is briefly explained here and detailed in the next sections.</div>
+<a href="vector/index.html"><img src="Idea-no-text.svg" style="width:45%; height: 45%;"></a>
+<div style=
+	"position: absolute;
+	 margin-left: 50%;
+	 top: 15.05%; left: 11%;
+	 color: white;
+	 font-family: bold; 
+	 font-size: 4.2vw"
+>Vector GUIs</div>
+<div style=
+	"position: absolute;
+	 margin-left: 50%;
+	 top: 21%; left: 10%; margin-right: 11.5%;
+	 color: rgb(229.5,252.99,255);
+	 text-align: justify;
+	 font-family: normal; 
+	 font-size: 1.25vw"
+>The main idea proposed in this site is to use basic vector graphics primitives to create Graphics User Interfaces that can be used everywhere, with no or little need of code modification as a way to obtain portability and compatibility among quite different screen resolutions.</div>
+<div style=
+	"position: absolute; 
+	 margin-left: 50%;
+	 top: 32.5%; left: 10%; margin-right: 11.5%;
+	 color: rgb(229.5,252.99,255);
+	 text-align: justify;
+	 font-family: normal; 
+	 font-size: 1.25vw"
+>After few decenies of experience in vector graphics and observing that these basic primitives look very much alike, gives origin to the idea that the same design could be very easily converted to other platforms. Automatic code generation becames also a possibility.</div>
+<a href="examples/index.html"><img src="Aspiration-no-text.svg" style="width:45%; height: 45%; margin-left: 5%;"></a>
+<div style=
+	"position: absolute;
+	 margin-left: 5%;
+	 top: 64.85%; left: 23.2%; 
+	 transform: translate(-50%, 0%);
+	 color: white;
+	 font-family: bold; 
+	 font-size: 4.2vw;"
+>Examples</div>
+<div style=
+	"position: absolute;
+	 margin-left: 5%;
+	 top: 71.1%; left: 9.2%; margin-right: 58.1%;
+	 color: rgb(229.5,255,246.37);
+	 text-align: justify;
+	 font-family: normal; 
+	 font-size: 1.25vw"
+>This section is dedicated to examples of vector graphics use on the web as well as in applications on desktops, etc.</div>
+<div style=
+	"position: absolute; 
+	 margin-left: 5%;
+	 top: 76.5%; left: 9.2%; margin-right: 58.1%;
+	 color: rgb(229.5,255,246.37);
+	 text-align: justify;
+	 font-family: normal; 
+	 font-size: 1.25vw"
+>This is a work in progress section where increasingly more complex graphics user interfaces are ported to the web using different methods and technologies. Currently Javascript and HTML 5 Canvas is used. HTML 5 Canvas is probably going to be the intermediate medium between future frontend code and the display on the brwoser. This is the way online games have been working so far and it is a suitable technology for vector GUIs.</div>
+</div>
 
 </body>
 </html>
