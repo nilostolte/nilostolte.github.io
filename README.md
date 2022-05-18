@@ -3,7 +3,7 @@
 <a href="https://twitter.com/nilostolte"><img src="twitter-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 4%; padding-bottom: 0.15%; padding-right: 0.25%;"></a>&nbsp;
 <a href="https://github.com/nilostolte"><img src="github-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-top: 0.5%; padding-left: 0.25%; padding-right: 0.375%;"></a>&nbsp;
 <a href="https://dev.to/nilostolte"><img src="dev-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 0.375%;"></a>
-<img src="vector/bar.svg" style="width:100%; height: 100%;">
+<img src="bar.svg" style="width:100%; height: 100%;">
 
 ## Why vector graphics?
 
@@ -73,15 +73,15 @@ independently of size.
 
 ## Basic Vector Interface
 
-[This example](https://nilostolte.github.io/) coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.
+[This example](https://nilostolte.github.io/examples) coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.
 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/80269251/162779499-d5274b4e-4309-4899-83de-3c3e24b1bd88.png">
 </p>
 
-<img src="vector/bar.svg" style="width:100%; height: 100%;">
+<img src="bar.svg" style="width:100%; height: 100%;">
 
 ## [Research Work](https://github.com/nilostolte/Research-Work#research-work)
 
-<img src="vector/bar.svg" style="width:100%; height: 100%;">
+<img src="bar.svg" style="width:100%; height: 100%;">
