@@ -7,501 +7,157 @@
 <meta name="author" content="Nilo Stolte">
 
 <style>
+@font-face {
+  font-family: opensans;
+  src: url('OpenSans-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: opensanslightitalic;
+  src: url('OpenSans-LightItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: opensansbold;
+  src: url('OpenSans-Bold.ttf')  format('truetype');
+}
+a { 
+	text-decoration: none;
+	color: inherit;
+}
 th {
   padding: 0px 0px 0px 0px;
+}
+
+td {
+	padding: 0px 0px 0px 0px;
 }
 
 table {
     border-spacing: 0px;
 }
+
+.par1 {
+	font-family: opensans; 
+	text-align: justify; 
+	font-size: 1.7vw;
+	padding-right: 5%;
+}
+.parn {
+	font-family: opensans; 
+	text-align: justify; 
+	font-size: 1.7vw;
+	padding-top: 0.8%;
+	padding-right: 5%;
+}
+.title {
+	font-family: opensansbold; 
+	text-align: justify;
+	font-size: 1.76vw;
+	padding-top: 1.5%;
+	padding-right: 5%;
+	padding-bottom: 0.8%;
+}
 </style>
 </head>
 <body style="margin: 0px 0px 0px 0px;">
-<a href="https://github.com/nilostolte/nilostolte.github.io/tree/main#readme" title="Pi Vector GUI Everywhere - Is your app prepared for tomorrow's resolutions?">
-	<img src="twitter-banner-upsized.svg" alt="Java (desktop / Android), JavaScript (HTML 5), and other languages. Qualifications: PhD in Computer Science (Computer Graphics). Expertise: GUI programming,  design,  vector graphics, typography, fonts (otf,ttf), kerning, PDFBox, Opentype.js, Java, C/C++, writing (science, tech, geopolitics, economy),  OOP,  HPC. English, French, Portuguese, Spanish." style="width:100%; height: 100%;" >
-</a>
-<img src="bar.svg" style="width:100%; height: 100%;">
-<a href="https://twitter.com/nilostolte"><img src="twitter-logo.svg" style="width:3%; height: 3%; vertical-align: bottom; padding-left: 5%; padding-bottom: 0.15%; padding-right: 0.6%;"></a><a href="https://github.com/nilostolte"><img src="github-logo.svg" style="width:3%; height: 3%; vertical-align: bottom; padding-top: 0.5%; padding-left: 0.6%; padding-right: 0.7%;"></a><a href="https://dev.to/nilostolte"><img src="dev-logo.svg" style="width:3%; height: 3%; vertical-align: bottom; padding-left: 0.7%;"></a>
-<a href="https://github.com/nilostolte/nilostolte.github.io/tree/main#readme"><img src="experimental.svg" style="width:50%; height: 50%; vertical-align: bottom; padding-left: 22%; padding-bottom: 0.15%;"></a>
-<table>
+<table style="color:rgb(63,63,63);">
 	<tr>
-		<th colspan="2"><img src="bar.svg" style="width:100%; height: 100%;"></th>
+		<td rowspan="2" style="width:20%; padding-top: 2%; vertical-align: top; text-align: center;"><img style="width:40%; height: 40%;" src="idea-icon.svg"></td>
+		<td class="title" title="Vector GUIs">Vector GUIs</td>
 	</tr>
 	<tr>
-		<th style="width:20%;"></th>
-		<th title="Why vector graphics?"><img src="text-why.svg" alt="Vector graphics is preferable to pixel graphics in many cases because its image quality is independent of the screen resolution. One of the typical properties of vector graphics is allowing infinite zooming without any quality lost. This property is excellent for GUIs, and using only simple primitives the interfaces can be built practically hardware independent and be portable. Another advantage of using these primitives is that common vector art produced by graphics designers can be used in live interfaces or widgets. This means that interfaces are no longer limited in terms of creativity." style="width:90%; height: 90%;"></th>
+		<td class="par1">The main idea proposed in this site is to use basic vector graphics primitives to create Graphics User Interfaces that can be used everywhere, with no or little need of code modification as a way to obtain portability and compatibility among quite different screen resolutions.
+		</td>
+	</tr>
+	</tr>
+		<tr>
+		<td></td>
+		<td class="parn">After few decenies of experience in vector graphics and observing that these basic primitives look very much alike, gives origin to the idea that the same design could be very easily converted to other platforms. Automatic code generation becames also a possibility.</td>
 	</tr>
 	<tr>
-		<th></th>
-		<th title="Vector Art">
-			<img src="text-vector-art.svg" alt="Vector graphics allows styles widely known in graphics design for quite a long time. It is very popular for commercial use, such as in logos, labels and advertisements. These designs are generally flat, but near realistic designs gain popularity with the advent of digital vector art. Examples of vector art of mine for beer labels can be found at the list on the left and below:" style="width:90%; height: 90%;" usemap="#vecrtdmap">
-			<map name="vecrtdmap">
-				<area id="vecart" shape="rect" href="https://github.com/nilostolte/Vector-Art#vector-art">
-			</map>
-		</th>
+		<td></td>
+		<td class="title" title="Why vector graphics?">Why vector graphics?</td>
+	</tr>
+	<tr>
+		<td style="width:20%;"></td>
+		<td class="par1">Vector graphics is preferable to pixel graphics in many cases because its image quality is independent of the screen resolution. One of the typical properties of vector graphics is allowing infinite zooming without any quality lost. This property is excellent for GUIs, and using only simple primitives the interfaces can be built practically hardware independent and be portable. Another advantage of using these primitives is that common vector art produced by graphics designers can be used in live interfaces or widgets. This means that interfaces are no longer limited in terms of creativity.</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="title" title="Vector Art"><a href="https://github.com/nilostolte/Vector-Art#vector-art">
+		Vector Art</a></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="par1">Vector graphics allows styles widely known in graphics design for quite a long time. It is very popular for commercial use, such as in logos, labels and advertisements. These designs are generally flat, but near realistic designs gain popularity with the advent of digital vector art. Examples of vector art of mine for beer labels can be found at the list on the left and below:</td>
 	</tr>
 	<tr>
 		<th title="Click at anyone of these other vector designs of mine">
-			<table>
-				<tr><th>
+			<table style="font-family: opensanslightitalic; font-size: 1.5vw; width: 70%; margin-left:auto;margin-right:auto;">
+				<tr style="text-align: left;"><td>
 					<a href="https://github.com/nilostolte/Vector-Art/blob/main/Colt-45#the-gunners-choice">
-					<img src="text-gunners.svg" style="width:70%; height: 70%;">
+					The Gunner's Choice
 					</a>
-				</th></tr>
-				<tr><th>
+				</td></tr>
+				<tr style="text-align: left;"><td>
 					<a href="https://github.com/nilostolte/Vector-Art/tree/main/Death%20Valley#death-valley-river">
-					<img src="text-deathvalley.svg" style="width:70%; height: 70%;">
+					Death Valley River
 					</a>
-				</th></tr>
-				<tr><th>
+				</td></tr>
+				<tr style="text-align: left;"><td>
 					<a href="https://github.com/nilostolte/Vector-Art/tree/main/Viva%20Zapata#viva-zapata">
-					<img src="text-zapata.svg" style="width:70%; height: 70%;">
+					Viva Zapata
 					</a>
-				</th></tr>
-				<tr><th>
+				</td></tr>
+				<tr style="text-align: left;"><td>
 					<a href="https://github.com/nilostolte/Vector-Art/tree/main/Darth-Vader#dark-lager">
-					<img src="text-darklager.svg" style="width:70%; height: 70%;">
+					Dark Lager
 					</a>
-				</th></tr>
-				<tr><th>
+				</td></tr>
+				<tr style="text-align: left;"><td>
 					<a href="https://github.com/nilostolte/Vector-Art/tree/main/Kiwi%20IPA#kiwi-ipa">
-					<img src="text-kiwi.svg" style="width:70%; height: 70%;">
+					Kiwi IPA
 					</a>
-				</th></tr>
+				</td></tr>
 			</table>
 		</th>
 		<th>
 		<a href="https://github.com/nilostolte/Vector-Art/tree/main/Selling%20England%20By%20The%20Pint#selling-england-by-the-pint" title="Example of beer label: Selling England By The Pint">
-			<img src="selling-england.svg" style="width:58.8%; height: 58.8%;">
+			<img src="selling-england.svg" style="width:58.8%; height: 58.8%; padding-top: 3%;">
 		</a>
 		</th>
 	</tr>
+	
 	<tr>
-		<th></th>
-		<th title="Technical Illustrations"><img src="text-technical.svg" alt="Vector graphics really excells in technical illustrations. Below the correspondence between the octree data structure and its representation in space is shown. The space is recursively subdivided in eight equal sized regions called octants. The octants are contiguously stored in arrays with eight positions as shown. If the octant is not empty it points to another array of eight positions and so forth until the last level is reached. Here the coordinates of the voxel nearer to the observer in a space with resolution 32³ are placed in a table to show how their bits are grouped to form an index in the array at each of its five levels. In this way one can convert indexes to coordinates and vice-versa."style="width:90%; height: 90%;"></th>
+		<td></td>
+		<td class="title" title="Technical Illustrations">
+		<a href="https://github.com/nilostolte/Vector-Art#technical-illustrations">Technical Illustrations</a></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="par1">Vector graphics really excells in technical illustrations. Below the correspondence between the octree data structure and its representation in space is shown. The space is recursively subdivided in eight equal sized regions called octants. The octants are contiguously stored in arrays with eight positions as shown. If the octant is not empty it points to another array of eight positions and so forth until the last level is reached. Here the coordinates of the voxel nearer to the observer in a space with resolution 32³ are placed in a table to show how their bits are grouped to form an index in the array at each of its five levels. In this way one can convert indexes to coordinates and vice-versa.</td>
 	</tr>
 	<tr>
 		<th></th>
 		<th><img src="octree-struct.svg" style="width:70%; height: 70%;"></th>
 	</tr>
 	<tr>
-		<th></th>
-		<th title="Why to use vector graphics everywhere?"><img src="text-everywhere.svg" alt="Vector graphics solves the problem of having different and quite disparate displays and screen resolutions, especially in the near future with ultra high resolutions, because it scales appropriately without losing quality. It becomes the ideal technology to construct GUIs in different programming languages as well as on the web as demonstrated in this website. The simplicity of vector primitives also promotes portability across different platforms, OS, and languages. Since they are quite similar in different environments it is easy to automatically convert from one environment to another." style="width:90%; height: 90%;"></th>
+		<td></td>
+		<td class="title" title="Vector graphics everywhere">Why to use vector graphics everywhere?</td>
 	</tr>
 	<tr>
-		<th></th>
-		<th title="What about 3D graphics? Is it vector graphics?"><img src="text-3d.svg" alt="3D graphics and the different 3D frameworks (e.g., OpenGL) are only partially vectorial nowadays. Imagine 2D vector graphics without Bezier curves. That’s what 3D graphics look like because surfaces are defined by polygons. 3D graphics still don’t allow the use of 3D Bezier patches at rendering time. Since 2D Bezier curves are “flattened” as a set of lines to be displayed, it is possible that in the future 3D Bezier patches will be flattened as a set of polygons. 3D surfaces “flatness” should change with depth (levels of detail), whereas in 2D curves it remains constant." style="width:90%; height: 90%;"></th>
+		<td></td>
+		<td class="par1">Vector graphics solves the problem of having different and quite disparate displays and screen resolutions, especially in the near future with ultra high resolutions, because it scales appropriately without losing quality. It becomes the ideal technology to construct GUIs in different programming languages as well as on the web as demonstrated in this website. The simplicity of vector primitives also promotes portability across different platforms, OS, and languages. Since they are quite similar in different environments it is easy to automatically convert from one environment to another.</td>
 	</tr>
 	<tr>
-		<th></th>
-		<th title="Examples of active vector elements"><img src="text-examples.svg" style="width:90%; height: 90%;"></th>
+		<td></td>
+		<td class="title" title="What about 3D graphics? Is it vector graphics?">
+		What about 3D graphics? Is it vector graphics?</td>
 	</tr>
 	<tr>
-		<th style="vertical-align: bottom;">
-			<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
-		</th>
-		<th title="ClockWidget in Java and HTML 5 Canvas with Javascript">
-			<!-- <img src="text-why.svg" style="width:90%; height: 90%;"> -->
-			<!-- <img src="vector-art.svg" style="width:90%; height: 90%;" usemap="#vecrtdmap"> -->
-			<!-- <img src="text-everywhere.svg" style="width:90%; height: 90%;"> -->
-			<!-- <img src="text-3d.svg" style="width:90%; height: 90%;"> -->
-			<img src="text-clk1.svg" alt="ClockWidget is a real time vector graphics clock inspired in a design found in Freepik and written in Java. This is an implementation working on desktops, automatically placed at the top right side of the screen." style="width:90%; height: 90%;" usemap="#clkwidmap">
-			<img src="text-clk2.svg" alt="The same analog vector graphics clock appearing on the left is ClockWidget rewritten in JavaScript using HTML 5 Canvas vector graphics primitives. In this implementation every time the width of the browser window changes, the size of the clock also changes. A modifiable map sets the bold parts of this text clickable, independently of size." style="width:90%; height: 90%;" usemap="#clkjsmap">
-
-			<map name="clkwidmap">
-				<area id="clockwidget" shape="rect" href="https://github.com/nilostolte/ClockWidget">
-				<area id="freepik" shape="rect" href="https://www.freepik.com/">
-				<area id="java" shape="rect" href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">
-			</map>
-			<map name="clkjsmap">
-			  <area id="js1" shape="rect" href="https://github.com/nilostolte/nilostolte.github.io/blob/main/index.html">
-			  <area id="js2" shape="rect" href="https://github.com/nilostolte/nilostolte.github.io/blob/main/index.html">
-			</map>
-		</th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Basic Vector Interface: click at any indicated point and drag"><img src="text-basic.svg" alt="This example coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly." style="width:90%; height: 90%;"></th>
-	</tr>
-
-	<tr>
-		<th></th>
-		<th title="Click at any indicated point and drag to change this Bezier curve" style="padding-bottom: 2%; padding-top: 2%;"><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas></th>
-	</tr>
-	<tr>
-		<th colspan="2"><img src="bar.svg" style="width:100%; height: 100%;"></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Research Work"><img src="text-research.svg" style="width:90%; height: 90%;"></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Selected scientific articles"><img src="text-science.svg" style="width:90%; height: 90%;"></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Arbitrary 3D Resolution Discrete Ray Tracing of Implicit Surfaces"><a href="https://github.com/nilostolte/Research-Work/blob/main/Stolte2005_Chapter_Arbitrary3DResolutionDiscreteR.pdf"><img src="text-article1.svg" style="width:90%; height: 90%;"></a></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Novel Techniques for Robust Voxelization and Visualization of Implicit Surfaces"><a href="https://github.com/nilostolte/Research-Work/blob/main/Graphical%20Models.pdf"><img src="text-article2.svg" style="width:90%; height: 90%;"></a></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Discrete Ray-Tracing of Huge Voxels Spaces"><a href="https://github.com/nilostolte/Research-Work/blob/main/eg95.pdf"><img src="text-article3.svg" style="width:90%; height: 90%;"></a></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Robust Hierarchical Voxel Models for Representation and Interactive Visualization for Implicit Surfaces in Spherical Coordinates"><img src="text-article4.svg" style="width:90%; height: 90%;"></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Parallel Spatial Enumeration of Implicit Surfaces using Interval Arithmetic for Octree Generation and its direct Visualization"><img src="text-article5.svg" style="width:90%; height: 90%;"></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th title="Comparison between Different Rasterization Methods for Implicit Surfaces"><a href="https://github.com/nilostolte/Research-Work/blob/main/leeds.pdf"><img src="text-article6.svg" style="width:90%; height: 90%;"></a></th>
-	</tr>
-	<tr>
-		<th colspan="2"><img src="bar.svg" style="width:100%; height: 100%;"></th>
-	</tr>
+		<td></td>
+		<td class="par1">3D graphics and the different 3D frameworks (e.g., OpenGL) are only partially vectorial nowadays. Imagine 2D vector graphics without Bezier curves. That’s what 3D graphics look like because surfaces are defined by polygons. 3D graphics still don’t allow the use of 3D Bezier patches at rendering time. Since 2D Bezier curves are “flattened” as a set of lines to be displayed, it is possible that in the future 3D Bezier patches will be flattened as a set of polygons. 3D surfaces “flatness” should change with depth (levels of detail), whereas in 2D curves it remains constant.</td>
+	</tr>	
 </table>
-<!-- <img src="bar.svg" style="width:100%; height: 100%;"> -->
-<!-- <table> -->
-
-<!-- </table> -->
-
-<script>
-<!-- document.body.style.transform = 'scale(' + window.screen.availHeight/800. + ')'; -->
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var bezpt = -1;
-const bez = [ 55, 320, 150, 20, 350, 20, 630, 320 ];
-document.getElementById("bezier").addEventListener("mousedown", bezierPicking);
-document.getElementById("bezier").addEventListener("mouseup", bezierReset);
-document.getElementById("bezier").addEventListener("mousemove", bezierMove);
-var size;
-var w;
-var radius;
-var rimgrad;
-
-resizeWindow();
-window.addEventListener('resize', resizeWindow);
-
-setInterval(drawClock, 1000);
-
-function resizeWindow() {
-	size = window.innerWidth;
-	resizeClock();
-	resizeTxtClock();
-	resizeBezier();
-}
-
-function bezierMove( e ) {
-	if (bezpt != -1) {
-		var s = screen.availWidth/size;
-		var canvas = document.getElementById("bezier");
-		var context = canvas.getContext("2d");
-		var rect = canvas.getBoundingClientRect();
-		bez[bezpt] = (e.clientX-rect.left)*s;
-		bez[bezpt+1] = (e.clientY-rect.top)*s;
-		<!-- context.clearRect(0, 0, 300, 40); -->
-		<!-- context.font = '10pt Calibri'; -->
-        <!-- context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25); -->
-		resizeBezier();
-	}
-}
-
-function bezierReset() {
-	bezpt = -1;
-}
-
-function bezierPicking( e ) {
-	var s = screen.availWidth/size;
-	var canvas = document.getElementById("bezier");
-	var rect = canvas.getBoundingClientRect();
-	var x = (e.clientX-rect.left)*s;
-	var y = (e.clientY-rect.top)*s;
-	<!-- window.alert("point: ("+x+", "+y); -->
-	var i;
-	for (i = 0; i < bez.length; i+=2) {
-		if ((Math.abs(x - bez[i]) < 4*s) && (Math.abs(y - bez[i+1]) < 4*s)) break;
-	}
-	bezpt = -1;
-	if (i < bez.length) {
-		bezpt = i;
-		<!-- window.alert("point: "+bezpt); -->
-	}
-	<!-- window.alert("point: "+bezpt); -->
-}
-
-function resizeBezier() {
-	var canvas = document.getElementById("bezier");
-	canvas.width = size / 2;
-	canvas.height = size / 4;
-	var s = size / screen.availWidth;
-	var ctx = canvas.getContext("2d");
-
-	ctx.beginPath();
-	ctx.moveTo(bez[0]*s, bez[1]*s);
-	ctx.bezierCurveTo(bez[2]*s, bez[3]*s, bez[4]*s, bez[5]*s, bez[6]*s, bez[7]*s);
-	ctx.stroke();
-	
-
-	ctx.fillStyle = "#FF0000";
-	ctx.beginPath();
-	ctx.arc(bez[2]*s, bez[3]*s, 4*s, 0, 2 * Math.PI);
-	ctx.fill();
-	ctx.beginPath();
-	ctx.arc(bez[4]*s, bez[5]*s, 4*s, 0, 2 * Math.PI);
-	ctx.fill();
-	ctx.strokeStyle = "#FF0000";
-	ctx.beginPath();
-	ctx.moveTo(bez[0]*s, bez[1]*s);
-	ctx.lineTo(bez[2]*s, bez[3]*s);
-	ctx.stroke();
-	ctx.beginPath();
-	ctx.moveTo(bez[4]*s, bez[5]*s);
-	ctx.lineTo( bez[6]*s, bez[7]*s);
-	ctx.stroke();
-	ctx.fillStyle = "#000000";
-	ctx.beginPath();
-	ctx.arc(bez[0]*s, bez[1]*s, 4*s, 0, 2 * Math.PI);
-	ctx.fill();
-	ctx.beginPath();
-	ctx.arc(bez[6]*s, bez[7]*s, 4*s, 0, 2 * Math.PI);
-	ctx.fill();
-
-}
-
-function resizeTxtClock() {
-	var s = size / screen.availWidth;
-	document.getElementById("vecart").coords = "0,0,"+(s*120)+","+(s*46);
-	document.getElementById("clockwidget").coords = "0,"+(s*10)+","+(s*150)+","+(s*46);
-	document.getElementById("freepik").coords = ""+(s*790)+","+(s*52)+","+(s*900)+","+(s*85);
-	document.getElementById("java").coords = ""+(s*95)+","+ (s*85) +","+(s*160)+","+(s*118);
-	document.getElementById("js1").coords = "0,"+ (s*40)+","+(s*125)+","+(s*75);
-	document.getElementById("js2").coords = ""+(s*180)+","+ (s*40) +","+(s*690)+","+(s*75);
-}
-
-function resizeClock() {
-	<!-- size = document.getElementsByTagName('body')[0].clientWidth; -->
-	<!-- window.alert(size); -->
-	<!-- window.alert("test string"); -->
-	canvas.width = size / 5;
-	canvas.height = size / 5;
-	w = canvas.width / 2;
-	ctx.translate(w, w);
-	radius = w * 0.90;
-	rimgrad = rimGrad(ctx, radius);
-	drawClock();
-}
-
-function drawClock() {
-  drawFace(ctx, radius);
-  var r = radius * 0.93;
-  drawNumbers(ctx, r);
-  drawTime(ctx, r);
-}
-
-function drawFace(ctx, radius) {
-  drawDial(ctx, radius *0.95);
-  drawRim(ctx, radius);
-  drawIntRim(ctx, radius);
-}
-
-function intRimGrad(ctx, radius) {
-	var grad = ctx.createLinearGradient(0, 0, 0, radius*0.9);
-	grad.addColorStop(0, "rgb(75,75,75)");
-	//grad.addColorStop(0.01, "rgb(100, 100, 100)");
-	//grad.addColorStop(0.4, "rgb(100, 100, 100)");
-	grad.addColorStop(1, "rgb(250,250,250)");
-	return grad;
-}
-
-function drawIntRim(ctx, radius) {
-	ctx.beginPath();
-	ctx.arc(0, 0, radius*0.9, 0, 2*Math.PI);
-	ctx.arc(0, 0, radius * 0.88, 0, 2*Math.PI, true);
-	ctx.fillStyle = intRimGrad(ctx,radius);
-	ctx.fill();
-}
-
-function rimGrad(ctx, radius) {
-	var grad = ctx.createLinearGradient(0, -radius/2, 0, radius);
-	grad.addColorStop(0, "rgb(196,196,196)");
-	grad.addColorStop(1, "rgb(75,75,75)");
-	return grad;
-}
-
-// division between ceiling specular reflexion and shadowed area
-function ceilingSpecular(ctx, r) {
-	ctx.arc(0,r*0.62,r*1.2,0,2*Math.PI, true);
-}
-
-function drawRim(ctx, radius) {
-	var r = radius*0.95;
-	ctx.beginPath();
-	ctx.arc(0, 0, radius, 0, 2*Math.PI);
-	ctx.arc(0, 0, radius*0.89, 0, 2*Math.PI, true);
-	var grad = ctx.createLinearGradient(0, -radius, 0, radius*0.7);
-	grad.addColorStop(0, "rgb(250,250,250)");
-	grad.addColorStop(0.1, "rgb(200,200,200)");
-	grad.addColorStop(1, "rgb(170, 170, 170)");
-	//ctx.fillStyle = "rgb(186, 186, 186)";
-	ctx.fillStyle = grad;
-	ctx.fill();
-	ctx.save();
-	ctx.beginPath();
-	ctx.arc(0, 0, radius, 0, 2*Math.PI);
-	ctx.arc(0, 0, radius*0.89, 0, 2*Math.PI, true);
-	ctx.clip();
-	ctx.beginPath();
-	ceilingSpecular(ctx, r);
-	ctx.fillStyle = rimgrad;
-	ctx.fill();
-	ctx.restore();
-}
-
-function drawDial(ctx, radius) {
-	ctx.beginPath();
-	ctx.arc(0, 0, radius, 0, 2*Math.PI);
-	ctx.fillStyle = 'rgb(226, 226, 226)';
-	ctx.fill();
-	
-	ctx.beginPath();
-	ctx.fillStyle = 'rgb(216, 216, 216)';
-	// for intersection: "source-atop"
-	ctx.globalCompositeOperation = "source-atop";
-	ceilingSpecular(ctx, radius);
-	ctx.fill();
-	ctx.globalCompositeOperation = "source-over";
-}
-
-function drawNumbers(ctx, radius) {
-	var r = radius*0.75;
-	ctx.fillStyle = '#333';
-	drawHourMark(ctx, r);
-	drawMinMark(ctx, r, 0.5235987755982988731);
-	drawMinMark(ctx, r, 1.04719755119659775);
-}
-function drawMinMark(ctx, length, ang) {
-	var i;
-	var l = length * 1.16;
-	var l2 = length * 1.05;
-	var dx = length * 0.02;
-	ctx.save();
-	ctx.rotate(ang);
-	for (i = 0; i < 4; i++) {
-		ctx.beginPath();
-		ctx.moveTo(-dx,-l2);
-		ctx.lineTo(dx,-l2);
-		ctx.lineTo(dx,-l);
-		ctx.lineTo(-dx,-l);
-		ctx.closePath();
-		ctx.fill();
-		ctx.rotate(1.57079632679489662);
-	}
-	ctx.restore();
-}
-
-function drawHourMark(ctx, length) {
-	var i;
-	var l = length * 1.19;
-	var l2 = length * 0.98;
-	var dx = length * 0.02;
-	ctx.save();
-	for (i = 0; i < 4; i++) {
-		ctx.beginPath();
-		ctx.moveTo(-dx,-l2);
-		ctx.lineTo(dx,-l2);
-		ctx.lineTo(dx,-l);
-		ctx.lineTo(-dx,-l);
-		ctx.closePath();
-		ctx.fill();
-		ctx.rotate(1.57079632679489662);
-	}
-	ctx.restore();
-}
-
-
-function drawTime(ctx, radius){
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
-	var l = radius*0.75;
-
-    hour=hour%12;
-	var s = (second/60.0);
-    var m = (s/60.0) +  (minute/60.0);
-	var h = (m/12.) + (hour/12.);
-	//hour
-	drawHour(ctx, 6.283185307179586477 * h, l);
-    //minute
-    drawMin(ctx, 6.283185307179586477 * m, l);
-    // second
-    ctx.fillStyle = 'red';
-    drawSec(ctx,  6.283185307179586477 * s, l);
-    ctx.beginPath();
-    ctx.arc(0, 0, radius*0.06, 0, 2*Math.PI);
-    ctx.fillStyle = '#333';
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(0, 0, radius*0.04, 0, 2*Math.PI);
-    ctx.fillStyle = 'rgb(216, 216, 216)';
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(0, 0, radius*0.02, 0, 2*Math.PI);
-    ctx.fillStyle = 'red';
-    ctx.fill();
-}
-
-function drawHour(ctx, pos, length) {
-    var d1 = length * 0.038;
-	var d2 = length * 0.012;
-    var w = length  * 0.27;
-	var l = length * 0.75;
-    ctx.rotate(pos);
-    ctx.beginPath();
-    ctx.moveTo(-d1,w);
-    ctx.lineTo(d1,w);
-    ctx.lineTo(d2, -l);
-    ctx.lineTo(-d2, -l);
-    ctx.closePath();
-    ctx.fill();
-    ctx.rotate(-pos);
-}
-
-function drawMin(ctx, pos, length) {
-    var d1 = length * 0.038;
-	var d2 = length * 0.006;
-    var w = length  * 0.27;
-    ctx.rotate(pos);
-    ctx.beginPath();
-    ctx.moveTo(-d1,w);
-    ctx.lineTo(d1,w);
-    ctx.lineTo(d2, -length);
-    ctx.lineTo(-d2, -length);
-    ctx.closePath();
-    ctx.fill();
-    ctx.rotate(-pos);
-}
-
-function drawSec(ctx, pos, length) {
-    var dx = length * 0.019;
-    var w = length  * 0.22;
-    ctx.rotate(pos);
-    ctx.beginPath();
-    ctx.moveTo(-dx,w);
-    ctx.lineTo(dx,w);
-    ctx.lineTo(0, -length);
-    ctx.closePath();
-    ctx.fill();
-    ctx.rotate(-pos);
-}
-
-</script>
+<br><br>
 </body>
 </html>
