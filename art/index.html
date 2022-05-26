@@ -1,13 +1,35 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Nilo Stolte Graphics - Vector Graphics UI/GUI</title>
+<meta name="keywords" content="Java, programming, HTML5, Canvas, JavaScript, GUI, UI, user interfaces, Computer Graphics, vector art, SVG, desktop, Android, embedded, typography, fonts, kerning, PDFBox, OOP, HPC, C/C++, research, otf, ttf, OpenType.js, graphics design, technical writing, science, technology, geopolitics, economy, English, French, Portuguese, Spanish, beer labels, technical illustrations, octree, 3D graphics, Clockwidget, Widgets, Real time analog clock, Bezier curves">
+<meta name="description" content="Is your app prepared for tomorrow's resolutions? We offer services and promote vector graphics primitives for the development of interfaces (UI, GUI) on desktops, mobile, web, and embedded systems. The objective is better portability across different platforms and languages, as well as a better solution for different displays resolutions. ">
+<meta name="author" content="Nilo Stolte">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
 @font-face {
-  font-family: normal;
-  src: url('OpenSans-Regular.ttf')  format('truetype');
+  font-family: montserrat-regular;
+  src: url('Montserrat-Regular.otf')  format('opentype');
+}
+@font-face {
+  font-family: montserrat-bold;
+  src: url('Montserrat-Bold.otf')  format('opentype');
 }
 @font-face {
   font-family: semibold;
+  src: url('OpenSans-Semibold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: regular;
+  src: url('OpenSans-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: montserrat-semibold;
   src: url('Montserrat-Semibold.otf')  format('opentype');
+}
+@font-face {
+  font-family: italic;
+  src: url('OpenSans-SemiBoldItalic.ttf')  format('truetype');
 }
 @font-face {
   font-family: bold;
@@ -17,54 +39,269 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-.par1 {
-	font-family: normal; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-right: 5%;
-}
-.parn {
-	font-family: normal; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-top: 0.8%;
-	padding-right: 5%;
-}
-.title {
+* {
+	margin:0;
+	padding:0
+}/* for demo only - use a prper reset instead */
+h1 {
 	font-family: bold; 
-	text-align: justify;
+	text-align: left;
 	font-size: 1.76vw;
 	padding-top: 1.5%;
-	padding-right: 5%;
 	padding-bottom: 0.8%;
 }
-td {
-	padding: 0px 0px 0px 0px;
+p + p {
+	padding-top: 0.8%;
+}
+th {
+  padding: 0px;
+  margin: 0px;
 }
 
-th {
-  padding: 0px 0px 0px 0px;
+td {
+	padding: 0px;
+	margin: 0px;
 }
 
 table {
     border-spacing: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+html {
+	width: 100%;
+	font-family: regular;
+	font-size: 1.7vw;
+}
+body {
+	width:100%;
+	text-align:center;
+	background:#FFFFFF;
+	padding:1% 0;
+}
+#wrapper {
+	width:86%;
+	margin:0 auto;
+	text-align:left;
+	background:#FFFFFF;
+	//border:0.2em solid #000;
+	padding:5%;
+}
+#header {
+	background:#FFF;
+	//border:0.1em solid #000;
+	/*zoom:1.0;*/ /* haslayout fix ie*/
+	font-family: montserrat-regular;
+	font-size: 2.5vw;
+}
+#header h1, #footer p {
+	text-align:center;
+	margin:0 0 0 0;
+}
+#twocolumns {
+	position:relative;
+	width:100%;
+	z-index:2;
+	margin:1% 0;
+	overflow:hidden;
+}
+#leftside {
+	width:20%;
+	z-index:3;
+	position:relative;
+	float:left;
+	text-align: justify;
+}
+#rightside {
+	position:relative;
+	z-index:2;
+	margin:0 0 0 20%;
+	text-align: justify;
+	/*zoom:1.0;*//*ie haslayout fix */
+}
+
+/* use absolute overlays for full column colours and borders*/
+.col {
+	width:20%;
+	position:absolute;
+	z-index:0;
+	left:0;
+	top:0;
+	bottom:0;
+	//border:0.1em solid #000;
+	background:#FFFFFF;
+}
+.two {
+	background:#FFFFFF;
+	left:20%;
+	right:0;
+	width:auto;
+}
+.title-text {
+	text-align:center;
+	color: rgb(47,62,81);
+}
+.social{
+	float: right;
+	margin: -3% 0 0 0;
+	vertical-align: top;
+	width: 10%;
+}
+
+.dot {
+  height: 0.8vw;
+  width: 0.8vw;
+  margin: 0 0.7vw 0 0.7vw;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-gray {
+  height: 2px;
+  width: 2px;
+  transform: matrix(0.707,-0.707,0.707,0.707,1,1);
+  margin: 0 0 0.4vw 0;
+  display: inline-block;
+  background-color: rgb(47,62,81);
 }
 </style>
-<body>
-<table style="color:rgb(63,63,63);">
-	<tr>
-		<td rowspan="2" style="width:20%; padding-top: 2%; vertical-align: top; text-align: center;"><img style="width:40%; height: 40%;" src="art-icon-final.svg"></td>
-		<td class="title" title="Art">Art</td>
-	</tr>
-	<tr>
-		<td class="par1">Vector graphics allows styles widely known in graphics design for quite a long time. It is very popular for commercial use, such as in logos, labels and advertisements. These designs are generally flat, but near realistic designs gain popularity with the advent of digital vector art. Examples of vector art of mine for beer labels can be found at the list on the left and below:
-		</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="parn">Here are some of vector creations of mine in beer labels (for my prior brewery), icons, illustrations, designs, etc. In some of these examples I explain the steps taken on the creation as well as their inspiration. A more complete list can be found on my <a href="https://github.com/nilostolte/Vector-Art#vector-art" style="font-family: semibold;">Github</a>.</td>
-	</tr>
-</table>
+</head>
 
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div style="margin: 0.5% 0 0 0;"></div>
+			<div style="position:absolute; left: 50%;"> 
+				<div style="margin: 1.8vw 0 0 -4.4vw;"> 
+					<div style="margin: 0 0 0 -5px;">    
+						<span class="dot-gray" ></span><a href="../research/index.html"><span class="dot" style="background-color: rgb(152,202,62);"></span></a><span class="dot-gray"></span><a href="../vector/index.html"><span class="dot" style="background-color: rgb(59,199,211);"></span></a><span class="dot-gray"></span><a href="../examples/index.html"><span class="dot" style="background-color: rgb(64,184,150);"></span></a><span class="dot-gray"></span><a href="../art/index.html"><span class="dot" style="background-color: rgb(181,172,90);"></a></span><span class="dot-gray"></span>
+					</div>
+				</div>
+			</div>
+			<div class="title-text">
+				<a href="about/index.html">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
+			</div>
+			<div class="social">
+				<a href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
+			</div>
+			<div style="margin-bottom:7%;"></div>
+		</div>
+		<div id="twocolumns">
+			<div id="leftside">
+				<p style="text-align: center;">
+				<img style="width:40%; height: 40%;" src="art-icon-small.svg">
+				</p>
+				<p style="margin-bottom:250%;"></p>
+				<p>
+					<table title="Click at anyone of these other vector designs of mine" style="font-family: italic; font-size: 1.2vw; margin-left:auto;margin-right:auto;">
+						<tr style="text-align: left;"><td>
+							<a href="https://github.com/nilostolte/Vector-Art/blob/main/Colt-45#the-gunners-choice">
+							The Gunner's Choice
+							</a>
+						</td></tr>
+						<tr style="text-align: left;"><td>
+							<a href="https://github.com/nilostolte/Vector-Art/tree/main/Death%20Valley#death-valley-river">
+							Death Valley River
+							</a>
+						</td></tr>
+						<tr style="text-align: left;"><td>
+							<a href="https://github.com/nilostolte/Vector-Art/tree/main/Viva%20Zapata#viva-zapata">
+							Viva Zapata
+							</a>
+						</td></tr>
+						<tr style="text-align: left;"><td>
+							<a href="https://github.com/nilostolte/Vector-Art/tree/main/Darth-Vader#dark-lager">
+							Dark Lager
+							</a>
+						</td></tr>
+						<tr style="text-align: left;"><td>
+							<a href="https://github.com/nilostolte/Vector-Art/tree/main/Kiwi%20IPA#kiwi-ipa">
+							Kiwi IPA
+							</a>
+						</td></tr>
+					</table>
+				</p>
+				<p style="margin-bottom:100%;"></p>
+				<p style="text-align: center;">
+					<a title="Download portable Inkscape here" href="https://portableapps.com/apps/graphics_pictures/inkscape_portable"><img style="width:28%; height: 28%;" src="inkscape.svg"></a>
+				</p>
+				<p style="text-align: center;">
+					<a title="Download the Postscript manual here" href="PostScript.pdf"><img style="width:45%; height:45%;" src="postscript-logo.svg"></a>
+				</p>
+				<p style="text-align: center;">
+					<a title="Download portable Ghostscript here" href="https://portableapps.com/apps/utilities/ghostscript_portable"><img style="width:20%; height:20%;" src="Ghostscript_logo.svg"></a>
+				</p>
+
+			</div>
+			<div id="rightside">
+				<h1>Vector Art</h1>
+				<p>
+					Vector graphics allows styles widely known in graphics design for quite a long time. It is very popular for commercial use, such as in logos, labels, icons, widgets and advertisements. These designs are generally flat, but near realistic designs gain popularity with the advent of digital vector art.
+				</p>
+				<p>
+					Here are some of vector creations of mine in beer labels (for my prior brewery), icons, illustrations, designs, etc. In some of these examples I explain the steps taken on the creation as well as their inspiration. A more complete list can be found on my <a title="Repository containing many of these and other designs"href="https://github.com/nilostolte/Vector-Art#vector-art" style="font-family: semibold;">Vector Art Github</a> repository.
+				</p>
+				<h1>Beer Labels Designs</h1>
+				<p>
+					All these beer labels were designed entirely from scratch, from their names until the last details of the label. Giving attractive and fun names is often a good strategy for maketing a product. Combining with modern, unusual, and attractive artwork can easily boost product acceptability. Here are some samples of the creativity involved in these designs at the list on the left and below:
+				</p>
+				<div style="text-align: center; margin: 4% 0 4% 0">
+					<a href="https://github.com/nilostolte/Vector-Art/tree/main/Selling%20England%20By%20The%20Pint#selling-england-by-the-pint" title="Example of beer label: Selling England By The Pint">
+						<img src="selling-england.svg" style="width:58.8%; height: 58.8%;">
+					</a>
+				</div>
+				<p>
+					These labels were created using a mixture of techniques and tools. One of these tools, used in the design above, was <a title="Download portable Inkscape here" href="https://portableapps.com/apps/graphics_pictures/inkscape_portable" style="font-family: semibold;">Inkscape</a>, a portable (doesn't require installation, it runs from an USB key or an SD card) open source vector graphics editor. Some other labels were developed using <a style="font-family: semibold;" title="Download the Postscript manual here" href="PostScript.pdf">PostScript</a>, a vector graphics language developed by Adobe. The advantage of PostScript is that vector designs can be typed on a text editor. Once the file is typed it can be visualized using <a title="Download portable Ghostscript here" href="https://portableapps.com/apps/utilities/ghostscript_portable" style="font-family: semibold;">Ghostscript</a>, and open source Postscript interpretor and visualizer. Once the design is finished one can generate a PDF file that can be printed or imported. Nowadays, most designs I develop are using Illustrator, a vector graphics editor written by Adobe.
+				</p>
+				<h1 title="Technical Illustrations"><a href="https://github.com/nilostolte/Vector-Art#technical-illustrations">Technical Illustrations</a></h1>
+				<p>
+					Vector graphics really excells in technical illustrations. Below the correspondence between the octree data structure and its representation in space is shown. The space is recursively subdivided in eight equal sized regions called octants. The octants are contiguously stored in arrays with eight positions as shown. If the octant is not empty it points to another array of eight positions and so forth until the last level is reached. Here the coordinates of the voxel nearer to the observer in a space with resolution 32³ are placed in a table to show how their bits are grouped to form an index in the array at each of its five levels. In this way one can convert indexes to coordinates and vice-versa.
+				</p>
+				<div title="Example of illustration showing the correspondence between the octree data structure and its representation in space" style="text-align: center; margin: 4% 0 4% 0">
+					<img src="octree-struct.svg" style="width:70%; height: 70%;">
+				</div>
+				<h1>Icons</h1>
+				<p>
+					The design of icons is similar to any vector design except that it is expected that the icon will be seen with a quite small size, and, thus, it has to be be sufficiently thick and not very detailed in order to be distiguishable when shown with smaller sizes. This is also applicable to objects that will appear with a small size such as this decoration of the beer label <a title="Small object in a beer label" href="https://github.com/nilostolte/Vector-Art/blob/main/Colt-45#the-gunners-choice" style="font-family: semibold;">The Gunner's Choice</a>. This label, supposed to recall the Old West, has a bull skull that was intially extracted from a photo:
+				</p>
+				<div title="The model on the left appears a little  
+faded while the on the right appears 
+clearer when shown with small size" style="text-align: center; margin: 4% 0 4% 0">
+					<img src="skull.svg" style="width:35%; height: 35%;"><img src="skull.svg" style="width:15%; height: 15%; margin: 0 8% 0 -12%;"><img src="skull-thick.svg" style="width:15%; height: 15%; margin: 0 -12% 0 0;"><img src="skull-thick.svg" style="width:35%; height: 35%;">
+				</div>
+				<p>
+					The lines of the model on right above were made thicker, and it indeed appears much clearer when shown with a small size, but there are too many details, and the lower part becomes indistiguishable. It will also depend on the resolution of the screen or of the printer (in full screen it appears better). One would still need to draw the model in a much simpler way. Only thicker lines does not solve the problem.
+				</p>
+				<h1>The icon of this page</h1>
+				<p>
+					The icons used to symbolize the contents of these pages and the <a href="../index.html" style="font-family: semibold;">first page design</a> are inspired by the "<a href="https://www.freepik.com/free-vector/vector-illustration-infographic-design-template-with-icons-4-options-steps_11289702.htm" style="font-family: semibold;">4 options vector created by rorozoa</a>". On the other hand, the forth option was not adequate for the "<span style="font-family: italic;">vector art</span>" subject. In addition, new frames with respective new icons would have to be created if more options were to be added. The technique to produce the wireframe was grasped and a new frame has been produced. The new icon design is the following:
+				</p>
+				<div title="Icon to represent vector art. On the left, the
+the original one. On the right, to be used 
+when shown with small size" style="text-align: center; margin: 4% 0 4% 0;">
+					<img src="art-icon-final.svg" style="width:30%; height: 30%;"><img src="art-icon-small.svg" style="width:30%; height: 30%; margin: 0 0 0 4%;">
+				</div>
+				<p>
+					The resulting icon matches well with the other designs for its simplicity, but this design is not totally "flat" like the others. The painter's palette is shown in perspective and the brush has an almost unperceptive hidden line removal to indicate that the brush is in front. On the left, the original design. On the right, the one used with small sizes. 
+				<p/>
+				<h1>Pop stack icon example</h1>
+				<p>
+					This is a design inspired in the icon of the website <a href="https://stackoverflow.com" style="font-family: semibold;">Stackoverflow</a>. It was developed in Postscript to be used in the <a href="https://github.com/nilostolte/Java-Vector-GUI/tree/main/MenuInfographics6#menuinfographics6" style="font-family: semibold;">MenuInfographics6</a> menu example written in Java. The icon was converted from PostScript to Java using <a href="https://github.com/nilostolte/PostScript/tree/main/Examples/Convertion%20to%20Java#conversion-to-java" style="font-family: semibold;">this tool</a> I have writen in PostScript. The icon indicates a pop operation on a stack:
+				</p>
+				<div title="Icon to represent vector art. On the left, the
+the original one. On the right, to be used 
+when shown with small size" style="text-align: center; margin: 4% 0 4% 0;">
+					<img src="pop-stack-icon.svg" style="width:25%; height: 25%;">
+				</div>
+			</div>
+
+			<div class="col"></div>
+			<!-- col one and two supply full length column colours and borders and hold not content -->
+			<div class="col two"></div>
+		</div>
+		<div id="footer">
+				<!-- <p>Footer</p> -->
+		</div>
+	</div>
 </body>
 </html>
