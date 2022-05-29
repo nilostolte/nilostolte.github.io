@@ -1,15 +1,31 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 <head>
-<title>Pi Vector GUI Everywhere - Vector Graphics UI/GUI</title>
+<title>Nilo Stolte Graphics - Vector Graphics UI/GUI</title>
 <meta name="keywords" content="Java, programming, HTML5, Canvas, JavaScript, GUI, UI, user interfaces, Computer Graphics, vector art, SVG, desktop, Android, embedded, typography, fonts, kerning, PDFBox, OOP, HPC, C/C++, research, otf, ttf, OpenType.js, graphics design, technical writing, science, technology, geopolitics, economy, English, French, Portuguese, Spanish, beer labels, technical illustrations, octree, 3D graphics, Clockwidget, Widgets, Real time analog clock, Bezier curves">
 <meta name="description" content="Is your app prepared for tomorrow's resolutions? We offer services and promote vector graphics primitives for the development of interfaces (UI, GUI) on desktops, mobile, web, and embedded systems. The objective is better portability across different platforms and languages, as well as a better solution for different displays resolutions. ">
 <meta name="author" content="Nilo Stolte">
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
 @font-face {
-  font-family: normal;
+  font-family: montserrat-regular;
+  src: url('Montserrat-Regular.otf')  format('opentype');
+}
+@font-face {
+  font-family: montserrat-bold;
+  src: url('Montserrat-Bold.otf')  format('opentype');
+}
+@font-face {
+  font-family: semibold;
+  src: url('OpenSans-Semibold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: regular;
   src: url('OpenSans-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: montserrat-semibold;
+  src: url('Montserrat-Semibold.otf')  format('opentype');
 }
 @font-face {
   font-family: italic;
@@ -23,82 +39,190 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+* {
+	margin:0;
+	padding:0
+}/* for demo only - use a prper reset instead */
+h1 {
+	font-family: bold; 
+	text-align: left;
+	font-size: 1.76vw;
+	padding-top: 1.5%;
+	padding-bottom: 0.8%;
+}
+p + p {
+	padding-top: 0.8%;
+}
 th {
-  padding: 0px 0px 0px 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 td {
-	padding: 0px 0px 0px 0px;
+	padding: 0px;
+	margin: 0px;
 }
 
 table {
     border-spacing: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+html {
+	width: 100%;
+	font-family: regular;
+	font-size: 1.7vw;
+}
+body {
+	width:100%;
+	text-align:center;
+	background:#FFFFFF;
+	padding:1% 0;
+}
+#wrapper {
+	width:86%;
+	margin:0 auto;
+	text-align:left;
+	background:#FFFFFF;
+	//border:0.2em solid #000;
+	padding:5%;
+}
+#header {
+	background:#FFF;
+	//border:0.1em solid #000;
+	/*zoom:1.0;*/ /* haslayout fix ie*/
+	font-family: montserrat-regular;
+	font-size: 2.5vw;
+}
+#header h1, #footer p {
+	text-align:center;
+	margin:0 0 0 0;
+}
+#twocolumns {
+	position:relative;
+	width:100%;
+	z-index:2;
+	margin:1% 0;
+	overflow:hidden;
+}
+#leftside {
+	width:20%;
+	z-index:3;
+	position:relative;
+	float:left;
+	text-align: justify;
+}
+#rightside {
+	position:relative;
+	z-index:2;
+	margin:0 0 0 20%;
+	text-align: justify;
+	/*zoom:1.0;*//*ie haslayout fix */
 }
 
-.par1 {
-	font-family: normal; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-right: 5%;
+/* use absolute overlays for full column colours and borders*/
+.col {
+	width:20%;
+	position:absolute;
+	z-index:0;
+	left:0;
+	top:0;
+	bottom:0;
+	//border:0.1em solid #000;
+	background:#FFFFFF;
 }
-.parn {
-	font-family: normal; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-top: 0.8%;
-	padding-right: 5%;
+.two {
+	background:#FFFFFF;
+	left:20%;
+	right:0;
+	width:auto;
 }
-.title {
-	font-family: bold; 
-	text-align: justify;
-	font-size: 1.76vw;
-	padding-top: 1.5%;
-	padding-right: 5%;
-	padding-bottom: 0.8%;
+.title-text {
+	text-align:center;
+	color: rgb(47,62,81);
+}
+.social{
+	float: right;
+	margin: -3% 0 0 0;
+	vertical-align: top;
+	width: 10%;
+}
+
+.dot {
+  height: 0.8vw;
+  width: 0.8vw;
+  margin: 0 0.7vw 0 0.7vw;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-gray {
+  height: 2px;
+  width: 2px;
+  transform: matrix(0.707,-0.707,0.707,0.707,1,1);
+  margin: 0 0 0.4vw 0;
+  display: inline-block;
+  background-color: rgb(47,62,81);
 }
 </style>
 </head>
-<body style="margin: 0px 0px 0px 0px;">
-<table style="color:rgb(63,63,63);">
-	<tr>
-		<td rowspan="2" style="width:20%; padding-top: 2%; vertical-align: top; text-align: center;"><img style="width:40%; height: 40%;" src="idea-icon.svg"></td>
-		<td class="title" title="Vector GUIs">Vector GUIs</td>
-	</tr>
-	<tr>
-		<td class="par1">The main idea proposed in this site is to use basic vector graphics primitives to create Graphics User Interfaces that can be used everywhere, with no or little need of code modification as a way to obtain portability and compatibility among quite different screen resolutions.
-		</td>
-	</tr>
-	</tr>
-		<tr>
-		<td></td>
-		<td class="parn">After few decenies of experience in vector graphics and observing that these basic primitives look very much alike, the idea that the same design could be very easily converted to other platforms became quite clear. Automatic code generation becames also a possibility.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="title" title="Why vector graphics?">Why vector graphics?</td>
-	</tr>
-	<tr>
-		<td style="width:20%;"></td>
-		<td class="par1">Vector graphics is preferable to pixel graphics in many cases because its image quality is independent of the screen resolution. One of the typical properties of vector graphics is allowing infinite zooming without any quality lost. This property is excellent for GUIs, and using only simple primitives the interfaces can be built practically hardware independent and be portable. Another advantage of using these primitives is that common vector art produced by graphics designers can be used in live interfaces or widgets. This means that interfaces are no longer limited in terms of creativity.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="title" title="Vector graphics everywhere">Why to use vector graphics everywhere?</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="par1">Vector graphics solves the problem of having different and quite disparate displays and screen resolutions, especially in the near future with ultra high resolutions, because it scales appropriately without losing quality. It becomes the ideal technology to construct GUIs in different programming languages as well as on the web as demonstrated in this website. The simplicity of vector primitives also promotes portability across different platforms, OS, and languages. Since they are quite similar in different environments it is easy to automatically convert from one environment to another.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="title" title="What about 3D graphics? Is it vector graphics?">
-		What about 3D graphics? Is it vector graphics?</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="par1">3D graphics and the different 3D frameworks (e.g., OpenGL) are only partially vectorial nowadays. Imagine 2D vector graphics without Bezier curves. That’s what 3D graphics look like because surfaces are defined by polygons. 3D graphics still don’t allow the use of 3D Bezier patches at rendering time. Since 2D Bezier curves are “flattened” as a set of lines to be displayed, it is possible that in the future 3D Bezier patches will be flattened as a set of polygons. 3D surfaces “flatness” should change with depth (levels of detail), whereas in 2D curves it remains constant.</td>
-	</tr>	
-</table>
-<br><br>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div style="margin: 0.5% 0 0 0;"></div>
+			<div style="position:absolute; left: 50%;"> 
+				<div style="margin: 1.8vw 0 0 -4.4vw;"> 
+					<div style="margin: 0 0 0 -5px;">    
+						<span class="dot-gray" ></span><a href="../research/index.html"><span class="dot" style="background-color: rgb(152,202,62);"></span></a><span class="dot-gray"></span><a href="../vector/index.html"><span class="dot" style="background-color: rgb(59,199,211);"></span></a><span class="dot-gray"></span><a href="../examples/index.html"><span class="dot" style="background-color: rgb(64,184,150);"></span></a><span class="dot-gray"></span><a href="../art/index.html"><span class="dot" style="background-color: rgb(181,172,90);"></a></span><span class="dot-gray"></span>
+					</div>
+				</div>
+			</div>
+			<div class="title-text">
+				<a href="about/index.html">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
+			</div>
+			<div class="social">
+				<a href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
+			</div>
+			<div style="margin-bottom:7%;"></div>
+		</div>
+		<div id="twocolumns">
+			<div id="leftside">
+				<p style="text-align: center;">
+				<img style="width:40%; height: 40%;" src="idea-icon.svg">
+				</p>
+				<p style="margin-bottom:250%;"></p>
+			</div>
+			<div id="rightside">
+				<h1>Vector GUIs</h1>
+				<p>
+					The main idea proposed in this site is to use basic vector graphics primitives to create Graphics User Interfaces that can be used everywhere, with no or little need of code modification as a way to obtain portability and compatibility among quite different screen resolutions.
+				</p>
+				<p>
+					After few decenies of experience in vector graphics and observing that these basic primitives look very much alike, the idea that the same design could be very easily converted to other platforms became quite clear. Automatic code generation becames also a possibility.
+				</p>
+				<h1 title="Why vector graphics?">Why vector graphics?</h1>
+				<p>
+					Vector graphics is preferable to pixel graphics in many cases because its image quality is independent of the screen resolution. One of the typical properties of vector graphics is allowing infinite zooming without any quality lost. This property is excellent for GUIs, and using only simple primitives the interfaces can be built practically hardware independent and be portable. Another advantage of using these primitives is that common vector art produced by graphics designers can be used in live interfaces or widgets. This means that interfaces are no longer limited in terms of creativity.
+				</p>
+				<h1 title="Vector graphics everywhere">Why to use vector graphics everywhere?</td></h1>
+				<p>
+					Vector graphics solves the problem of having different and quite disparate displays and screen resolutions, especially in the near future with ultra high resolutions, because it scales appropriately without losing quality. It becomes the ideal technology to construct GUIs in different programming languages as well as on the web as demonstrated in this website. The simplicity of vector primitives also promotes portability across different platforms, OS, and languages. Since they are quite similar in different environments it is easy to automatically convert from one environment to another.
+				</p>
+				<h1 title="What about 3D graphics? Is it vector graphics?">What about 3D graphics? Is it vector graphics?</h1>
+				<p>
+					3D graphics and the different 3D frameworks (e.g., OpenGL) are only partially vectorial nowadays. Imagine 2D vector graphics without Bezier curves. That’s what 3D graphics look like because surfaces are defined by polygons. 3D graphics still don’t allow the use of 3D Bezier patches at rendering time. Since 2D Bezier curves are “flattened” as a set of lines to be displayed, it is possible that in the future 3D Bezier patches will be flattened as a set of polygons. 3D surfaces “flatness” should change with depth (levels of detail), whereas in 2D curves it remains constant.
+				</p>
+
+			</div>
+
+			<div class="col"></div>
+			<!-- col one and two supply full length column colours and borders and hold not content -->
+			<div class="col two"></div>
+		</div>
+		<div id="footer">
+				<!-- <p>Footer</p> -->
+		</div>
+	</div>
 </body>
 </html>
