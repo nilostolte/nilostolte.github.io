@@ -1,122 +1,230 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
 <head>
-<style> 
+<title>Nilo Stolte Graphics - Research</title>
+<meta name="keywords" content="Selected research work in computer graphics area, published in scientific journals, books and international conferences is shown. This  research work is, among other domains, in ray-tracing, 3D visualization, voxelization, robust voxelization, octree, 3D rendering, implicit surfaces, point rendering, interval arithmetic, and parallel processing.">
+<meta name="description" content="Is your app prepared for tomorrow's resolutions? We offer services and promote vector graphics primitives for the development of interfaces (UI, GUI) on desktops, mobile, web, and embedded systems. The objective is better portability across different platforms and languages, as well as a better solution for different displays resolutions. ">
+<meta name="author" content="Nilo Stolte">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
 @font-face {
-  font-family: opensans;
+  font-family: montserrat-regular;
+  src: url('Montserrat-Regular.otf')  format('opentype');
+}
+@font-face {
+  font-family: semi;
+  src: url('OpenSans-Semibold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: bold;
+  src: url('OpenSans-Bold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: regular;
   src: url('OpenSans-Regular.ttf')  format('truetype');
 }
 @font-face {
   font-family: italic;
   src: url('OpenSans-Italic.ttf')  format('truetype');
 }
-@font-face {
-  font-family: bold;
-  src: url('OpenSans-Bold.ttf')  format('truetype');
-}
 
 a { 
 	text-decoration: none;
 	color: inherit;
 }
-
-td {
-	padding: 0px 0px 0px 0px;
+* {
+	margin:0;
+	padding:0
+}/* for demo only - use a prper reset instead */
+h1 {
+	font-family: bold; 
+	text-align: left;
+	font-size: 1.76vw;
+	padding-top: 1.5%;
+	padding-bottom: 0.8%;
+}
+p + p {
+	padding-top: 0.8%;
+}
+th {
+  padding: 0px;
+  margin: 0px;
 }
 
-th {
-	padding: 0px 0px 0px 0px;
+td {
+	padding: 0px;
+	margin: 0px;
 }
 
 table {
     border-spacing: 0px;
+	padding: 0px;
+	margin: 0px;
 }
-
-.cite {
-	font-family: opensans; 
-	text-align: justify; 
+html {
+	width: 100%;
+	font-family: regular;
 	font-size: 1.7vw;
-	padding-top: 1.5%;
-	padding-right: 5%;
 }
-
-.lastcite {
-	padding-bottom: 1.5%;
+body {
+	width:100%;
+	text-align:center;
+	background:#FFFFFF;
+	padding:1% 0;
 }
-
-.par1 {
-	font-family: opensans; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-right: 5%;
+#wrapper {
+	width:86%;
+	margin:0 auto;
+	text-align:left;
+	background:#FFFFFF;
+	//border:0.2em solid #000;
+	padding:5%;
 }
-.parn {
-	font-family: opensans; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-top: 0.8%;
-	padding-right: 5%;
+#header {
+	background:#FFF;
+	//border:0.1em solid #000;
+	/*zoom:1.0;*/ /* haslayout fix ie*/
+	font-family: montserrat-regular;
+	font-size: 2.5vw;
 }
-.title {
-	font-family: bold; 
+#header h1, #footer p {
+	text-align:center;
+	margin:0 0 0 0;
+}
+#twocolumns {
+	position:relative;
+	width:100%;
+	z-index:2;
+	margin:1% 0;
+	overflow:hidden;
+}
+#leftside {
+	width:20%;
+	z-index:3;
+	position:relative;
+	float:left;
 	text-align: justify;
-	font-size: 1.76vw;
-	padding-top: 1.5%;
-	padding-right: 5%;
-	padding-bottom: 0.8%;
+}
+#rightside {
+	position:relative;
+	z-index:2;
+	margin:0 0 0 20%;
+	text-align: justify;
+	/*zoom:1.0;*//*ie haslayout fix */
 }
 
+/* use absolute overlays for full column colours and borders*/
+.col {
+	width:20%;
+	position:absolute;
+	z-index:0;
+	left:0;
+	top:0;
+	bottom:0;
+	//border:0.1em solid #000;
+	background:#FFFFFF;
+}
+.two {
+	background:#FFFFFF;
+	left:20%;
+	right:0;
+	width:auto;
+}
+.title-text {
+	text-align:center;
+	color: rgb(47,62,81);
+}
+.social{
+	float: right;
+	margin: -3% 0 0 0;
+	vertical-align: top;
+	width: 10%;
+}
+
+.dot {
+  height: 0.8vw;
+  width: 0.8vw;
+  margin: 0 0.7vw 0 0.7vw;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-gray {
+  height: 2px;
+  width: 2px;
+  transform: matrix(0.707,-0.707,0.707,0.707,1,1);
+  margin: 0 0 0.4vw 0;
+  display: inline-block;
+  background-color: rgb(47,62,81);
+}
 </style>
 </head>
+
 <body>
+	<div id="wrapper">
+		<div id="header">
+			<div style="margin: 0.5% 0 0 0;"></div>
+			<div style="position:absolute; left: 50%;"> 
+				<div style="margin: 1.8vw 0 0 -4.4vw;"> 
+					<div style="margin: 0 0 0 -5px;">    
+						<span class="dot-gray" ></span><a href="../research/index.html"><span class="dot" style="background-color: rgb(152,202,62);"></span></a><span class="dot-gray"></span><a href="../vector/index.html"><span class="dot" style="background-color: rgb(59,199,211);"></span></a><span class="dot-gray"></span><a href="../examples/index.html"><span class="dot" style="background-color: rgb(64,184,150);"></span></a><span class="dot-gray"></span><a href="../art/index.html"><span class="dot" style="background-color: rgb(181,172,90);"></a></span><span class="dot-gray"></span>
+					</div>
+				</div>
+			</div>
+			<div class="title-text">
+				<a href="about/index.html">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
+			</div>
+			<div class="social">
+				<a href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
+			</div>
+			<div style="margin-bottom:7%;"></div>
+		</div>
+		<div id="twocolumns">
+			<div id="leftside">
+				<p style="text-align: center;">
+				<img style="width:40%; height: 40%;" src="research-icon.svg">
+				</p>
+				<p style="margin-bottom:250%;"></p>
+			</div>
+			<div id="rightside">
+				<h1>Research</h1>
+				<p>
+					In this section, a list of previous selected research work in the area of computer graphics, published in scientific journals, books and international conferences is shown. This work is mainly in ray-tracing, implicit surfaces, interval arithmetic, robust voxelization,  3D rendering, point rendering, octree as well as parallel processing.
+				</p>
+				<p>
+					Recent research and development work in 2D vector graphics for Graphics User Interfaces is briefly explained here and detailed in the next sections.
+				</p>
+				<h1 title="Previous Research Work">Previous Research Work</h1>
+				<p title="Selected scientific articles">Selected scientific articles published in journals, books and events:
+				</p>
+				<p title="Arbitrary 3D Resolution Discrete Ray Tracing of Implicit Surfaces">Nilo Stolte. 
+					<a href=					"https://github.com/nilostolte/Research-Work/blob/main/Stolte2005_Chapter_Arbitrary3DResolutionDiscreteR.pdf" style="font-family: semi;">Arbitrary 3D Resolution Discrete Ray Tracing of Implicit Surfaces</a>. <span style="font-family: italic;">Lecture Notes in Computer Science</span>, 3429, 414-426, 2005.
+				</p>
+				<p title="Novel Techniques for Robust Voxelization and Visualization of Implicit Surfaces"
+					>Nilo Stolte and Arie Kaufman. <a href="https://github.com/nilostolte/Research-Work/blob/main/Graphical%20Models.pdf" style="font-family: semi;">Novel Techniques for Robust Voxelization and Visualization of Implicit Surfaces</a>. <span style="font-family: italic;">Graphical Models</span>, 63(6):387-412, Academic Press, 2001.
+				</p>
+				<p title="Discrete Ray-Tracing of Huge Voxels Spaces"
+					>Nilo Stolte and René Caubet. <a href="https://github.com/nilostolte/Research-Work/blob/main/eg95.pdf" style="font-family: semi;">Discrete Ray-Tracing of Huge Voxels Spaces</a>. <span style="font-family: italic;">Computer Graphics Forum</span>, 14(3):383-394, Blackwell, August 1995.
+				</p>
+				<p title="Robust Hierarchical Voxel Models for Representation and Interactive Visualization for Implicit Surfaces in Spherical Coordinates">
+					Nilo Stolte and Arie Kaufman. <span style="font-family: semi;">Robust Hierarchical Voxel Models for Representation and Interactive Visualization for Implicit Surfaces in Spherical Coordinates</span>. In <span style="font-family: italic;">Implicit Surfaces'98</span>, pages 11-17, Seattle, 1998.
+				</p>
+				<p title="Parallel Spatial Enumeration of Implicit Surfaces using Interval Arithmetic for Octree Generation and its direct Visualization"
+					>Nilo Stolte and Arie Kaufman. <span style="font-family: semi;">Parallel Spatial Enumeration of Implicit Surfaces using Interval Arithmetic for Octree Generation and its direct Visualization</span>. In <span style="font-family: italic;">Implicit Surfaces'98</span>, pages 81-87, Seattle, 1998.
+				</p>
+				<p title="Comparison between Different Rasterization Methods for Implicit Surfaces"
+					>Nilo Stolte and René Caubet. <a style="font-family: semi;" href="https://github.com/nilostolte/Research-Work/blob/main/leeds.pdf">Comparison between Different Rasterization Methods for Implicit Surfaces</a>. In Rae Earnshaw, John A. Vince and How Jones, editors, <span style="font-family: italic;">Visualization and Modeling</span>, Chapter 10, pages 191-201, Academic Press, April 1997.
+				</p>
 
-<table style="color:rgb(63,63,63);">
-	<tr>
-		<td rowspan="2" style="width:20%; vertical-align: top; text-align: center;"><img style="width:40%; height: 40%;" src="research-icon.svg"></td>
-		<td class="title" title="Research">Research</td>
-	</tr>
-	<tr>
-		<td class="par1">
-		In this section, a list of previous selected research work in the area of computer graphics, published in scientific journals, books and international conferences is shown. This work is mainly in ray-tracing, implicit surfaces, interval arithmetic, robust voxelization,  3D rendering, point rendering, octree as well as parallel processing.
-		</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="parn">Recent research and development work in 2D vector graphics for Graphics User Interfaces is briefly explained here and detailed in the next sections.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="title" title="Previous Research Work">Previous Research Work</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="par1" title="Selected scientific articles">Selected scientific articles published in journals, books and events:</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="cite" title="Arbitrary 3D Resolution Discrete Ray Tracing of Implicit Surfaces">Nilo Stolte. <a href="https://github.com/nilostolte/Research-Work/blob/main/Stolte2005_Chapter_Arbitrary3DResolutionDiscreteR.pdf" style="font-family: bold;">Arbitrary 3D Resolution Discrete Ray Tracing of Implicit Surfaces</a>. <span style="font-family: italic;">Lecture Notes in Computer Science</span>, 3429, 414-426, 2005.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="cite"  title="Novel Techniques for Robust Voxelization and Visualization of Implicit Surfaces">Nilo Stolte and Arie Kaufman. <a href="https://github.com/nilostolte/Research-Work/blob/main/Graphical%20Models.pdf" style="font-family: bold;">Novel Techniques for Robust Voxelization and Visualization of Implicit Surfaces</a>. <span style="font-family: italic;">Graphical Models</span>, 63(6):387-412, Academic Press, 2001.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="cite"  title="Discrete Ray-Tracing of Huge Voxels Spaces">Nilo Stolte and René Caubet. <a href="https://github.com/nilostolte/Research-Work/blob/main/eg95.pdf" style="font-family: bold;">Discrete Ray-Tracing of Huge Voxels Spaces</a>. <span style="font-family: italic;">Computer Graphics Forum</span>, 14(3):383-394, Blackwell, August 1995.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="cite"  title="Robust Hierarchical Voxel Models for Representation and Interactive Visualization for Implicit Surfaces in Spherical Coordinates">Nilo Stolte and Arie Kaufman. <span style="font-family: bold;">Robust Hierarchical Voxel Models for Representation and Interactive Visualization for Implicit Surfaces in Spherical Coordinates</span>. In <span style="font-family: italic;">Implicit Surfaces'98</span>, pages 11-17, Seattle, 1998.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="cite"  title="Parallel Spatial Enumeration of Implicit Surfaces using Interval Arithmetic for Octree Generation and its direct Visualization">Nilo Stolte and Arie Kaufman. <span style="font-family: bold;">Parallel Spatial Enumeration of Implicit Surfaces using Interval Arithmetic for Octree Generation and its direct Visualization</span>. In <span style="font-family: italic;">Implicit Surfaces'98</span>, pages 81-87, Seattle, 1998.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="cite lastcite"  title="Comparison between Different Rasterization Methods for Implicit Surfaces">Nilo Stolte and René Caubet. <a style="font-family: bold;" href="https://github.com/nilostolte/Research-Work/blob/main/leeds.pdf">Comparison between Different Rasterization Methods for Implicit Surfaces</a>. In Rae Earnshaw, John A. Vince and How Jones, editors, <span style="font-family: italic;">Visualization and Modeling</span>, Chapter 10, pages 191-201, Academic Press, April 1997.</td>
-	</tr>
-</table>
+			</div>
 
+			<div class="col"></div>
+			<!-- col one and two supply full length column colours and borders and hold not content -->
+			<div class="col two"></div>
+		</div>
+		<div id="footer">
+				<!-- <p>Footer</p> -->
+		</div>
+	</div>
 </body>
 </html>
