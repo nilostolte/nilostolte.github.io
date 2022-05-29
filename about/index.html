@@ -1,9 +1,221 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Nilo Stolte Graphics - About</title>
+<meta name="keywords" content="Nilo Stolte resume, research, PhD, Paul Sabatier University, Masters', post-doc, SUNY Stony Brook, Duke University, Senior lecturer, Software Engeneering, C++, Java, parallel processing, embedded, assembly, Toulouse, Singapore, New York, London, Los Angeles, South Korea, Lund, Montreal">
+<meta name="description" content="Is your app prepared for tomorrow's resolutions? We offer services and promote vector graphics primitives for the development of interfaces (UI, GUI) on desktops, mobile, web, and embedded systems. The objective is better portability across different platforms and languages, as well as a better solution for different displays resolutions. ">
+<meta name="author" content="Nilo Stolte">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+@font-face {
+  font-family: montserrat-regular;
+  src: url('Montserrat-Regular.otf')  format('opentype');
+}
+@font-face {
+  font-family: semi;
+  src: url('OpenSans-Semibold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: bold;
+  src: url('OpenSans-Bold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: regular;
+  src: url('OpenSans-Regular.ttf')  format('truetype');
+}
+
+a { 
+	text-decoration: none;
+	color: inherit;
+}
+* {
+	margin:0;
+	padding:0
+}/* for demo only - use a prper reset instead */
+h1 {
+	font-family: bold; 
+	text-align: left;
+	font-size: 1.76vw;
+	padding-top: 1.5%;
+	padding-bottom: 0.8%;
+}
+p + p {
+	padding-top: 0.8%;
+}
+th {
+  padding: 0px;
+  margin: 0px;
+}
+
+td {
+	padding: 0px;
+	margin: 0px;
+}
+
+table {
+    border-spacing: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+html {
+	width: 100%;
+	font-family: regular;
+	font-size: 1.7vw;
+}
+body {
+	width:100%;
+	text-align:center;
+	background:#FFFFFF;
+	padding:1% 0;
+}
+#wrapper {
+	width:86%;
+	margin:0 auto;
+	text-align:left;
+	background:#FFFFFF;
+	//border:0.2em solid #000;
+	padding:5%;
+}
+#header {
+	background:#FFF;
+	//border:0.1em solid #000;
+	/*zoom:1.0;*/ /* haslayout fix ie*/
+	font-family: montserrat-regular;
+	font-size: 2.5vw;
+}
+#header h1, #footer p {
+	text-align:center;
+	margin:0 0 0 0;
+}
+#twocolumns {
+	position:relative;
+	width:100%;
+	z-index:2;
+	margin:1% 0;
+	overflow:hidden;
+}
+#leftside {
+	width:20%;
+	z-index:3;
+	position:relative;
+	float:left;
+	text-align: justify;
+}
+#rightside {
+	position:relative;
+	z-index:2;
+	margin:0 0 0 20%;
+	text-align: justify;
+	/*zoom:1.0;*//*ie haslayout fix */
+}
+
+/* use absolute overlays for full column colours and borders*/
+.col {
+	width:20%;
+	position:absolute;
+	z-index:0;
+	left:0;
+	top:0;
+	bottom:0;
+	//border:0.1em solid #000;
+	background:#FFFFFF;
+}
+.two {
+	background:#FFFFFF;
+	left:20%;
+	right:0;
+	width:auto;
+}
+.title-text {
+	text-align:center;
+	color: rgb(47,62,81);
+}
+.social{
+	float: right;
+	margin: -3% 0 0 0;
+	vertical-align: top;
+	width: 10%;
+}
+
+.dot {
+  height: 0.8vw;
+  width: 0.8vw;
+  margin: 0 0.7vw 0 0.7vw;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-gray {
+  height: 2px;
+  width: 2px;
+  transform: matrix(0.707,-0.707,0.707,0.707,1,1);
+  margin: 0 0 0.4vw 0;
+  display: inline-block;
+  background-color: rgb(47,62,81);
+}
+</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div style="margin: 0.5% 0 0 0;"></div>
+			<div style="position:absolute; left: 50%;"> 
+				<div style="margin: 1.8vw 0 0 -4.4vw;"> 
+					<div style="margin: 0 0 0 -5px;">    
+						<span class="dot-gray" ></span><a href="../research/index.html"><span class="dot" style="background-color: rgb(152,202,62);"></span></a><span class="dot-gray"></span><a href="../vector/index.html"><span class="dot" style="background-color: rgb(59,199,211);"></span></a><span class="dot-gray"></span><a href="../examples/index.html"><span class="dot" style="background-color: rgb(64,184,150);"></span></a><span class="dot-gray"></span><a href="../art/index.html"><span class="dot" style="background-color: rgb(181,172,90);"></a></span><span class="dot-gray"></span>
+					</div>
+				</div>
+			</div>
+			<div title="Return to root" class="title-text">
+				<a href="../index.html">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
+			</div>
+			<div class="social">
+				<a href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
+			</div>
+			<div style="margin-bottom:7%;"></div>
+		</div>
+		<div id="twocolumns">
+			<div id="leftside">
+				<p title="About Nilo Stolte Graphics" style="text-align: center;">
+					<img style="width:40%; height: 40%;" src="emblem-important.svg">
+				</p>
+				<p style="margin-bottom:250%;"></p>
+			</div>
+			<div id="rightside">
+				<h1 title="About Nilo Stolte Graphics">About</h1>
+				<p>
+					Nilo Stolte completed his <span style="font-family: bold;">PhD</span> in computer graphics at <span style="font-family: semi;">Paul Sabatier University</span>, Toulouse, France, in 1996. His research dealt about ray-tracing, 3D visualization, voxelization, robust voxelization, octree, 3D rendering, implicit surfaces, point rendering and interval arithmetic.
+				</p>
+				<p>
+					Prior to his <span style="font-family: semi;"></span>Masters' degree, he had considerable experience in embedded, concurrent and Assembly programming (particularly for the 8085 processor) as well as several high level languages. During his <span style="font-family: bold;">Masters'</span> his main interests were in <span style="font-family: semi;">computer graphics</span> and <span style="font-family: semi;">computer architectures</span>, among other areas in <span style="font-family: semi;">computer science</span>. He started programming in C language and also used some 8086 Assembly.
+				</p>
+				<p>
+					During his <span style="font-family: semi;"></span>post-doc at <span style="font-family: semi;">SUNY Stony Brook</span> and <span style="font-family: semi;">Duke University</span>, he continued his research in computer graphics and started reasearch in <a href="../research/index.html#parallel"><span style="font-family: semi;">parallel processing</span></a>, proposing a new dynamic load balancing algorithm for multiprocessing memory shared machines. He also started programming in C++.
+				</p>
+				<p >
+					He then switched from an academic position of Senior Lecturer in London to a <span style="font-family: semi;">C++ Software Engineer</span> position in a computer graphics company in Toulouse, France, where he dealt with multi-spectral ray-tracing for military applications.
+				</p>
+				<p>
+					After this experience, he switched back to an academic position of <span style="font-family: semi;">Assistant Professor</span> in <span style="font-family: semi;">Singapore</span> and of "Professeur Agrégé" in Montreal, <span style="font-family: semi;">Canada</span>. He acquired Canadian citizenship and started a career in Java Android development in <span style="font-family: semi;">Motorola</span>, <span style="font-family: semi;">Samsung</span>, and <span style="font-family: semi;">Sony Ericson</span>. This experience allowed him to have a very good perception of the problem of the use of frameworks for <span style="font-family: semi;">GUI development</span>, starting with Java Android and now in Java desktop.
+				</p>
+				<p>
+					He has been nowadays studying and developping several tools for developping GUIs using vector graphics, as a way to obtain portable and multiplatform GUIs. He studied, used and modified several vector graphics open source packages (<a href="https://github.com/nilostolte/FreeHep"><span style="font-family: semi;">FreeHEP</span></a>, <a href="https://github.com/nilostolte/PDFBox"><span style="font-family: semi;">PDFBox</span></a> and <a href="https://github.com/nilostolte/Projects-Presentations/blob/main/Automatic%20Vector%20Fonts%20Generator%20Project.md#automatic-vector-fonts-generator-project--glyphs-their-widths-and-kerning-pairs"><span style="font-family: semi;">Opentype.js</span></a>) for transforming Java vector to other vector formats, to generate PDF and to use vector fonts and vector typography on desktops and enbedded applications as well as to automatically generate formatted texts in PDF. His interest has been also extended to ways to have web applications using the same code used in desktop and embedded applications.
+				</p>
+			</div>
+
+			<div class="col"></div>
+			<!-- col one and two supply full length column colours and borders and hold not content -->
+			<div class="col two"></div>
+		</div>
+		<div id="footer">
+				<!-- <p>Footer</p> -->
+		</div>
+	</div>
+</body>
+</html><!DOCTYPE html>
 <html>
 <body>
-<a href="https://github.com/nilostolte/nilostolte.github.io/tree/main#readme" title="Pi Vector GUI Everywhere - Is your app prepared for tomorrow's resolutions?">
-	<img src="twitter-banner-upsized.svg" alt="Java (desktop / Android), JavaScript (HTML 5), and other languages. Qualifications: PhD in Computer Science (Computer Graphics). Expertise: GUI programming,  design,  vector graphics, typography, fonts (otf,ttf), kerning, PDFBox, Opentype.js, Java, C/C++, writing (science, tech, geopolitics, economy),  OOP,  HPC. English, French, Portuguese, Spanish." style="width:100%; height: 100%;" >
-</a>
 
 </body>
 </html>
