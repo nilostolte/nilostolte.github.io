@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
 <head>
+<title>Nilo Stolte Graphics - Vector Graphics UI/GUI</title>
+<meta name="keywords" content="Java, programming, HTML5, Canvas, JavaScript, GUI, UI, user interfaces, Computer Graphics, vector art, SVG, desktop, Android, embedded, typography, fonts, kerning, PDFBox, OOP, HPC, C/C++, research, otf, ttf, OpenType.js, graphics design, technical writing, science, technology, geopolitics, economy, English, French, Portuguese, Spanish, beer labels, technical illustrations, octree, 3D graphics, Clockwidget, Widgets, Real time analog clock, Bezier curves">
+<meta name="description" content="Is your app prepared for tomorrow's resolutions? We offer services and promote vector graphics primitives for the development of interfaces (UI, GUI) on desktops, mobile, web, and embedded systems. The objective is better portability across different platforms and languages, as well as a better solution for different displays resolutions. ">
+<meta name="author" content="Nilo Stolte">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
 @font-face {
-  font-family: normal;
+  font-family: montserrat-regular;
+  src: url('Montserrat-Regular.otf')  format('opentype');
+}
+@font-face {
+  font-family: montserrat-bold;
+  src: url('Montserrat-Bold.otf')  format('opentype');
+}
+@font-face {
+  font-family: semibold;
+  src: url('OpenSans-Semibold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: regular;
   src: url('OpenSans-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: montserrat-semibold;
+  src: url('Montserrat-Semibold.otf')  format('opentype');
+}
+@font-face {
+  font-family: italic;
+  src: url('OpenSans-SemiBoldItalic.ttf')  format('truetype');
 }
 @font-face {
   font-family: bold;
@@ -14,93 +39,200 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-
-td {
-	padding: 0px 0px 0px 0px;
+* {
+	margin:0;
+	padding:0
+}/* for demo only - use a prper reset instead */
+h1 {
+	font-family: bold; 
+	text-align: left;
+	font-size: 1.76vw;
+	padding-top: 1.5%;
+	padding-bottom: 0.8%;
+}
+p + p {
+	padding-top: 0.8%;
+}
+th {
+  padding: 0px;
+  margin: 0px;
 }
 
-th {
-  padding: 0px 0px 0px 0px;
+td {
+	padding: 0px;
+	margin: 0px;
 }
 
 table {
     border-spacing: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+html {
+	width: 100%;
+	font-family: regular;
+	font-size: 1.7vw;
+}
+body {
+	width:100%;
+	text-align:center;
+	background:#FFFFFF;
+	padding:1% 0;
+}
+#wrapper {
+	width:86%;
+	margin:0 auto;
+	text-align:left;
+	background:#FFFFFF;
+	//border:0.2em solid #000;
+	padding:5%;
+}
+#header {
+	background:#FFF;
+	//border:0.1em solid #000;
+	/*zoom:1.0;*/ /* haslayout fix ie*/
+	font-family: montserrat-regular;
+	font-size: 2.5vw;
+}
+#header h1, #footer p {
+	text-align:center;
+	margin:0 0 0 0;
+}
+#twocolumns {
+	position:relative;
+	width:100%;
+	z-index:2;
+	margin:1% 0;
+	overflow:hidden;
+}
+#leftside {
+	width:20%;
+	z-index:3;
+	position:relative;
+	float:left;
+	text-align: justify;
+}
+#rightside {
+	position:relative;
+	z-index:2;
+	margin:0 0 0 20%;
+	text-align: justify;
+	/*zoom:1.0;*//*ie haslayout fix */
 }
 
-.par1 {
-	font-family: normal; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-right: 5%;
+/* use absolute overlays for full column colours and borders*/
+.col {
+	width:20%;
+	position:absolute;
+	z-index:0;
+	left:0;
+	top:0;
+	bottom:0;
+	//border:0.1em solid #000;
+	background:#FFFFFF;
 }
-.parn {
-	font-family: normal; 
-	text-align: justify; 
-	font-size: 1.7vw;
-	padding-top: 0.8%;
-	padding-right: 5%;
+.two {
+	background:#FFFFFF;
+	left:20%;
+	right:0;
+	width:auto;
 }
-.title {
-	font-family: bold; 
-	text-align: justify;
-	font-size: 1.76vw;
-	padding-top: 1.5%;
-	padding-right: 5%;
-	padding-bottom: 0.8%;
+.title-text {
+	text-align:center;
+	color: rgb(47,62,81);
+}
+.social{
+	float: right;
+	margin: -3% 0 0 0;
+	vertical-align: top;
+	width: 10%;
+}
+
+.dot {
+  height: 0.8vw;
+  width: 0.8vw;
+  margin: 0 0.7vw 0 0.7vw;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-gray {
+  height: 2px;
+  width: 2px;
+  transform: matrix(0.707,-0.707,0.707,0.707,1,1);
+  margin: 0 0 0.4vw 0;
+  display: inline-block;
+  background-color: rgb(47,62,81);
 }
 </style>
 </head>
+
 <body>
-<table style="color:rgb(63,63,63);">
-	<tr>
-		<td rowspan="2" style="width:20%; padding-top: 2%; vertical-align: top; text-align: center;"><img style="width:40%; height: 40%;" src="rocket-icon.svg"></td>
-		<td class="title" title="Examples">Examples</td>
-	</tr>
-	<tr>
-		<td class="par1">This section is dedicated to examples of vector graphics use on the web as well as in applications on desktops, etc.
-		</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="parn">This is a work in progress section where increasingly more complex graphics user interfaces are ported to the web using different methods and technologies. Currently Javascript and HTML 5 Canvas is used. HTML 5 Canvas is probably going to be the intermediate medium between future frontend code and the display on the browser. This is the way online games have been working so far and it is a suitable technology for vector GUIs.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="parn">Below examples illustrate how similar vector graphics primitives are in different platforms.</td>
-	</tr>
-	
-	<tr>
-		<td></td>
-		<td class="title" title="ClockWidget"><a href="https://github.com/nilostolte/ClockWidget">ClockWidget</a></td>
-	</tr>
-	<tr>
-		<td style="width:20%;"></td>
-		<td class="par1">ClockWidget is a real time vector graphics clock inspired in a design found in <span style="font-family: bold;"><a href="https://www.freepik.com/">Freepik</a></span> and written in <span style="font-family: bold;"><a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">Java</a></span>. This is an implementation working on desktops, automatically placed at the top right side of the screen.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="parn">The same analog vector graphics clock appearing on the left is ClockWidget rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. A modifiable map sets the bold parts of this text clickable, independently of size.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td style="text-align: center; padding-right: 5%;"><canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas></td>
-	</tr>
-	<a name="bezier"></a>
-	<tr>
-		<td></td>
-		<td class="title" title="Basic Vector Interface">Basic Vector Interface</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td class="par1">This example coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td title="Click at any indicated point and drag to change this Bezier curve" 
-			style="padding-bottom: 0%; padding-top: 2%; text-align: center; padding-right: 5%;"
-		><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas></td>
-	</tr>
-</table>
+	<div id="wrapper">
+		<div id="header">
+			<div style="margin: 0.5% 0 0 0;"></div>
+			<div style="position:absolute; left: 50%;"> 
+				<div style="margin: 1.8vw 0 0 -4.4vw;"> 
+					<div style="margin: 0 0 0 -5px;">    
+						<span class="dot-gray" ></span><a href="../research/index.html"><span class="dot" style="background-color: rgb(152,202,62);"></span></a><span class="dot-gray"></span><a href="../vector/index.html"><span class="dot" style="background-color: rgb(59,199,211);"></span></a><span class="dot-gray"></span><a href="../examples/index.html"><span class="dot" style="background-color: rgb(64,184,150);"></span></a><span class="dot-gray"></span><a href="../art/index.html"><span class="dot" style="background-color: rgb(181,172,90);"></a></span><span class="dot-gray"></span>
+					</div>
+				</div>
+			</div>
+			<div class="title-text">
+				<a href="about/index.html">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
+			</div>
+			<div class="social">
+				<a href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
+			</div>
+			<div style="margin-bottom:7%;"></div>
+		</div>
+		<div id="twocolumns">
+			<div id="leftside">
+				<p style="text-align: center;">
+				<img style="width:40%; height: 40%;" src="rocket-icon.svg">
+				</p>
+				<p style="margin-bottom:250%;"></p>
+			</div>
+			<div id="rightside">
+				<h1>Examples</h1>
+				<p>
+					This section is dedicated to examples of vector graphics use on the web as well as in applications on desktops, etc.
+				</p>
+				<p>
+					This is a work in progress section where increasingly more complex graphics user interfaces are ported to the web using different methods and technologies. Currently Javascript and HTML 5 Canvas is used. HTML 5 Canvas is probably going to be the intermediate medium between future frontend code and the display on the browser. This is the way online games have been working so far and it is a suitable technology for vector GUIs.
+				</p>
+				<p>
+					Below examples illustrate how similar vector graphics primitives are in different platforms.
+				</p>
+				<h1><a href="https://github.com/nilostolte/ClockWidget">ClockWidget</a></h1>
+				<p>
+					ClockWidget is a real time vector graphics clock inspired in a design found in <span style="font-family: bold;"><a href="https://www.freepik.com/">Freepik</a></span> and written in <span style="font-family: bold;"><a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">Java</a></span>. This is an implementation working on desktops, automatically placed at the top right side of the screen.
+				</p>
+				<p>
+					The same analog vector graphics clock appearing below is ClockWidget rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. A modifiable map sets the bold parts of this text clickable, independently of size.
+				</p>
+				<div title="ClockWidget example rewritten in JavaScript" style="text-align: center; margin: 4% 0 4% 0">
+					<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
+				</div>
+				<a name="bezier"></a>
+				<h1 title="Basic Vector Interface">Basic Vector Interface</h1>
+				<p>
+					This example coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.
+				</p>
+				<div title="Click at any indicated point and drag to change this Bezier curve" 
+					style="margin: 4% 0 4% 0; text-align: center;"
+					><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas>
+				</div>
+			</div>
+
+			<div class="col"></div>
+			<!-- col one and two supply full length column colours and borders and hold not content -->
+			<div class="col two"></div>
+		</div>
+		<div id="footer">
+				<!-- <p>Footer</p> -->
+		</div>
+	</div>
 <script>
 <!-- document.body.style.transform = 'scale(' + window.screen.availHeight/800. + ')'; -->
 var canvas = document.getElementById("canvas");
@@ -419,8 +551,6 @@ function drawSec(ctx, pos, length) {
     ctx.fill();
     ctx.rotate(-pos);
 }
-
 </script>
-<br><br><br>
 </body>
 </html>
