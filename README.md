@@ -79,8 +79,5 @@ independently of size.
   <a href="https://nilostolte.github.io/examples/index.html#bezier"><img src="https://user-images.githubusercontent.com/80269251/162779499-d5274b4e-4309-4899-83de-3c3e24b1bd88.png"></a>
 </p>
 
-<img src="bar.svg" style="width:100%; height: 100%;">
-
 ## [Research Work](https://github.com/nilostolte/Research-Work#research-work)
 
-<img src="bar.svg" style="width:100%; height: 100%;">
