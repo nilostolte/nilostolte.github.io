@@ -63,8 +63,6 @@ table {
 }
 html {
 	width: 100%;
-	font-family: regular;
-	font-size: 1.7vw;
 }
 body {
 	width:100%;
@@ -97,6 +95,8 @@ body {
 	z-index:2;
 	margin:1% 0;
 	overflow:hidden;
+	font-family: regular;
+	font-size: 1.7vw;
 }
 #leftside {
 	width:20%;
@@ -164,20 +164,20 @@ body {
 	<div id="wrapper">
 		<div id="header">
 			<div style="margin: 0.5% 0 0 0;"></div>
-			<div style="position:absolute; left: 50%;"> 
-				<div style="margin: 1.8vw 0 0 -4.4vw;"> 
-					<div style="margin: 0 0 0 -5px;">    
-						<span class="dot-gray" ></span><a href="../research/index.html"><span class="dot" style="background-color: rgb(152,202,62);"></span></a><span class="dot-gray"></span><a href="../vector/index.html"><span class="dot" style="background-color: rgb(59,199,211);"></span></a><span class="dot-gray"></span><a href="../examples/index.html"><span class="dot" style="background-color: rgb(64,184,150);"></span></a><span class="dot-gray"></span><a href="../art/index.html"><span class="dot" style="background-color: rgb(181,172,90);"></a></span><span class="dot-gray"></span>
-					</div>
-				</div>
-			</div>
-			<div title="About Nilo Stolte Graphics" class="title-text">
+			<div title="Click here to know about Nilo Stolte Graphics&#10;Click circles below to go to other sections" class="title-text">
 				<a href="../about/index.html">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
 			</div>
 			<div class="social">
-				<a href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
+				<a title="Follow me on Twitter" href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a title="Go to my GitHub" href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a title="Go to my Dev account" href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
 			</div>
-			<div style="margin-bottom:7%;"></div>
+			<div style="margin-left: 50%; font-size: 0;">
+				<div style="margin: 0.4vw 0 0 -4.4vw;"> 
+					<div style="margin: 0 0 0 -5px;">    
+						<span class="dot-gray" ></span><span title="Research" class="dot" onclick="location.href='../research/index.html';" style="background-color: rgb(152,202,62); cursor:pointer;"></span><span class="dot-gray"></span><span title="Vector GUIs" class="dot" onclick="location.href='../vector/index.html';" style="background-color: rgb(59,199,211); cursor:pointer;"></span><span class="dot-gray"></span><span title="Examples" class="dot" onclick="location.href='../examples/index.html';" style="background-color: rgb(64,184,150); cursor:pointer;"></span><span class="dot-gray"></span><span title="Vector Art" class="dot" onclick="location.href='../art/index.html';" style="background-color: rgb(181,172,90); cursor:pointer;"></span><span class="dot-gray"></span>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom:5%;"></div>
 		</div>
 		<div id="twocolumns">
 			<div id="leftside">
@@ -209,6 +209,7 @@ body {
 				<p title="Robust Hierarchical Voxel Models for Representation and Interactive Visualization for Implicit Surfaces in Spherical Coordinates">
 					Nilo Stolte and Arie Kaufman. <span style="font-family: semi;">Robust Hierarchical Voxel Models for Representation and Interactive Visualization for Implicit Surfaces in Spherical Coordinates</span>. In <span style="font-family: italic;">Implicit Surfaces'98</span>, pages 11-17, Seattle, 1998.
 				</p>
+				<a name="parallel"></a>
 				<p title="Parallel Spatial Enumeration of Implicit Surfaces using Interval Arithmetic for Octree Generation and its direct Visualization"
 					>Nilo Stolte and Arie Kaufman. <span style="font-family: semi;">Parallel Spatial Enumeration of Implicit Surfaces using Interval Arithmetic for Octree Generation and its direct Visualization</span>. In <span style="font-family: italic;">Implicit Surfaces'98</span>, pages 81-87, Seattle, 1998.
 				</p>

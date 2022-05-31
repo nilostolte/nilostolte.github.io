@@ -58,8 +58,6 @@ table {
 }
 html {
 	width: 100%;
-	font-family: regular;
-	font-size: 1.7vw;
 }
 body {
 	width:100%;
@@ -77,8 +75,6 @@ body {
 }
 #header {
 	background:#FFF;
-	//border:0.1em solid #000;
-	/*zoom:1.0;*/ /* haslayout fix ie*/
 	font-family: montserrat-regular;
 	font-size: 2.5vw;
 }
@@ -92,6 +88,8 @@ body {
 	z-index:2;
 	margin:1% 0;
 	overflow:hidden;
+	font-family: regular;
+	font-size: 1.7vw;
 }
 #leftside {
 	width:20%;
@@ -105,7 +103,6 @@ body {
 	z-index:2;
 	margin:0 0 0 20%;
 	text-align: justify;
-	/*zoom:1.0;*//*ie haslayout fix */
 }
 
 /* use absolute overlays for full column colours and borders*/
@@ -131,7 +128,7 @@ body {
 }
 .social{
 	float: right;
-	margin: -3% 0 0 0;
+	margin: -2% 0 0 0;
 	vertical-align: top;
 	width: 10%;
 }
@@ -159,16 +156,16 @@ body {
 	<div id="wrapper">
 		<div id="header">
 			<div style="margin: 0.5% 0 0 0;"></div>
-			<div title="Return to root" class="title-text">
+			<div title="Click here to return to root&#10;Click circles below to go to other sections" class="title-text">
 				<a href="../index.html">NILO STOLTE <span style="color: rgb(59,199,211);">GRAPHICS</span></a>
 			</div>
 			<div class="social">
-				<a href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
+				<a title="Follow me on Twitter" href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:29%; height:29%;  padding-right: 3.5%;"></a><a title="Go to my GitHub" href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:29%; height: 29%; padding-left: 3.5%;"></a><a title="Go to my Dev account" href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:27%; height: 27%; padding-left: 8%;"></a>
 			</div>
 			<div style="margin-left: 50%; font-size: 0;">
 				<div style="margin: 0.4vw 0 0 -4.4vw;"> 
-					<div style="margin: 0 0 0 -5px; height:0.5%;">    
-						<span class="dot-gray" ></span><span class="dot" onclick="location.href='../research/index.html';" style="background-color: rgb(152,202,62); cursor:pointer;"></span><span class="dot-gray"></span><span class="dot" onclick="location.href='../vector/index.html';" style="background-color: rgb(59,199,211); cursor:pointer;"></span><span class="dot-gray"></span><span class="dot" onclick="location.href='../examples/index.html';" style="background-color: rgb(64,184,150); cursor:pointer;"></span><span class="dot-gray"></span><span class="dot" onclick="location.href='../art/index.html';" style="background-color: rgb(181,172,90); cursor:pointer;"></span><span class="dot-gray"></span>
+					<div style="margin: 0 0 0 -5px;">    
+						<span class="dot-gray" ></span><span title="Research" class="dot" onclick="location.href='../research/index.html';" style="background-color: rgb(152,202,62); cursor:pointer;"></span><span class="dot-gray"></span><span title="Vector GUIs" class="dot" onclick="location.href='../vector/index.html';" style="background-color: rgb(59,199,211); cursor:pointer;"></span><span class="dot-gray"></span><span title="Examples" class="dot" onclick="location.href='../examples/index.html';" style="background-color: rgb(64,184,150); cursor:pointer;"></span><span class="dot-gray"></span><span title="Vector Art" class="dot" onclick="location.href='../art/index.html';" style="background-color: rgb(181,172,90); cursor:pointer;"></span><span class="dot-gray"></span>
 					</div>
 				</div>
 			</div>
