@@ -7,6 +7,10 @@
 <meta name="author" content="Nilo Stolte">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
+:root {
+  --left-column-size: 20%;
+}
+
 @font-face {
   font-family: montserrat-regular;
   src: url('Montserrat-Regular.otf')  format('opentype');
@@ -82,12 +86,12 @@ body {
 	margin:0 auto;
 	text-align:left;
 	background:#FFFFFF;
-	//border:0.2em solid #000;
+	/*border:0.2em solid #000;*/
 	padding:5%;
 }
 #header {
 	background:#FFF;
-	//border:0.1em solid #000;
+	/*border:0.1em solid #000;*/
 	/*zoom:1.0;*/ /* haslayout fix ie*/
 	font-family: montserrat-regular;
 	font-size: 2.5vw;
@@ -99,41 +103,41 @@ body {
 #twocolumns {
 	position:relative;
 	width:100%;
-	z-index:2;
+	z-index:1;
 	margin:1% 0;
-	overflow:hidden;
+	overflow:  visible;
 	font-family: regular;
 	font-size: 1.7vw;
 }
 #leftside {
-	width:20%;
-	z-index:3;
+	width: var(--left-column-size);
+	z-index:2;
 	position:relative;
 	float:left;
 	text-align: justify;
 }
 #rightside {
 	position:relative;
-	z-index:2;
-	margin:0 0 0 20%;
+	z-index:3;
+	margin:0 0 0 var(--left-column-size);
 	text-align: justify;
 	/*zoom:1.0;*//*ie haslayout fix */
 }
 
 /* use absolute overlays for full column colours and borders*/
 .col {
-	width:20%;
+	width: var(--left-column-size);
 	position:absolute;
 	z-index:0;
 	left:0;
 	top:0;
 	bottom:0;
-	//border:0.1em solid #000;
+	/*border:0.1em solid #000;*/
 	background:#FFFFFF;
 }
 .two {
 	background:#FFFFFF;
-	left:20%;
+	left: var(--left-column-size);
 	right:0;
 	width:auto;
 }
@@ -164,6 +168,17 @@ body {
   display: inline-block;
   background-color: rgb(47,62,81);
 }
+
+.shift-1st-div-left {
+  display: grid;
+  grid-template-columns: calc(var(--left-column-size) + 5%) 100%;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  position: relative;
+  left: calc((var(--left-column-size) + 5%) * -1);
+}
+
 </style>
 </head>
 
@@ -191,7 +206,6 @@ body {
 				<p title="Examples of vector GUIs and widgets" style="text-align: center;">
 				<img style="width:40%; height: 40%;" src="rocket-icon.svg">
 				</p>
-				<p style="margin-bottom:250%;"></p>
 			</div>
 			<div id="rightside">
 				<h1 title="Examples of vector GUIs and widgets">Examples</h1>
@@ -206,23 +220,48 @@ body {
 				</p>
 				<a name="clock"></a>
 				<h1 title="Real time vector graphics clock written in Java and&#10;JavaScript with HTML 5 Canvas vector primitives"><a href="https://github.com/nilostolte/ClockWidget">ClockWidget</a></h1>
-				<p>
-					ClockWidget is a real time vector graphics clock inspired in a design found in <span style="font-family: bold;"><a href="https://www.freepik.com/">Freepik</a></span> and written in <span style="font-family: bold;"><a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">Java</a></span>. This is an implementation working on desktops, automatically placed at the top right side of the screen.
+				<div class="shift-1st-div-left">
+					<div title="ClockWidget written&#10;in Java for desktops" style="padding: 0 26% 0 26%; ">
+						<a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java"><img src="java-badge.svg" style="width:100%; height: 100%;"></a>
+					</div>
+					<div>
+						ClockWidget is a real time vector graphics clock inspired in a design found in <span style="font-family: bold;"><a href="https://www.freepik.com/">Freepik</a></span> and written in <span style="font-family: bold;"><a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">Java</a></span>. This is an implementation working on desktops, automatically placed at the top right side of the screen.
+					</div>
+				</div>
+				<p style="margin: 0.8% 0 0 0;">
+						The same analog vector graphics clock appearing below is the same ClockWidget but rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. A modifiable map sets the bold parts of this text clickable, independently of size.
 				</p>
-				<p>
-					The same analog vector graphics clock appearing below is the same ClockWidget but rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. A modifiable map sets the bold parts of this text clickable, independently of size.
-				</p>
-				<div title="ClockWidget example rewritten in JavaScript" style="text-align: center; margin: 4% 0 4% 0">
-					<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
+				<div class="shift-1st-div-left">
+					<div>
+						<div title="ClockWidget written in&#10;Javascript and HTML5" style="padding: 0 33.58% 0 18.42%; ">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="HTML5-badge.svg" style="width:100%; height: 100%;"></a>
+						</div>
+						<div title="ClockWidget written in&#10;Javascript and HTML5" style="padding: 0 18.42% 0 18.42%; ">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="JS-badge.svg" style="width:100%; height: 100%;"></a>
+						</div>
+					</div>
+					<div title="ClockWidget example rewritten in JavaScript" style="text-align: center; margin: 4% 0 4% 0">
+						<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
+					</div>
 				</div>
 				<a name="bezier"></a>
 				<h1 title="Basic Vector Interface">Basic Vector Interface</h1>
 				<p>
 					This example coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.
 				</p>
-				<div title="Click at any indicated point and drag to change this Bezier curve" 
-					style="margin: 4% 0 4% 0; text-align: center;"
-					><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas>
+				<div class="shift-1st-div-left">
+					<div>
+						<div title="Interface written in&#10;Javascript and HTML5" style="padding: 0 33.58% 0 18.42%; ">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="HTML5-badge.svg" style="width:100%; height: 100%;"></a>
+						</div>
+						<div title="Interface written in&#10;Javascript and HTML5" style="padding: 0 18.42% 0 18.42%; ">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="JS-badge.svg" style="width:100%; height: 100%;"></a>
+						</div>
+					</div>
+					<div title="Click at any indicated point and drag to change this Bezier curve" 
+						style="margin: 4% 0 4% 0; text-align: center;"
+						><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas>
+					</div>
 				</div>
 			</div>
 
