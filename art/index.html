@@ -8,6 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+:root {
+  --left-column-size: 20%;
+}
+
 @font-face {
   font-family: montserrat-regular;
   src: url('Montserrat-Regular.otf')  format('opentype');
@@ -103,11 +107,11 @@ body {
 	z-index:2;
 	margin:1% 0;
 	overflow: visible;
-	font-size: 1.7vw;
 	font-family: regular;
+	font-size: 1.7vw;
 }
 #leftside {
-	width:20%;
+	width: var(--left-column-size);
 	z-index:3;
 	position:relative;
 	float:left;
@@ -116,14 +120,14 @@ body {
 #rightside {
 	position:relative;
 	z-index:2;
-	margin:0 0 0 20%;
+	margin:0 0 0 var(--left-column-size);
 	text-align: justify;
 	/*zoom:1.0;*//*ie haslayout fix */
 }
 
 /* use absolute overlays for full column colours and borders*/
 .col {
-	width:20%;
+	width: var(--left-column-size);
 	position:absolute;
 	z-index:0;
 	left:0;
@@ -134,7 +138,7 @@ body {
 }
 .two {
 	background:#FFFFFF;
-	left:20%;
+	left: var(--left-column-size);
 	right:0;
 	width:auto;
 }
@@ -166,14 +170,14 @@ body {
   background-color: rgb(47,62,81);
 }
 
-.lmax {
+.shift-1st-div-left {
   display: grid;
-  grid-template-columns: 20%  100%;
+  grid-template-columns: var(--left-column-size)  100%;
   padding: 0;
   margin: 0;
   align-items: center;
   position: relative;
-  left: -20%;
+  left: calc(var(--left-column-size) * -1);
 }
 
 </style>
@@ -216,7 +220,7 @@ body {
 				<p>
 					All these beer labels were designed entirely from scratch, from their names until the last details of the label. Giving attractive and fun names is often a good strategy for maketing a product. Combining with modern, unusual, and attractive artwork can easily boost product acceptability. Here are some samples of the creativity involved in these designs at the list on the left and below:
 				</p>
-				<div class="lmax" style="margin: 4% 0 4% 0;">
+				<div class="shift-1st-div-left" style="margin: 4% 0 4% 0;">
 						<div>	
 							<table title="Click at anyone of these other beer&#10;labels designs of mine" style="font-family: italic; font-size: 1.2vw;">
 									<tr style="text-align: left;">
@@ -249,7 +253,7 @@ body {
 								<img title="Example of beer label: Selling England By The Pint" onclick="location.href='https://github.com/nilostolte/Vector-Art/tree/main/Selling%20England%20By%20The%20Pint#selling-england-by-the-pint';" src="selling-england.svg" style="width: 100%; height: 100%; cursor:pointer;">
 						</div>
 				</div>
-				<div class="lmax">
+				<div class="shift-1st-div-left">
 					<div style="padding: 0 30% 0 0">
 							<div style="padding: 0 26% 0 26%;">
 								<a title="Download portable Inkscape here" href="https://portableapps.com/apps/graphics_pictures/inkscape_portable"><img src="inkscape.svg" style="width: 100%; height: 100%;"></a>
@@ -277,7 +281,7 @@ body {
 					The design of icons is similar to any vector design except that it is expected that the icon will be seen with a quite small size, and, thus, it has to be be sufficiently thick and not very detailed in order to be distiguishable when shown with smaller sizes. This is also applicable to any other objects that will appear with a small size.
 				</p>
 				<h1 title="The icon symbolizing the contents of this page">The icon of this page</h1>
-				<div class="lmax">
+				<div class="shift-1st-div-left">
 					<div>
 						<div title="Original icon design to&#10;represent Vector Art." style="text-align: center; padding: 0 25% 0 25%;">
 							<img src="art-icon-final.svg" style="width:100%; height: 100%;">
@@ -296,7 +300,7 @@ body {
 					</div>
 				</div>
 				<h1 title="Pop stack icon">Pop stack icon example</h1>
-				<div class="lmax">
+				<div class="shift-1st-div-left">
 					<div title="Icon to represent a pop in a stack.&#10;Inspired in the stackoverflow icon" style="padding: 0 25% 0 25%; text-align: center;">
 						<a href="https://github.com/nilostolte/Java-Vector-GUI/tree/main/MenuInfographics6#menuinfographics6"><img src="pop-stack-icon.svg" style="width:100%; height: 100%;"></a>
 					</div>
