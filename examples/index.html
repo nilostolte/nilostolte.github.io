@@ -11,6 +11,7 @@
 <style>
 :root {
   --left-column-size: 20%;
+  --left-shift: 25%; /* --left-shift = var(--left-column-size) / (100% - var(--left-column-size))% */
 }
 
 @font-face {
@@ -156,12 +157,12 @@ body {
 
 .shift-1st-div-left {
   display: grid;
-  grid-template-columns: calc(var(--left-column-size) + 5%) 100%;
+  grid-template-columns: var(--left-shift) 100%;
   padding: 0;
   margin: 0;
   align-items: center;
   position: relative;
-  left: calc((var(--left-column-size) + 5%) * -1);
+  left: calc(var(--left-shift) * -1);
 }
 
 </style>
@@ -218,8 +219,8 @@ body {
 				<a name="clock"></a>
 				<h1 title="Real time vector graphics clock written in Java and&#10;JavaScript with HTML 5 Canvas vector primitives"><a href="https://github.com/nilostolte/ClockWidget">ClockWidget</a></h1>
 				<div class="shift-1st-div-left">
-					<div title="ClockWidget written&#10;in Java for desktops" style="padding: 0 26% 0 26%; ">
-						<a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java"><img src="java-badge.svg" style="width:100%; height: 100%;"></a>
+					<div title="ClockWidget written&#10;in Java for desktops" style="text-align: left; margin-left: 25%; width:50%;">
+						<a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java"><img src="java-badge.svg"></a>
 					</div>
 					<div>
 						ClockWidget is a real time vector graphics clock inspired in a design found in <span style="font-family: bold;"><a href="https://www.freepik.com/">Freepik</a></span> and written in <span style="font-family: bold;"><a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">Java</a></span>. This is an implementation working on desktops, automatically placed at the top right side of the screen.
@@ -229,12 +230,12 @@ body {
 						The same analog vector graphics clock appearing below is the same ClockWidget but rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. The bold parts of this text are clickable, redirecting to the source code of this page.
 				</p>
 				<div class="shift-1st-div-left">
-					<div>
-						<div title="ClockWidget written in&#10;Javascript and HTML5" style="padding: 0 33.58% 0 18.42%; ">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="HTML5-badge.svg" style="width:100%; height: 100%;"></a>
+					<div style="text-align: left;">
+						<div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="HTML5-badge.svg"></a>
 						</div>
-						<div title="ClockWidget written in&#10;Javascript and HTML5" style="padding: 0 18.42% 0 18.42%; ">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="JS-badge.svg" style="width:100%; height: 100%;"></a>
+						<div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="JS-badge.svg"></a>
 						</div>
 					</div>
 					<div title="ClockWidget example rewritten in JavaScript" style="text-align: center; margin: 4% 0 4% 0">
@@ -246,13 +247,14 @@ body {
 				<p>
 					This example coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.
 				</p>
+				<!-- To center things on the left: widest element is 66%, 100% - 66% = 34% -> 34% / 2 = 17% -->
 				<div class="shift-1st-div-left">
-					<div>
-						<div title="Interface written in&#10;Javascript and HTML5" style="padding: 0 33.58% 0 18.42%; ">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="HTML5-badge.svg" style="width:100%; height: 100%;"></a>
+					<div style="text-align: left;">
+						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="HTML5-badge.svg" ></a>
 						</div>
-						<div title="Interface written in&#10;Javascript and HTML5" style="padding: 0 18.42% 0 18.42%; ">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="JS-badge.svg" style="width:100%; height: 100%;"></a>
+						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="JS-badge.svg"></a>
 						</div>
 					</div>
 					<div title="Click at any indicated point and drag to change this Bezier curve" 
