@@ -11,6 +11,7 @@
 <style>
 :root {
   --left-column-size: 20%;
+  --left-shift: 25%; /* --left-shift = var(--left-column-size) / (100% - var(--left-column-size))% */
 }
 
 @font-face {
@@ -156,12 +157,12 @@ body {
 
 .shift-1st-div-left {
   display: grid;
-  grid-template-columns: var(--left-column-size)  100%;
+  grid-template-columns: var(--left-shift)  100%;
   padding: 0;
   margin: 0;
   align-items: center;
   position: relative;
-  left: calc(var(--left-column-size) * -1);
+  left: calc(var(--left-shift) * -1);
 }
 
 </style>
@@ -201,7 +202,7 @@ body {
 		<div id="twocolumns">
 			<div id="leftside">
 				<p title="Vector Art" style="text-align: center;">
-				 <img style="width:40%; height: 40%;" src="art-icon-small.svg">
+				 <img style="width:40%;" src="art-icon-small.svg">
 				</p>
 			</div>
 			<div id="rightside">
@@ -218,7 +219,7 @@ body {
 				</p>
 				<div class="shift-1st-div-left" style="margin: 4% 0 4% 0;">
 						<div>	
-							<table title="Click at anyone of these other beer&#10;labels designs of mine" style="font-family: italic; font-size: 1.2vw;">
+							<table title="Click at anyone of these other beer&#10;labels designs of mine" style="font-family: italic; font-size: 1.2vw; margin-left:auto; margin-right:auto;">
 									<tr style="text-align: left;">
 									<td>
 										<a href="https://github.com/nilostolte/Vector-Art/blob/main/Colt-45#the-gunners-choice">The Gunner's Choice</a>
@@ -250,15 +251,15 @@ body {
 						</div>
 				</div>
 				<div class="shift-1st-div-left">
-					<div style="padding: 0 30% 0 0">
-							<div style="padding: 0 26% 0 26%;">
-								<a title="Download portable Inkscape here" href="https://portableapps.com/apps/graphics_pictures/inkscape_portable"><img src="inkscape.svg" style="width: 100%; height: 100%;"></a>
+					<div style="text-align: left;">
+							<div style="margin-left:auto; margin-right:auto; width: 32%;">
+								<a title="Download portable Inkscape here" href="https://portableapps.com/apps/graphics_pictures/inkscape_portable"><img src="Inkscape_Logo.svg"></a>
 							</div>
-							<div style="padding: 0 7% 0 7%;">
-								<a title="Download the Postscript manual here" href="PostScript.pdf"><img  src="postscript-logo.svg" style="width: 100%; height: 100%;"></a>
+							<div style="margin-left:auto; margin-right:auto; width: 57.33%;">
+								<a title="Download the Postscript manual here" href="PostScript.pdf"><img  src="postscript-logo.svg"></a>
 							</div>
-							<div style="padding: 0 32% 0 32%;">
-								<a title="Download portable Ghostscript here" href="https://portableapps.com/apps/utilities/ghostscript_portable"><img style="width:100%; height:100%;" src="Ghostscript_logo.svg"></a>
+							<div style="margin-left:auto; margin-right:auto; width: 24%;">
+								<a title="Download portable Ghostscript here" href="https://portableapps.com/apps/utilities/ghostscript_portable"><img src="Ghostscript_logo.svg"></a>
 							</div>
 					</div>
 					<div>
@@ -279,11 +280,11 @@ body {
 				<h1 title="The icon symbolizing the contents of this page">The icon of this page</h1>
 				<div class="shift-1st-div-left">
 					<div>
-						<div title="Original icon design to&#10;represent Vector Art." style="text-align: center; padding: 0 25% 0 25%;">
-							<img src="art-icon-final.svg" style="width:100%; height: 100%;">
+						<div title="Original icon design to&#10;represent Vector Art." style="margin-left:auto; margin-right:auto; width: 45%;">
+							<img src="art-icon-final.svg">
 						</div>
-						<div title="Redesign of the icon to&#10;be shown with small size" style="text-align: center; padding: 0 25% 0 25%;">
-							<img src="art-icon-small.svg" style="width:100%; height: 100%;">
+						<div title="Redesign of the icon to&#10;be shown with small size" style="margin-left:auto; margin-right:auto; width: 45%;">
+							<img src="art-icon-small.svg">
 						</div>
 					</div>
 					<div>
@@ -297,8 +298,8 @@ body {
 				</div>
 				<h1 title="Pop stack icon">Pop stack icon example</h1>
 				<div class="shift-1st-div-left">
-					<div title="Icon to represent a pop in a stack.&#10;Inspired in the stackoverflow icon" style="padding: 0 25% 0 25%; ">
-						<a href="https://github.com/nilostolte/Java-Vector-GUI/tree/main/MenuInfographics6#menuinfographics6"><img src="pop-stack-icon.svg" style="width:100%; height: 100%;"></a>
+					<div title="Icon to represent a pop in a stack.&#10;Inspired in the stackoverflow icon" style="margin-left:auto; margin-right:auto; width: 45%;">
+						<a href="https://github.com/nilostolte/Java-Vector-GUI/tree/main/MenuInfographics6#menuinfographics6"><img src="pop-stack-icon.svg"></a>
 					</div>
 					<div>
 						The design on the left was inspired in the icon of the website <a href="https://stackoverflow.com" style="font-family: semibold;">Stackoverflow</a>. It was developed in Postscript to be used in the <a href="https://github.com/nilostolte/Java-Vector-GUI/tree/main/MenuInfographics6#menuinfographics6" style="font-family: semibold;">MenuInfographics6</a> menu example written in Java. The icon was converted from PostScript to Java using <a href="https://github.com/nilostolte/PostScript/tree/main/Examples/Convertion%20to%20Java#conversion-to-java" style="font-family: semibold;">this tool</a> I have writen in PostScript. The icon indicates a pop operation on a stack.
