@@ -273,8 +273,7 @@ body {
 		</div>
 	</div>
 <script>
-<!-- document.body.style.transform = 'scale(' + window.screen.availHeight/800. + ')'; -->
-var canvas = document.getElementById("canvas");
+var canvas = document.getEl<ementById("canvas");
 var ctx = canvas.getContext("2d");
 var bezpt = -1;
 const bez = [ 55, 320, 150, 20, 350, 20, 630, 320 ];
@@ -305,9 +304,9 @@ function bezierMove( e ) {
 		var rect = canvas.getBoundingClientRect();
 		bez[bezpt] = (e.clientX-rect.left)*s;
 		bez[bezpt+1] = (e.clientY-rect.top)*s;
-		<!-- context.clearRect(0, 0, 300, 40); -->
-		<!-- context.font = '10pt Calibri'; -->
-        <!-- context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25); -->
+		// context.clearRect(0, 0, 300, 40); -->
+		// context.font = '10pt Calibri'; -->
+        // context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25); -->
 		resizeBezier();
 	}
 }
@@ -322,7 +321,7 @@ function bezierPicking( e ) {
 	var rect = canvas.getBoundingClientRect();
 	var x = (e.clientX-rect.left)*s;
 	var y = (e.clientY-rect.top)*s;
-	<!-- window.alert("point: ("+x+", "+y); -->
+	//window.alert("point: ("+x+", "+y);
 	var i;
 	for (i = 0; i < bez.length; i+=2) {
 		if ((Math.abs(x - bez[i]) < 4*s) && (Math.abs(y - bez[i+1]) < 4*s)) break;
@@ -330,9 +329,9 @@ function bezierPicking( e ) {
 	bezpt = -1;
 	if (i < bez.length) {
 		bezpt = i;
-		<!-- window.alert("point: "+bezpt); -->
+		//window.alert("point: "+bezpt);
 	}
-	<!-- window.alert("point: "+bezpt); -->
+	// window.alert("point: "+bezpt);
 }
 
 function resizeBezier() {
@@ -375,9 +374,9 @@ function resizeBezier() {
 }
 
 function resizeClock() {
-	<!-- size = document.getElementsByTagName('body')[0].clientWidth; -->
-	<!-- window.alert(size); -->
-	<!-- window.alert("test string"); -->
+	// size = document.getElementsByTagName('body')[0].clientWidth;
+	// window.alert(size);
+	// window.alert("test string");
 	canvas.width = size / 5;
 	canvas.height = size / 5;
 	w = canvas.width / 2;
