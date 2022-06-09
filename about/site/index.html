@@ -72,7 +72,7 @@ body {
 	margin:0 auto;
 	text-align:left;
 	background:#FFFFFF;
-	//border:0.2em solid #000;
+	/*border:0.2em solid #000;*/
 	padding:5%;
 }
 #header {
@@ -115,7 +115,7 @@ body {
 	left:0;
 	top:0;
 	bottom:0;
-	//border:0.1em solid #000;
+	/*border:0.1em solid #000;*/
 	background:#FFFFFF;
 }
 .two {
@@ -171,12 +171,13 @@ body {
 		</div>
 		<div id="twocolumns">
 			<div id="leftside">
-				<p title="About Nilo Stolte Graphics" style="text-align: center;">
+				<p title="This page explains the details&#10;about this site, its goals and&#10;the way it was conceived" style="text-align: center; cursor:pointer;">
 					<img style="width:42.11%; height:42.11%;" src="../emblem-important.svg">
 				</p>
 				<p style="margin-bottom:70%;"></p>
 				<div style="text-align: center;">
 					<div style="text-align: center; margin-left: 17%; width:50%;"><img src="../HTML5-badge.svg"></div>
+					<div style="text-align: center; margin-left: 17%; width:50%;"><img src="../SVG-badge.svg"></div>
 					<img style="width:66%;" src="../JS-badge.svg">
 				</div>
 				<p style="margin-bottom:250%;"></p>
@@ -185,32 +186,28 @@ body {
 				<h1 title="Details about this site,&#10;its goals and the way&#10;it was conceived"
 					style="cursor:pointer;">About this site</h1>
 				<p>
-					This is an experimental site containing only vector information. The contents are near <span style="font-family: semi;">WYSIWYG</span> with text and images zoomable. An extra mile has been taken to make it mobile ready, but HTML 5 Canvas images are not yet zoomable on mobiles, only on desktops when browser window size changes (for example, putting the browser window in full screen). This feature was implemented in <span style="font-family: semi;">Javascript</span>.
+					This is an experimental site containing only vector information. The contents are near <span style="font-family: semi;">WYSIWYG</span> with text and images zoomable. An extra mile has been taken to make it mobile ready, but HTML 5 Canvas images are not yet zoomable on mobiles, only on desktops when browser window size changes; for example, putting the browser window in full screen. This feature was implemented in <span style="font-family: semi;">Javascript</span> by intercepting window resizing and dynamically modifying the size of the canvas accordingly. Since all elements are defined using <span style="font-family: semi;">vector graphics</span> primitives, the scale is updated and the canvas redrawn.
 				</p>
 				<p>
-					The goal of this site is to demonstrate that modern web sites can be all vectorial only using standard HTML, CSS and Javascript. Constructing sites in this way creates desirable features, especially on mobiles, since it allows its contents to be seen and read in larger sizes without any change in the formatting. It's easier for visual impaired persons to be able to access the information more confortably.
-				</p>
-				<p>
-					On the other hand, vector web sites are also interesting to apply the <span style="font-family: semi;">GUI</span> concepts that have been praised in this site. Although, coding for the web is different, involving complex CSS formatting and HTML structuring, as well as a script language used as a programming language, the same ideas are also valid here. The main problem is that web programming became an universe in itself, completely isolated from the rest of the computing world. One could imagine the use of all this know-how on a desktop, using <a href="https://webkit.org/"><span style="font-family: semi;">webkit</span></a> for example. This solution would be too cumbersome, though, and limited to a certain programming language as well as to desktops only. 
-				</p>
-				<p>
-					The simpler solution is to do the opposite, that is, to code the application in a universal programming language and generating code to the web directly from that programming language. This is the idea behind <a href="https://webassembly.org/"><span style="font-family: semi;">WebAssembly</span></a>. That's where vector graphics GUIs seem to adapt better to create portable and universal GUIs with a single code.
+					The goal of this site is to demonstrate that modern web sites can be all vectorial only using standard <span style="font-family: semi;">HTML</span>, <span style="font-family: semi;">CSS</span>, <span style="font-family: semi;">SVG</span>, <span style="font-family: semi;">vector fonts</span>,  and <span style="font-family: semi;">Javascript</span>. Constructing sites in this way creates desirable features, especially on mobiles, since it allows its contents to be seen and read in larger sizes with practically no change in the formatting. It's easier for visual impaired persons to be able to interact with the visual information more confortably.
 				</p>
 				<h1 title="About the CSS code&#10;used in this site">CSS code</h1>
 				<p>
-					CSS coding was prefered for formatting this site, although some old HTML structures (such as tables) were sometimes used instead for confort. The reason for using CSS rather than HTML to do the same thing is that CSS is more flexible and much nearer to what vector graphics is about than HTML.
+					CSS coding was prefered for formatting this site, although some old HTML structures, such as tables, were sometimes used instead for confort. The reason for using CSS rather than HTML to do similar things is that CSS is more flexible and much nearer to what vector graphics is about than HTML.
 				</p>
+				<h1 title="About the SVG code&#10;used in this site">SVG code</h1>
 				<p>
-					
+					The images in this site are all <span style="font-family: semi;">SVG</span> vector images without fixed sizes, to induce resizing when the window size changes. The sizes are either given by the containers or in <span style="font-family: semi;">&lt;img&gt;</span> tags, and always in terms of percentages, relative to the parent element, or in terms of <span style="font-family: semi;">vw</span>, relative to 1&percnt; of the width of the viewport. The SVG files are all simplified to have only the namespace (xmlns) and the viewport, which is the bounding box of the design.
 				</p>
 				<p >
-					
+					Inline SVG is used in simple features or in features containing text with WYSIWYG formating. Texts belonging to an SVG item are actually written as text, for the purposes of page indexing, and with fixed formatting, in order to not alter the design when displayed with different sizes. Letters not used as text, as in cases of logos or badges, are not represented by text but by their glyph paths.
+				</p>
+				<h1 title="About the vector fonts&#10;used in this site">Vector fonts</h1>
+				<p>
+					The fonts used in this site are open source vector fonts supplied locally in each site directory. These are the original Truetype or Opentype fonts normally used by the system in personal computers. The effort of using fonts in the local directory prevents the problem of changing the design of one page in particular, as well as maintaining the directory structure flexible.
 				</p>
 				<p>
-					
-				</p>
-				<p>
-					
+					Here also, the sizes are always given in <span style="font-family: semi;">vw</span> in order to induce size changes when the window size changes.
 				</p>
 			</div>
 
