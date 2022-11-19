@@ -9,9 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-:root {
-  --left-column-size: 20%;
-  --left-shift: 25%; /* --left-shift = var(--left-column-size) / (100% - var(--left-column-size))% */
+:root {				/* Calculating leftside width at the grid level as it were on the rightside*/
+  --left-column-size: 20%;	/* top level leftside width: 20% -> top-level rightside width: 80%, since global width = 100%*/
+  --left-shift: 25%;		/* grid level width on rightside: 100% -> 100% / 80% = 1.25 -> 1.25 * 20% = 25% -> --left-shift = 25%*/
 }
 
 @font-face {
