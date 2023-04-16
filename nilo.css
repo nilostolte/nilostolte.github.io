@@ -9,7 +9,7 @@
 }
 @font-face {
   font-family: montserrat-semibold;
-  src: url('../Montserrat-Semibold.otf')  format('opentype');
+  src: url('/Montserrat-Semibold.otf')  format('opentype');
 }
 @font-face {
   font-family: montserrat-bold;
@@ -17,7 +17,7 @@
 }
 @font-face {
   font-family: regular;
-  src: url('../OpenSans-Regular.ttf')  format('truetype');
+  src: url('/OpenSans-Regular.ttf')  format('truetype');
 }
 @font-face {
   font-family: italic;
