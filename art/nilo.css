@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: montserrat-regular;
-  src: url('../Montserrat-Regular.otf')  format('opentype');
+  src: url('/Montserrat-Regular.otf')  format('opentype');
 }
 @font-face {
   font-family: montserrat-semibold;
@@ -13,7 +13,7 @@
 }
 @font-face {
   font-family: montserrat-bold;
-  src: url('../Montserrat-Bold.otf')  format('opentype');
+  src: url('/Montserrat-Bold.otf')  format('opentype');
 }
 @font-face {
   font-family: regular;
@@ -21,15 +21,15 @@
 }
 @font-face {
   font-family: italic;
-  src: url('../OpenSans-SemiBoldItalic.ttf')  format('truetype');
+  src: url('/OpenSans-SemiBoldItalic.ttf')  format('truetype');
 }
 @font-face {
   font-family: semibold;
-  src: url('../OpenSans-Semibold.ttf')  format('truetype');
+  src: url('/OpenSans-Semibold.ttf')  format('truetype');
 }
 @font-face {
   font-family: bold;
-  src: url('../OpenSans-Bold.ttf')  format('truetype');
+  src: url('/OpenSans-Bold.ttf')  format('truetype');
 }
 
 a { 
