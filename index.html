@@ -66,6 +66,48 @@
 }
 </script>
 <link rel="stylesheet" type="text/css" href="/nilo.css">
+<style>
+#twocolumns {
+	position:relative;
+	width:100%;
+	z-index:2;
+	margin:1% 0;
+	overflow:hidden;
+	font-family: montserrat-regular;
+	font-size: 1.14vw;
+	line-height: 1.4vw;
+}
+#leftside {
+	width:48%;
+	z-index:3;
+	position:relative;
+	float:left;
+	text-align: justify;
+}
+#rightside {
+	position:relative;
+	z-index:2;
+	margin:0 0 0 52%;
+	text-align: justify;
+}
+.col {
+	width:48%;
+	position:absolute;
+	z-index:0;
+	left:0;
+	top:0;
+	bottom:0;
+	/* uncomment to see areas borders */
+	/* border:0.1em solid #000; */
+	background:#FFFFFF;
+}
+.two {
+	background:#FFFFFF;
+	left:52%;
+	right:0;
+	width:auto;
+}
+</style>
 </head>
 
 <body>
