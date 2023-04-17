@@ -626,7 +626,7 @@ let countPixi = 0;
 app.ticker.add(() => {
     if (!animPixi) return;
 
-    if (countPixi > 360 ) {
+    if (countPixi >= 360 ) {
        countPixi = countPixi - 360;
     }
     var angle = (countPixi/180) * Math.PI ;
