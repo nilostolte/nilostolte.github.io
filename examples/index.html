@@ -264,6 +264,7 @@ function resizeBezier() {
 	var s = canvas.width / 685;
 	canvas.height = 340 * s;
 	var ctx = canvas.getContext("2d");
+	ctx.lineWidth = 5;
 
 	ctx.beginPath();
 	ctx.moveTo(bez[0]*s, bez[1]*s);
