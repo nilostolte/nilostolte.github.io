@@ -204,9 +204,9 @@ const bez = [ 55, 320, 150, 20, 350, 20, 630, 320 ];
 document.getElementById("bezier").addEventListener("pointerdown", bezierPicking);
 document.getElementById("bezier").addEventListener("pointerup", bezierReset);
 document.getElementById("bezier").addEventListener("pointermove", bezierMove);
-document.getElementById("bezier").addEventListener("touchstart", bezierPicking);
-document.getElementById("bezier").addEventListener("touchend", bezierReset);
-document.getElementById("bezier").addEventListener("touchmove", bezierMove);
+document.getElementById("bezier").addEventListener("touchstart", bezierPicking, false);
+document.getElementById("bezier").addEventListener("touchend", bezierReset, false);
+document.getElementById("bezier").addEventListener("touchmove", bezierMove, false);
 
 var size;
 var w;
