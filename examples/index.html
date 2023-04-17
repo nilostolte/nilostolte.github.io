@@ -36,8 +36,8 @@
 </head>
 
 <body>
-	<div id="wrapper">
-		<div id="header">
+   <div id="wrapper">
+      <div id="header">
 			<div style="margin: 0.5% 0 0 0;"></div>
 			<div title="Click here to know about Nilo Stolte Graphics&#10;Click circles below to go to other sections" class="title-text">
 				<a href="../about">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
@@ -73,96 +73,110 @@
 			  </div>
 			</div>
 			<div style="margin-bottom:5%;"></div>
-		</div>
-		<div id="twocolumns">
-			<div id="leftside">
-				<p title="Examples of vector GUIs and widgets" style="text-align: center;">
-				<img style="width:40%; height: 40%;" src="rocket-icon.svg">
-				</p>
-			</div>
-			<div id="rightside">
-				<h1 title="Examples of vector GUIs and widgets">Examples</h1>
-				<p>
-					This section is dedicated to examples of vector graphics use on the web as well as in applications on desktops, etc.
-				</p>
-				<p>
-					This is a work in progress section where increasingly more complex graphics user interfaces are ported to the web using different methods and technologies. Currently Javascript and HTML 5 Canvas is used. HTML 5 Canvas is probably going to be the intermediate medium between future frontend code and the display on the browser. This is the way online games have been working so far and it is a suitable technology for vector GUIs.
-				</p>
-				<p>
-					Below examples illustrate how similar vector graphics primitives are in different platforms.
-				</p>
-				<a name="clock"></a>
-				<h1 title="Real time vector graphics clock written in Java and&#10;JavaScript with HTML 5 Canvas vector primitives"><a href="https://github.com/nilostolte/ClockWidget">ClockWidget</a></h1>
-				<div class="shift-1st-div-left">
-					<div title="ClockWidget written&#10;in Java for desktops" style="text-align: left; margin-left: 25%; width:50%;">
-						<a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java"><img src="/resources/java-badge.svg"></a>
-					</div>
-					<div>
-						ClockWidget is a real time vector graphics clock inspired in a design found in <span style="font-family: bold;"><a href="https://www.freepik.com/">Freepik</a></span> and written in <span style="font-family: bold;"><a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">Java</a></span>. This is an implementation working on desktops, automatically placed at the top right side of the screen.
-					</div>
-				</div>
-				<p style="margin: 0.8% 0 0 0;">
-						The same analog vector graphics clock appearing below is the same ClockWidget but rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. The bold parts of this text are clickable, redirecting to the source code of this page.
-				</p>
-				<div class="shift-1st-div-left">
-					<div style="text-align: left;">
-						<div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg"></a>
-						</div>
-						<div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
-						</div>
-					</div>
-					<div title="ClockWidget example rewritten in JavaScript" style="text-align: center; margin: 4% 0 4% 0">
-						<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
-					</div>
-				</div>
-
-				<div class="shift-1st-div-left">
-					<div style="text-align: left;">
-						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg" ></a>
-						</div>
-						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
-						</div>
-					</div>
-					<div title="Click at any indicated point and drag to change this Bezier curve" 
-						style="margin: 4% 0 4% 0; text-align: center;"
-					     id="pixdemo"
-					>
-					</div>
-				</div>
-				<a name="bezier"></a>
-				<h1 title="Basic Vector Interface">Basic Vector Interface</h1>
-				<p>
-					This example coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.
-				</p>
-				<!-- To center things on the left: widest element is 66%, 100% - 66% = 34% -> 34% / 2 = 17% -->
-				<div class="shift-1st-div-left">
-					<div style="text-align: left;">
-						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg" ></a>
-						</div>
-						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
-						</div>
-					</div>
-					<div title="Click at any indicated point and drag to change this Bezier curve" 
-						style="margin: 4% 0 4% 0; text-align: center;"
-						><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas>
-					</div>
-				</div>
-			</div>
-
-			<div class="col"></div>
-			<!-- col one and two supply full length column colours and borders and hold not content -->
-			<div class="col two"></div>
-		</div>
-		<div id="footer">
-				<!-- <p>Footer</p> -->
-		</div>
-	</div>
+      </div>
+      <div id="twocolumns">
+         <div id="leftside">
+            <p title="Examples of vector GUIs and widgets" style="text-align: center;">
+               <img style="width:40%; height: 40%;" src="rocket-icon.svg">
+            </p>
+         </div>
+         <div id="rightside">
+            <h1 title="Examples of vector GUIs and widgets">Examples</h1>
+            <p>
+               This section is dedicated to examples of vector graphics use on the web as well as in
+               applications on desktops, etc.
+            </p>
+            <p>
+               This is a work in progress section where increasingly more complex graphics user
+               interfaces are ported to the web using different methods and technologies. Currently
+               Javascript and HTML 5 Canvas is used. HTML 5 Canvas is probably going to be the 
+               intermediate medium between future frontend code and the display on the browser. This
+               is the way online games have been working so far and it is a suitable technology for
+               vector GUIs.
+            </p>
+            <p>
+               Below examples illustrate how similar vector graphics primitives are in different 
+               platforms.
+            </p>
+            <a name="clock"></a>
+            <h1 title="Real time vector graphics clock written in Java and&#10;JavaScript with HTML 5 Canvas vector primitives"><a href="https://github.com/nilostolte/ClockWidget">ClockWidget</a></h1>
+            <div class="shift-1st-div-left">
+               <div title="ClockWidget written&#10;in Java for desktops" style="text-align: left; margin-left: 25%; width:50%;">
+                  <a href="https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java"
+                  ><img src="/resources/java-badge.svg"></a>
+               </div>
+               <div>
+                  ClockWidget is a real time vector graphics clock inspired in a design found in
+                  <span style="font-family: bold;"><a href="https://www.freepik.com/">Freepik</a
+                  ></span> and written in <span style="font-family: bold;"><a href=
+                  "https://github.com/nilostolte/ClockWidget/blob/main/com/ClockWidget.java">Java
+                  </a></span>. This is an implementation working on desktops, automatically placed
+                  at the top right side of the screen.
+               </div>
+            </div>
+            <p style="margin: 0.8% 0 0 0;">
+               The same analog vector graphics clock appearing below is the same ClockWidget but rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. The bold parts of this text are clickable, redirecting to the source code of this page.
+            </p>
+            <div class="shift-1st-div-left">
+               <div style="text-align: left;">
+                  <div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
+                     <a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg"></a>
+                  </div>
+                  <div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
+                     <a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
+                  </div>
+               </div>
+               <div title="ClockWidget example rewritten in JavaScript" style="text-align: center; margin: 4% 0 4% 0">
+                  <canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
+               </div>
+            </div>
+            <p style="margin: 0.8% 0 0 0;">
+               The same analog vector graphics clock appearing below is the same ClockWidget but rewritten in <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">JavaScript</a></span> using <span style="font-family: bold;"><a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html">HTML 5 Canvas vector graphics primitives</a></span>. In this implementation every time the width of the browser window changes, the size of the clock also changes. The bold parts of this text are clickable, redirecting to the source code of this page.
+            </p>
+            <div class="shift-1st-div-left">
+               <div style="text-align: left;">
+                  <div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
+                     <a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg" ></a>
+                  </div>
+                  <div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
+                     <a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
+                  </div>
+               </div>
+               <div title="Click at any indicated point and drag to change this Bezier curve" 
+                  style="margin: 4% 0 4% 0; text-align: center;"
+                  id="pixdemo"
+               >
+               </div>
+            </div>
+            <a name="bezier"></a>
+            <h1 title="Basic Vector Interface">Basic Vector Interface</h1>
+            <p>
+               This example coded using HTML 5 Canvas and JavaScript demonstrates simple interactivity in an interface that allows changing a Bezier curve. The picking algorithm just loops into the array containing the coordinates of the control points of the Bezier curve. Once the point  clicked on is found it can be changed by moving the mouse. For more complex objects this scheme is inadequate. One can get constant time picking by organizing the objects in lists or grids (as in menus or in calculator keys), or exploiting some sort of spacial coherence scheme such as BSP tree or quadtree. Although this is more straighforward in Java, on the web this would be more adequate and efficient using WebAssembly.
+            </p>
+               <!-- To center things on the left: widest element is 66%, 100% - 66% = 34% -> 34% / 2 = 17% -->
+            <div class="shift-1st-div-left">
+               <div style="text-align: left;">
+                  <div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
+                     <a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg" ></a>
+                  </div>
+                  <div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
+                     <a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
+                  </div>
+               </div>
+               <div title="Click at any indicated point and drag to change this Bezier curve" 
+                  style="margin: 4% 0 4% 0; text-align: center;"
+                  ><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas>
+               </div>
+            </div>
+         </div> <!-- rightside -->
+         <div class="col"></div>
+         <!-- col one and two supply full length column colours and borders and hold not content -->
+         <div class="col two"></div>
+      </div> <!-- twocolumns -->
+      <div id="footer">
+          <!-- <p>Footer</p> -->
+      </div>
+   </div> <!-- wrapper -->
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
