@@ -248,7 +248,7 @@ function bezierPicking( e ) {
 	//window.alert("point: ("+x+", "+y);
 	var i;
 	for (i = 0; i < bez.length; i+=2) {
-		if ((Math.abs(x - bez[i]) < 4*s) && (Math.abs(y - bez[i+1]) < 4*s)) break;
+		if ((Math.abs(x - bez[i]) < 50*s) && (Math.abs(y - bez[i+1]) < 50*s)) break;
 	}
 	bezpt = -1;
 	if (i < bez.length) {
