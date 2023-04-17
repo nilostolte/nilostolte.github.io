@@ -228,7 +228,7 @@ function bezierMove( e ) {
 	if (bezpt != -1) {
 		var s = screen.availWidth/size;
 		var canvas = document.getElementById("bezier");
-		var context = canvas.getContext("2d");
+		/* var context = canvas.getContext("2d"); */
 		var rect = canvas.getBoundingClientRect();
 		var s = (685*2)/size;
 		bez[bezpt] = (e.clientX-rect.left)*s;
@@ -258,6 +258,9 @@ function bezierPicking( e ) {
 	bezpt = -1;
 	if (i < bez.length) {
 		bezpt = i;
+		bez[bezpt] = x*s;
+		bez[bezpt+1] = y*s;
+                resizeBezier();
 		//window.alert("point: "+bezpt);
 	}
 	// window.alert("point: "+bezpt);
