@@ -1,4 +1,4 @@
-<img src="about/twitter-banner-upsized.svg" style="width:100%; height: 100%;" >
+<img src="/resources/twitter-banner-upsized.svg" style="width:100%; height: 100%;" >
 <a href="https://twitter.com/nilostolte"><img src="/resources/twitter-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 4%; padding-bottom: 0.15%; padding-right: 0.25%;"></a>&nbsp;
 <a href="https://github.com/nilostolte"><img src="/resources/github-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-top: 0.5%; padding-left: 0.25%; padding-right: 0.375%;"></a>&nbsp;
 <a href="https://dev.to/nilostolte"><img src="/resources/dev-logo.svg" style="width:4%; height: 4%; vertical-align: bottom; padding-left: 0.375%;"></a>
