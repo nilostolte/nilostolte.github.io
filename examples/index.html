@@ -233,9 +233,9 @@ function bezierMove( e ) {
 		var s = (685*2)/size;
 		bez[bezpt] = (e.clientX-rect.left)*s;
 		bez[bezpt+1] = (e.clientY-rect.top)*s;
-		// context.clearRect(0, 0, 300, 40); -->
-		// context.font = '10pt Calibri'; -->
-        // context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25); -->
+	context.clearRect(0, 0, 300, 40); -->
+	context.font = '10pt Calibri'; -->
+        context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25); -->
 		resizeBezier();
 	}
 }
@@ -258,9 +258,6 @@ function bezierPicking( e ) {
 	bezpt = -1;
 	if (i < bez.length) {
 		bezpt = i;
-		bez[bezpt] = x*s;
-		bez[bezpt+1] = y*s;
-                resizeBezier();
 		//window.alert("point: "+bezpt);
 	}
 	// window.alert("point: "+bezpt);
