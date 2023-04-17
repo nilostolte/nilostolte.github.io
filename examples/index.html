@@ -517,7 +517,7 @@ var sizePixi, scalePixi;
 window.addEventListener('resize', resizePixiWindow);
 function resizePixiWindow() {
 	/* sizePixi = window.innerWidth; */
-	sizePixi = document.getElementById('pixdemo').getBoundingClientRect().width
+	sizePixi = document.getElementById('pixdemo').getBoundingClientRect().width * 0.7
 	//To resize the canvas
 	scalePixi = sizePixi/650;
 	app.renderer.resize(sizePixi, 410*scalePixi);
