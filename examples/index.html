@@ -204,6 +204,10 @@ const bez = [ 55, 320, 150, 20, 350, 20, 630, 320 ];
 document.getElementById("bezier").addEventListener("pointerdown", bezierPicking);
 document.getElementById("bezier").addEventListener("pointerup", bezierReset);
 document.getElementById("bezier").addEventListener("pointermove", bezierMove);
+document.getElementById("bezier").addEventListener("touchstart", bezierPicking);
+document.getElementById("bezier").addEventListener("touchend", bezierReset);
+document.getElementById("bezier").addEventListener("touchmove", bezierMove);
+
 var size;
 var w;
 var radius;
@@ -226,6 +230,7 @@ function bezierMove( e ) {
 		var canvas = document.getElementById("bezier");
 		var context = canvas.getContext("2d");
 		var rect = canvas.getBoundingClientRect();
+		var s = (size / 2) / 685;
 		bez[bezpt] = (e.clientX-rect.left)*s;
 		bez[bezpt+1] = (e.clientY-rect.top)*s;
 		// context.clearRect(0, 0, 300, 40); -->
@@ -240,9 +245,9 @@ function bezierReset() {
 }
 
 function bezierPicking( e ) {
-	var s = screen.availWidth/size;
 	var canvas = document.getElementById("bezier");
 	var rect = canvas.getBoundingClientRect();
+	var s = (size / 2) / 685;
 	var x = (e.clientX-rect.left)*s;
 	var y = (e.clientY-rect.top)*s;
 	//window.alert("point: ("+x+", "+y);
