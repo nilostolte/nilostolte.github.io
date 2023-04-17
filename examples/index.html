@@ -148,6 +148,10 @@
                this library is that it has hardware support. As far as GUIs are concerned this library, at least with version
                version 7.0.4 used here, is that it has no support for vector gradients.
             </p>
+            <p>
+               By clicking or touching on the touch screen, the animations stops. By repeating it, the animations
+               restarts.
+            </p>
             <div class="shift-1st-div-left">
                <div style="text-align: left;">
                   <div title="Demo using PixiJS written&#10;in Javascript and HTML5" style="margin-left: 17%; width: 50%;">
@@ -157,7 +161,7 @@
                      <a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
                   </div>
                </div>
-               <div title="Click here to amke stop the animation" 
+               <div title="Click here to make the animation stop" 
                   style="margin: 4% 0 4% 0; text-align: center;"
                   id="pixdemo"
                >
@@ -257,8 +261,8 @@ function bezierPicking( e ) {
 function resizeBezier() {
 	var canvas = document.getElementById("bezier");
 	canvas.width = size / 2;
-	canvas.height = size / 4;
-	var s = size / screen.availWidth;
+	var s = canvas.width / 685;
+	canvas.height = 340 * s;
 	var ctx = canvas.getContext("2d");
 
 	ctx.beginPath();
