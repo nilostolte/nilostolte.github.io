@@ -35,89 +35,153 @@
 </head>
 
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<div style="margin: 0.5% 0 0 0;"></div>
-			<div title="Click here to know about Nilo Stolte Graphics&#10;Click circles below to go to other sections" class="title-text">
-				<a href="../about">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
-			</div>
-			<div class="social">
-				<a title="Send me an email" href="https://linktr.ee/nilostolte"><img src="../email-logo.svg" style="width:21.3%; height:21.3%;  padding-right: 5.2%;"></a><a title="Follow me on Twitter" href="https://twitter.com/nilostolte"><img src="../twitter-logo.svg" style="width:21.3%; height:21.3%;  padding-right: 5.2%;"></a><a title="Go to my GitHub" href="https://github.com/nilostolte"><img src="../github-logo.svg" style="width:21.3%; height: 21.3%; ;"></a><a title="Go to my Dev account" href="https://dev.to/nilostolte"><img src="../dev-logo.svg" style="width:19.8%; height: 19.8%; padding-left: 5.9%;"></a>
-			</div>
-			<div style="margin-left: 50%; font-size: 0;">
-			  <div style="margin: .7vw 0 0 -6vw;"> 
-				<div style="width: 12vw;">
-				  <svg viewBox="0 0 1240 114" overflow="visible">
-					<g transform="translate(20,0)">
-					   <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z"/>
-					   <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(300,0)"/>
-					   <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(600,0)"/>
-					   <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(900,0)"/>
-					   <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(1200,0)"/>
-					   <a xlink:href="../research/index.html"><circle cx="150" cy="50" r="57" fill="rgb(152,202,62)"/></a>
-					   <a xlink:href="../vector/index.html"><circle cx="450" cy="50" r="57" fill="rgb(59,199,211)"/></a>
-					   <a xlink:href="../examples/index.html"><circle cx="750" cy="50" r="57" fill="rgb(64,184,150)"/></a>
-					   <a xlink:href="../art/index.html"><circle cx="1050" cy="50" r="57" fill="rgb(181,172,90)"/></a>
-					</g>
-				  </svg>
-				</div>
-			  </div>
-			</div>
-			<div style="margin-bottom:5%;"></div>
-		</div>
-		<div id="twocolumns">
-			<div id="leftside">
-				<p title="Vector GUIs" style="text-align: center;">
-				<img style="width:40%; height: 40%;" src="idea-icon.svg">
-				</p>
-				<p style="margin-bottom:250%;"></p>
-			</div>
-			<div id="rightside">
-				<h1 title="Vector GUIs">Vector GUIs</h1>
-				<p>
-					The main idea proposed in this site is to use basic vector graphics primitives to create Graphics User Interfaces that can be used everywhere, with no or little need of code modification as a way to obtain portability and compatibility among quite different screen resolutions.
-				</p>
-				<p>
-					After few decenies of experience in vector graphics and observing that these basic primitives look very much alike, the idea that the same design could be very easily converted to other platforms became quite clear. Automatic code generation became also a possibility.
-				</p>
-				<h1 title="Why vector graphics?">Why vector graphics?</h1>
-				<p>
-					Vector graphics is preferable to pixel graphics in many cases because its image quality is independent of the screen resolution. One of the typical properties of vector graphics is allowing infinite zooming without any quality lost. This property is excellent for GUIs, and using only simple primitives the interfaces can be built practically hardware independent and be portable. Another advantage of using these primitives is that common vector art produced by graphics designers can be used in live interfaces or widgets. This means that interfaces are no longer limited in terms of creativity.
-				</p>
-				<a name="everywhere"></a>
-				<h1 title="Vector graphics everywhere">Why to use vector graphics everywhere?</td></h1>
-				<p>
-					Vector graphics solves the problem of having different and quite disparate displays and screen resolutions, especially in the near future with ultra high resolutions, because it scales appropriately without losing quality. It becomes the ideal technology to construct GUIs in different programming languages as well as on the web as demonstrated in this website. The simplicity of vector primitives also promotes portability across different platforms, OS, and languages. Since they are quite similar in different environments it is easy to automatically convert from one environment to another.
-				</p>
-				<h1>Why web technology on desktops is not a good idea?</h1>
-				<p>
-					 One could imagine the use of web know-how on a desktop application. The main problem is that web programming became an universe in itself, completely isolated from the rest of the computing world. Thanks to <a href="https://webkit.org/"><span style="font-family: semibold;">webkit</span></a>, for example, one could integrate <span style="font-family: semibold;">GUI</span> technology used on the web with desktop applications. In this way the application GUI engine is basically like a browser and the GUI like a local web page. This solution is too cumbersome, though, and limited to a certain programming language as well as only appropriate to desktops. It is not a simple neither a light solution for building GUIs. Another approach is to develop applications using Javascript and <span style="font-family: semibold;">Node.js</span>, but this is mostly suitable to develop <span style="font-family: semibold;">IDE</span>s (Integrated Development Environments) targeting web development, such as  <a href="https://code.visualstudio.com/download/"><span style="font-family: semibold;">Visual Studio Code</span></a> or <a href="https://theia-ide.org/"><span style="font-family: semibold;">Eclipse Theia</span></a>. Although desktop applications using Node.js gained popularity lately, probably due the fact that web development became almost ubiquitous, it's still an interpreted language, lacking the performance of compiled languages. It's known by experience that vector graphics is computing intensive and that SVG and vector fonts lag on the web, hindering swift interactivity, particularly in animations.
-				</p>
-				<h1>GUIs in embedded applications</h1>
-				<p> 
-					In embedded software development compiled languages are more generally used, although interpreted languages such as Python gained popularity. It is also a reality that embedded applications generally rely on cheaper and less efficient hardware, generally lacking graphics cards. On the other hand, processors used in embedded software, particularly those requiring more sophisticated interfaces, have been offering more and more processing cores, thus increasing the possibilities of better performance through the use of multithreading and parallel processing. Vector graphics can then be used for constructing swift GUIs in embedded applications that need more interactivity, and parallel processing seems to be the way to achive it. Not only that but processors have been also packed with vector SIMD instructions. These instructions are useful to speed up transformations (translations, scaling, and rotations) on a large amount of points, thus, also a good argument in favor of vector graphics in embedded applications. The only problem is that, differently than threads, this kind of paralellism is practically inaccessible through most modern high level languages.
-				</p>
-				<h1>Go, probably the best candidate</h1>
-				<p>
-					A clear exception is <a href="https://go.dev/"><span style="font-family: semibold;">Go</span></a> that offers <a href="https://github.com/segmentio/asm"><span style="font-family: semibold;">good libraries</span></a> to use SIMD instructious in various processors transparently and efficiently. Go not only excels in supplying excellent support to low level features but is also have very good support for concurrency and <a href="https://pkg.go.dev/golang.org/x/image/vector"><span style="font-family: semibold;">vector graphics</span></a> as well, besides being also ideal for  <a href="https://go.dev/solutions/webdev"><span style="font-family: semibold;">web applications</span></a>.
-				</p>
-				<p>
-					Apparently, an ideal solution to develop portable GUIs seems to code the application in an universal programming language (Go, for example) and generating code to the web directly from that programming language. That's the idea behind <a href="https://webassembly.org/"><span style="font-family: semibold;">WebAssembly</span></a>. That's where vector graphics GUIs seems to adapt better to create portable and universal GUIs with a single code.
-				</p>
-				<h1 title="What about 3D graphics? Is it vector graphics?">What about 3D graphics? Is it vector graphics?</h1>
-				<p>
-					3D graphics and the different 3D frameworks (e.g., OpenGL) are only partially vectorial nowadays. Imagine 2D vector graphics without Bezier curves. That’s what 3D graphics look like because surfaces are defined by polygons. 3D graphics still don’t allow the use of 3D Bezier patches at rendering time. Since 2D Bezier curves are “flattened” as a set of lines to be displayed, it is possible that in the future 3D Bezier patches will be flattened as a set of polygons. 3D surfaces “flatness” should change with depth (levels of detail), whereas in 2D curves it remains constant.
-				</p>
-
-			</div>
-
-			<div class="col"></div>
-			<!-- col one and two supply full length column colours and borders and hold not content -->
-			<div class="col two"></div>
-		</div>
-		<div id="footer">
-				<!-- <p>Footer</p> -->
-		</div>
-	</div>
+  <div id="wrapper">
+    <div id="header">
+      <div style="margin: 0.5% 0 0 0;"></div>
+      <div title="Click here to know about Nilo Stolte Graphics&#10;Click circles below to go to other sections" class="title-text">
+      <a href="../about">NILO STOLTE <span style="color: rgb(59,199,211)";>GRAPHICS</span></a>
+      </div>
+      <div class="social">
+        <a title="Send me an email" href="https://linktr.ee/nilostolte"
+          ><img src="/resources/email-logo.svg" style="width:21.3%; height:21.3%;  padding-right: 5.2%;"></a
+        ><a title="Follow me on Twitter" href="https://twitter.com/nilostolte"
+           ><img src="/resources/twitter-logo.svg" style="width:21.3%; height:21.3%;  padding-right: 5.2%;"></a
+        ><a title="Go to my GitHub" href="https://github.com/nilostolte"
+           ><img src="/resources/github-logo.svg" style="width:21.3%; height: 21.3%; ;"></a
+        ><a title="Go to my Dev account" href="https://dev.to/nilostolte"
+           ><img src="/resources/dev-logo.svg" style="width:19.8%; height: 19.8%; padding-left: 5.9%;"></a
+        >
+      </div>
+      <div style="margin-left: 50%; font-size: 0;">
+        <div style="margin: .7vw 0 0 -6vw;">
+          <div style="width: 12vw;">
+            <svg viewBox="0 0 1240 114" overflow="visible">
+               <g transform="translate(20,0)">
+                 <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z"/>
+                 <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(300,0)"/>
+                 <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(600,0)"/>
+                 <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(900,0)"/>
+                 <path fill="rgb(47,62,81)" d="M0 30 L-20 50 L0 70 L20 50 Z" transform="translate(1200,0)"/>
+                 <a xlink:href="../research/index.html"><circle cx="150" cy="50" r="57" fill="rgb(152,202,62)"/></a>
+                 <a xlink:href="../vector/index.html"><circle cx="450" cy="50" r="57" fill="rgb(59,199,211)"/></a>
+                 <a xlink:href="../examples/index.html"><circle cx="750" cy="50" r="57" fill="rgb(64,184,150)"/></a>
+                 <a xlink:href="../art/index.html"><circle cx="1050" cy="50" r="57" fill="rgb(181,172,90)"/></a>
+               </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:5%;"></div>
+    </div>
+    <div id="twocolumns">
+      <div id="leftside">
+      	<p title="Vector GUIs" style="text-align: center;">
+      	   <img style="width:40%; height: 40%;" src="idea-icon.svg">
+      	</p>
+      	<p style="margin-bottom:250%;"></p>
+      </div>
+      <div id="rightside">
+        <h1 title="Vector GUIs">Vector GUIs</h1>
+        <p>
+           The main idea proposed in this site is to use basic vector graphics primitives to create Graphics User Interfaces that can be used
+           everywhere, with no or little need of code modification as a way to obtain portability and compatibility among quite different 
+           screen resolutions.
+        </p>
+        <p>
+           After few decenies of experience in vector graphics and observing that these basic primitives look very much alike, the idea that
+           the same design could be very easily converted to other platforms became quite clear. Automatic code generation became also a 
+           possibility.
+        </p>
+        <h1 title="Why vector graphics?">Why vector graphics?</h1>
+        <p>
+           Vector graphics is preferable to pixel graphics in many cases because its image quality is independent of the screen resolution. 
+           One of the typical properties of vector graphics is allowing infinite zooming without any quality lost. This property is excellent
+           for GUIs, and using only simple primitives the interfaces can be built practically hardware independent and be portable. Another 
+           advantage of using these primitives is that common vector art produced by graphics designers can be used in live interfaces or 
+           widgets. This means that interfaces are no longer limited in terms of creativity.
+        </p>
+        <a name="everywhere"></a>
+        <h1 title="Vector graphics everywhere">Why to use vector graphics everywhere?</td></h1>
+        <p>
+           Vector graphics solves the problem of having different and quite disparate displays and screen resolutions, especially in the near
+           future with ultra high resolutions, because it scales appropriately without losing quality. It becomes the ideal technology to 
+           construct GUIs in different programming languages as well as on the web as demonstrated in this website. The simplicity of vector 
+           primitives also promotes portability across different platforms, OS, and languages. Since they are quite similar in different 
+           environments it is easy to automatically convert from one environment to another.
+        </p>
+        <h1>Why web technology on desktops is not a good idea?</h1>
+        <p>
+           One could imagine the use of web know-how on a desktop application. The main problem is that web programming became an universe in
+           itself, completely isolated from the rest of the computing world. Thanks to <a href="https://webkit.org/"><span style=
+           "font-family: semibold;">webkit</span></a>, for example, one could integrate <span style="font-family: semibold;">GUI</span> 
+           technology used on the web with desktop applications. In this way the application GUI engine is basically like a browser and the 
+           GUI like a local web page. This solution is too cumbersome, though, and limited to C/C++ languages as well as only
+           appropriate to desktops. It is not a simple neither a light solution for building GUIs. Another approach is to develop applications
+           using Javascript and <span style="font-family: semibold;">Node.js</span>, but this is mostly suitable to develop <span style=
+           "font-family: semibold;">IDE</span>s (Integrated Development Environments) targeting web development, such as
+           <a href="https://code.visualstudio.com/download/"><span style="font-family: semibold;">Visual Studio Code</span></a> or
+           <a href="https://theia-ide.org/"><span style="font-family: semibold;">Eclipse Theia</span></a>. Although desktop applications
+           using Node.js gained popularity lately, probably due the fact that web development became almost ubiquitous, it's still an
+           interpreted language, lacking the performance of compiled languages, even though a huge progress has been done in JavaScript
+           JIT compilers. It's known by experience that vector graphics is computing intensive and that SVG and vector fonts lag on the web,
+           potentially hindering swift interactivity, particularly in animations. But new formats are appearing to solve the problem of
+           vector graphics animations that gives some hope of an universal representation of GUIs as seen <a href="#lottie"><span style=
+           "font-family: semibold;">below</span></a>
+        </p>
+        <h1>GUIs in embedded applications</h1>
+        <p> 
+           In embedded software development compiled languages are more generally used, although interpreted languages such as Python gained 
+           popularity. It is also a reality that embedded applications generally rely on cheaper and less efficient hardware, generally 
+           lacking graphics cards. On the other hand, processors used in embedded software, particularly those requiring more sophisticated
+           interfaces, have been offering more and more processing cores, thus increasing the possibilities of better performance through the
+           use of multithreading and parallel processing. Vector graphics can then be used for constructing swift GUIs in embedded applications
+           that need more interactivity, and parallel processing seems to be the way to achive it. Not only that but processors have been also
+           packed with vector SIMD instructions. These instructions are useful to speed up transformations (translations, scaling, and 
+           rotations) on a large amount of points, thus, also a good argument in favor of vector graphics in embedded applications. The only
+           problem is that, differently than threads, this kind of paralellism is practically inaccessible through most modern high level
+           languages excepted C/C++, recently in Java and in other languages. Java has been used in embedded applications and provides good
+           support for vector graphics with <span style="font-family: semibold;">Graphics2D</span></a>, but the use of Java in embedded
+           applications has apparently been fading.
+        </p>
+        <p>
+           Even with the appearence of new modern languages such as <a href="https://ziglang.org/"><span style="font-family: semibold;">Zig<
+           /span></a>, which is interchangeable with C (and, thus, C++), C still dominates embedded software. C is compilable to WebAssembly
+           but it is not clear if WebAssembly will one day have direct access to the DOM and to web vector primitives any time time soon.
+           Even in this case, the code would still be specific to be used on the web.<a name="lottie"></a>
+        </p>
+        <h1>Vector GUIs everywhere looks nice. But in which language?</h1>
+        <p>
+           It seems that the dream of having a GUI code that can be compiled everywhere in an universal language seems a little far-fetched,
+           given this environment. It seems that the solution is to define GUIs in a sort of a pseudocode that itself can then be compiled to
+           the target language or environment. Also, given the failure of using vector graphics languages for GUis and Windowing Systems in
+           the past, such as PostScript in Apple's <span style="font-family: semibold;">NeXTSTEP</span> and in Sun's <span style=
+           "font-family: semibold;">NeWS</span>, using a particular language to make this materialize doesn't seem like such a good idea.
+        </p>
+        <p>
+           On the other hand, other kinds of vector graphics representations have been having a huge succes on the web, but in specific fields
+           such as in animations: <a href="https://aescripts.com/bodymovin/"><span style="font-family: semibold;">Bodymovin</span></a>, 
+           Adobe After Effect file format, or AirBnB's <a href="https://airbnb.design/lottie/"><span style="font-family: semibold;">Lottie<
+           /span></a>, both using JSON representation. These formats are being used for anymations everywhere besides the web. This is quite
+           encouraing, even though one still lacks a similar representation for defining GUis. It looks obvious that this is likely to
+           happen, given the need of rich graphics in GUIs, including animations, and the urge of an uniform representation that can be easily
+           conveted to any system and environment. 
+        </p>
+        <h1 title="What about 3D graphics? Is it vector graphics?">What about 3D graphics? Is it vector graphics?</h1>
+        <p>
+           3D graphics and the different 3D frameworks (e.g., OpenGL) are only partially vectorial nowadays. Imagine 2D vector graphics
+           without Bezier curves. That’s what 3D graphics look like because surfaces are defined by polygons. 3D graphics still don’t allow 
+           the use of 3D Bezier patches at rendering time. Since 2D Bezier curves are “flattened” as a set of lines to be displayed, it is
+           possible that in the future 3D Bezier patches will be flattened as a set of polygons. 3D surfaces “flatness” should change with 
+           depth (levels of detail), whereas in 2D curves it remains constant.
+        </p>    
+      </div> <!-- rightside -->
+      <div class="col"></div>
+      <!-- col one and two supply full length column colours and borders and hold not content -->
+      <div class="col two"></div>
+    </div> <!-- twocolumns -->
+    <div id="footer">
+       <!-- <p>Footer</p> -->
+    </div>
+  </div> <!-- wrapper -->
 </body>
 </html>
