@@ -556,7 +556,15 @@ function resizePixiWindow() {
 	thing.y = 238 * scalePixi;	
 }
 
-
+var animPixi = false;
+document.getElementById("pixdemo").addEventListener("click", clickMe);
+function clickMe() {
+   if (animPixi) {
+      animPixi = false;
+      return;
+   }
+   animPixi = true;
+}
 
 //To change the background color
 app.renderer.backgroundColor = 0x061639;
@@ -616,7 +624,11 @@ thing.y = 600 / 2;
 let countPixi = 0;
 
 app.ticker.add(() => {
+    if (!animPixi) return;
     countPixi += 0.1;
+    if (countPixi > (2*Math.PI) ) {
+       countPixi -= 2*Math.PI;
+    }
 
     thing.clear();
     thing.lineStyle(10, 0xff0000, 1);
