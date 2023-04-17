@@ -106,15 +106,16 @@
 				</p>
 				<div class="shift-1st-div-left">
 					<div style="text-align: left;">
-						<div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
-							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg"></a>
+						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 50%;">
+							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/HTML5-badge.svg" ></a>
 						</div>
-						<div title="ClockWidget written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
+						<div title="Interface written in&#10;Javascript and HTML5" style="margin-left: 17%; width: 66%;">
 							<a href="https://github.com/nilostolte/nilostolte.github.io/blob/main/examples/index.html"><img src="/resources/JS-badge.svg"></a>
 						</div>
 					</div>
-					<div title="ClockWidget example rewritten in JavaScript" style="text-align: center; margin: 4% 0 4% 0">
-						<canvas id="canvas" style="background-color:rgba(0, 0, 0, 0);"></canvas>
+					<div title="Click at any indicated point and drag to change this Bezier curve" 
+						style="margin: 4% 0 4% 0; text-align: center;"
+						><canvas id="bezier" style="background-color:#FFFFFF; border:1px solid #000000; "></canvas>
 					</div>
 				</div>
 				<a name="bezier"></a>
@@ -464,6 +465,127 @@ function drawSec(ctx, pos, length) {
     ctx.fill();
     ctx.rotate(-pos);
 }
+</script>
+	
+<script src="/pixijs/pixi/pixi.min.js"></script>
+<script>
+
+//Create a Pixi Application
+const app = new PIXI.Application({ 
+    width: 256,
+    height: 256,
+    antialias: true,
+    transparent: false,
+    resolution: 1
+  }
+);
+
+//Add the canvas that Pixi automatically created for you to the HTML document
+document.body.appendChild(app.view);
+
+//If you want to make the canvas fill the entire window, you can apply this
+//CSS styling:
+/*
+app.renderer.view.style.position = "absolute"
+app.renderer.view.style.width = window.innerWidth + "px";
+app.renderer.view.style.height = window.innerHeight + "px";
+app.renderer.view.style.display = "block";
+*/
+
+//The `renderer.view` is just an ordinary `<canvas>` element.
+//Here's how you can reference to add an optional dashed 
+//border around the canvas 
+//app.renderer.view.style.border = "1px dashed black";
+var size, scale;
+
+window.addEventListener('resize', resizeWindow);
+function resizeWindow() {
+	size = window.innerWidth;
+	//To resize the canvas
+	scale = size/650;
+	app.renderer.resize(size, 410*scale);
+	graphics.scale.set(scale, scale);
+	thing.scale.set(scale, scale);
+	thing.x = 400 * scale;
+	thing.y = 238 * scale;	
+}
+
+
+
+//To change the background color
+app.renderer.backgroundColor = 0x061639;
+
+const graphics = new PIXI.Graphics();
+// set a fill and line style
+graphics.beginFill(0xFF3300);
+graphics.lineStyle(10, 0xffd900, 1);
+
+// draw a shape
+graphics.moveTo(50, 50);
+graphics.lineTo(250, 50);
+graphics.lineTo(100, 100);
+graphics.lineTo(250, 220);
+graphics.lineTo(50, 220);
+graphics.lineTo(50, 50);
+graphics.closePath();
+graphics.endFill();
+
+// set a fill and line style again
+graphics.lineStyle(10, 0xFF0000, 0.8);
+graphics.beginFill(0xFF700B, 1);
+
+// draw a second shape
+graphics.moveTo(210, 300);
+graphics.lineTo(450, 320);
+graphics.lineTo(570, 350);
+graphics.quadraticCurveTo(600, 0, 480, 100);
+graphics.lineTo(330, 120);
+graphics.lineTo(410, 200);
+graphics.lineTo(210, 300);
+graphics.closePath();
+graphics.endFill();
+
+// draw a rectangle
+graphics.lineStyle(2, 0x0000FF, 1);
+graphics.drawRect(50, 250, 100, 100);
+
+// draw a circle
+graphics.lineStyle(0);
+graphics.beginFill(0xFFFF0B, 0.5);
+graphics.drawCircle(470, 200, 100);
+graphics.endFill();
+
+graphics.lineStyle(20, 0x33FF00);
+graphics.moveTo(30, 30);
+graphics.lineTo(600, 300);
+
+app.stage.addChild(graphics);
+
+// let's create a moving shape
+const thing = new PIXI.Graphics();
+app.stage.addChild(thing);
+thing.x = 800 / 2;
+thing.y = 600 / 2;
+
+let count = 0;
+
+app.ticker.add(() => {
+    count += 0.1;
+
+    thing.clear();
+    thing.lineStyle(10, 0xff0000, 1);
+    thing.beginFill(0xffFF00, 0.5);
+
+    thing.moveTo(-120 + Math.sin(count) * 20, -80 + Math.cos(count) * 20);
+    thing.lineTo(120 + Math.cos(count) * 20, -80 + Math.sin(count) * 20);
+    thing.lineTo(120 + Math.sin(count) * 20, 80 + Math.cos(count) * 20);
+    thing.lineTo(-120 + Math.cos(count) * 20, 80 + Math.sin(count) * 20);
+    thing.lineTo(-120 + Math.sin(count) * 20, -80 + Math.cos(count) * 20);
+    thing.closePath();
+
+    thing.rotation = count * 0.1;
+});
+resizeWindow();
 </script>
 </body>
 </html>
