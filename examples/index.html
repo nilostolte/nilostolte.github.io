@@ -235,10 +235,11 @@ function bezierMove( e ) {
 		bez[bezpt+1] = (e.clientY-rect.top)*s;
 	//context.clearRect(0, 0, 300, 40);
 	context.font = '10pt Calibri';
-	context.fillText("Hello World!", 10, 50);
-        //context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25);
+        context.fillText("point: "+((e.clientX-rect.left)*s)+" "+((e.clientY-rect.top)*s), 10, 25);
 	//	resizeBezier();
+		return;
 	}
+resizeBezier();
 }
 
 function bezierReset() {
