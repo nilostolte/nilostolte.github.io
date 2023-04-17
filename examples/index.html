@@ -556,15 +556,7 @@ function resizePixiWindow() {
 	thing.y = 238 * scalePixi;	
 }
 
-var animPixi = false;
-document.getElementById("pixdemo").addEventListener("click", clickMe);
-function clickMe() {
-   if (animPixi) {
-      animPixi = false;
-      return;
-   }
-   animPixi = true;
-}
+var animPixi = true;
 
 //To change the background color
 app.renderer.backgroundColor = 0x061639;
