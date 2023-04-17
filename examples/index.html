@@ -625,7 +625,7 @@ let countPixi = 0;
 
 app.ticker.add(() => {
     if (!animPixi) return;
-    countPixi += 0.1;
+
     if (countPixi > (2*Math.PI) ) {
        countPixi = countPixi - (2*Math.PI);
     }
@@ -642,6 +642,7 @@ app.ticker.add(() => {
     thing.closePath();
 
     thing.rotation = countPixi * 0.1;
+    countPixi += 0.1;
 });
 resizePixiWindow();
 </script>
