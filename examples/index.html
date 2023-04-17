@@ -264,7 +264,7 @@ function resizeBezier() {
 	var s = canvas.width / 685;
 	canvas.height = 340 * s;
 	var ctx = canvas.getContext("2d");
-	ctx.lineWidth = 5;
+	ctx.lineWidth = 3;
 
 	ctx.beginPath();
 	ctx.moveTo(bez[0]*s, bez[1]*s);
@@ -274,10 +274,10 @@ function resizeBezier() {
 
 	ctx.fillStyle = "#FF0000";
 	ctx.beginPath();
-	ctx.arc(bez[2]*s, bez[3]*s, 4*s, 0, 2 * Math.PI);
+	ctx.arc(bez[2]*s, bez[3]*s, 20*s, 0, 2 * Math.PI);
 	ctx.fill();
 	ctx.beginPath();
-	ctx.arc(bez[4]*s, bez[5]*s, 4*s, 0, 2 * Math.PI);
+	ctx.arc(bez[4]*s, bez[5]*s, 20*s, 0, 2 * Math.PI);
 	ctx.fill();
 	ctx.strokeStyle = "#FF0000";
 	ctx.beginPath();
@@ -290,10 +290,10 @@ function resizeBezier() {
 	ctx.stroke();
 	ctx.fillStyle = "#000000";
 	ctx.beginPath();
-	ctx.arc(bez[0]*s, bez[1]*s, 4*s, 0, 2 * Math.PI);
+	ctx.arc(bez[0]*s, bez[1]*s, 20*s, 0, 2 * Math.PI);
 	ctx.fill();
 	ctx.beginPath();
-	ctx.arc(bez[6]*s, bez[7]*s, 4*s, 0, 2 * Math.PI);
+	ctx.arc(bez[6]*s, bez[7]*s, 20*s, 0, 2 * Math.PI);
 	ctx.fill();
 
 }
