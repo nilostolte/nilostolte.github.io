@@ -627,7 +627,7 @@ app.ticker.add(() => {
     if (!animPixi) return;
     countPixi += 0.1;
     if (countPixi > (2*Math.PI) ) {
-       countPixi -= 2*Math.PI;
+       countPixi = countPixi - (2*Math.PI);
     }
 
     thing.clear();
