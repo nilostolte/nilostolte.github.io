@@ -1,0 +1,171 @@
+/* variables starting with a:
+*  -  'd' are distances that change with scale
+*  -  'f' are distances that don't change scale
+*
+*
+*/
+:root {
+    --s: 1;
+    --w: 80px;
+    --ltx: 30px;
+    --dbt: 50px;
+    --wbt: 30px;
+    --wkb: 10px;
+    --lbt: calc(var(--ltx) + var(--dbt));
+    --lin: calc(var(--lbt) + var(--wbt));
+    --lri: calc(var(--lin) + var(--w));
+    --tbi: 45px;
+    --hbc: 31px;
+    --tbc: calc(var(--tbi) + var(--hbc));
+    --hin: 3px;
+    --htx: 3px;
+    --hkb: 7px;
+    --wic: calc(30px * var(--s));
+    --lz:  calc(40px * var(--s));
+    --wz:  calc(30px * var(--s));
+    --t0:  calc(8px * var(--s));
+    --mx: 40px;
+    --my: 40px;
+    --f16: calc(16px * var(--s));
+    font-family: regular;
+    font-size: calc(12px * var(--s));
+}
+
+@font-face {
+    font-family: regular;
+    src: url('/resources/OpenSans-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: bold;
+    src: url('/resources/OpenSans-Semibold.ttf')  format('truetype');
+}
+
+div {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+}
+
+
+.glyph_display {
+    border: calc(3px * var(--s)) hidden rgb(135,129,67); /*rgb(181,172,90);*/
+    border-radius: calc(10px * var(--s));
+    width: calc(300px * var(--s));
+    height: auto;
+    top: calc(var(--my) + (114px * var(--s)));
+    left: var(--mx);
+}
+
+
+#menu {
+    z-index:-1;
+    left: calc(var(--mx) + (86px * var(--s)));
+    width: calc(180px * var(--s));
+    top: var(--my);
+}
+
+#up {
+    position: absolute;
+    left: calc(var(--mx) + (270px * var(--s)));
+    width: var(--wic);
+    top: calc(var(--my) + var(--t0));
+}
+
+#zoom_in {
+    left: var(--mx);
+    width: var(--wz);
+    top: calc(var(--my) + var(--t0));
+}
+
+#zoom_out {
+    left: calc(var(--mx) + var(--lz));
+    width: var(--wz);
+    top: calc(var(--my) + var(--t0));
+}
+
+/* character index items */
+#indexbox {
+    top: calc(var(--my) + ((var(--tbi) + var(--hin)) * var(--s)));
+    left: calc(var(--mx) + (var(--lin) * var(--s)));
+    width: calc(var(--w) * var(--s));
+}
+
+#index:read-write:focus {
+    outline: none;
+}
+
+#index {
+    top: calc(var(--my) + ((var(--tbi) + var(--hkb)) * var(--s)));
+    left: calc(var(--mx) + ((var(--lin) + var(--wkb) ) * var(--s)));
+    margin-bottom: 0;
+    width: auto;
+}
+
+#indexdown {
+    top: calc(var(--my) + (var(--tbi) * var(--s)));
+    left: calc(var(--mx) + (var(--lbt) * var(--s)));
+    width: var(--wic);
+}
+
+#indexup {
+    top: calc(var(--my) + (var(--tbi)* var(--s)));
+    left: calc(var(--mx) + (var(--lri) * var(--s)));
+    width: var(--wic);
+}
+
+/* character code items */
+#codebox {
+    top: calc(var(--my) + ((var(--tbc) + var(--hin)) * var(--s)));
+    left: calc(var(--mx) + (var(--lin) * var(--s)));
+    width: calc(var(--w) * var(--s));
+}
+
+#code:read-write:focus {
+    outline: none;
+}
+
+#code {
+    top: calc(var(--my) + ((var(--tbc) + var(--hkb)) * var(--s)));
+    left: calc(var(--mx) + ((var(--lin) + var(--wkb) ) * var(--s)));
+    width: auto;
+}
+
+#codedown {
+    top: calc(var(--my) + (var(--tbc) * var(--s)));
+    left: calc(var(--mx) + (var(--lbt) * var(--s)));
+    width: var(--wic);
+}
+
+#codeup {
+    top: calc(var(--my) + (var(--tbc) * var(--s)));
+    left: calc(var(--mx) + (var(--lri) * var(--s)));
+    width: var(--wic);
+}
+
+#index_text {
+    left: calc(var(--mx) + (var(--ltx)*var(--s)));
+    top: calc(var(--my) + ((var(--tbi) + var(--htx)) * var(--s)));
+    font-family: bold;
+    font-size: var(--f16);
+}
+
+#code_text {
+    left: calc(var(--mx) + (var(--ltx) * var(--s)));
+    top: calc(var(--my) + ((var(--tbc) + var(--htx)) * var(--s)));
+    font-family: bold;
+    font-size: var(--f16);
+}
+
+.svgtxt{
+    -webkit-touch-callout: none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+}
+

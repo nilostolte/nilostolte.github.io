@@ -1,0 +1,367 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.890625 20" overflow="visible"
+     onload='Init(evt)'>
+	<style>
+	    @font-face {
+          font-family: regular;
+          src: url('OpenSans-Regular.ttf');
+        }
+		svg:root {
+			width: auto;
+			height: auto;
+			font-family: regular;
+		}
+		#field1:focus {
+		    outline: none;
+		}
+		<!-- #field { -->
+			<!-- user-select: none; -->
+		<!-- } -->
+		<!-- #text{ -->
+			<!-- user-select: none; -->
+		<!-- } -->
+	</style>
+    <script>
+		var SVGDocument = null;
+		var SVGRoot = null;
+		<!--  variables with font information  -->
+		<!--  this information comes from reading the font with Glyph Inspector  -->
+		var unitsPerEm = 2048;	<!-- size of character box in font: 2048 or 1024 -->
+		var advanceWidth = 1171;<!-- digits width to reach the next. No kerning  -->
+		var fontSize = 12;		<!-- size of the font -->
+		var advW = (advanceWidth/unitsPerEm)*fontSize;  <!-- scaled advanceWidth -->
+		
+		var xtoff = 5;			<!-- x offset of text -->
+		var chindex = 0;		<!-- index of character wher cursor is -->
+		var maxDigs = 8;		<!-- max number of digits  -->
+		var startSel = -1;		<!-- index of first character for selection -->
+		var move = false;		<!-- blocks selection -->
+		var xSel;				<!-- first x coord clicked for the selection -->
+		
+		
+        function Init(evt) {
+            SVGDocument = evt.target.ownerDocument;
+            SVGRoot = SVGDocument.documentElement;
+			SVGDocument.getElementById("field1").addEventListener('keydown', editNumber, false);
+        }
+		
+		
+		<!-- SELECTION/CURSOR PROCESSING -->
+		
+		var itemClicked = "";	<!-- holds the id of the element clicked -->
+		
+		
+		
+		function drawSel(sel, x0, x1) {
+			sel.setAttributeNS(null,'d',"M"+(x0)+",17 H"+(x1)+" V3 H"+(x0)+"z");
+		}
+		function drawSelected(sel, x0, x1) {
+			sel.setAttributeNS(null, 'd', "M"+(x0)+",17 h" + x1 + " V3 h-" + x1 +"z");
+		}
+		
+		function onMove() {		<!-- when dragging mouse, this draws selected text -->
+			if( !move ) return;				<!-- movement blocked -->
+			if (startSel == -1) return;		<!-- there was no selection -->
+			var cx = getcurPos(event);		<!-- calculate mouse position -->
+			<!-- verify if mouse is in text boundaries otherwise get off -->
+			if (0 > xSel) xSel = 0;
+			selbx = SVGDocument.getElementById(event.target.getAttributeNS(null, "sel"));
+			var x0 = xtoff + xSel;
+			<!-- ++++++++++++++++++++++++++++++++++ -->
+			if (0 > cx) { drawSel(selbx, x0, xtoff); return; }
+			<!-- ++++++++++++++++++++++++++++++++++ -->
+			var l = SVGDocument.getElementById(event.target.getAttributeNS(null, "text")).textContent.length;
+			var xmax = l*advW;
+			if (xSel > xmax) xSel = xmax;	<!-- shorten starting x to max -->
+			<!-- ++++++++++++++++++++++++++++++++++ -->
+			if (cx > xmax) { drawSel(selbx, x0, xtoff+xmax); return; }
+			<!-- ++++++++++++++++++++++++++++++++++ -->
+			drawSel(selbx, x0, xtoff+cx);
+		}
+		
+		function select() {  <!-- mousedown actions on every item -->
+			<!-- console.log("select t: " + event.target.id ); -->
+			if ( event.button != 0 ) { return; }
+			if ( event.detail > 1) event.preventDefault(); <!-- no selection -->
+			itemClicked = event.target.id;
+			var txt = SVGDocument.getElementById(event.target.getAttributeNS(null, "text")).textContent;
+			var cx = getcurPos(event);
+			startSel = getTxtIndex(txt, cx);
+			xSel = cx;
+			move = true;
+			<!-- var clicked = SVGDocument.getElementById(id); // get item -->
+			<!-- clicked.setAttributeNS(null, 'fill', "rgb(220,209,109)"); // darken its background -->
+			return false;
+		}
+		
+		function getcurPos(event) {
+			var item = SVGDocument.getElementById(event.target.id);
+			var w = item.getBBox().width;
+			var w2 = item.getBoundingClientRect().width
+			return (((w / w2) * event.offsetX) - xtoff);
+		}
+		
+		function getTxtIndex(txt, cx) {
+			i = Math.round(cx/advW);
+			if ( 0 > i ) return 0;			
+			if ( i > txt.length) return txt.length;
+			return i;
+		}
+		
+		function dummy() {
+		}		
+		
+		function selected() { // mouseup actions on every item
+			move=false;
+			var id = event.target.id;
+			<!-- console.log("selected t: " + event.target.id + " id: " + id + " clicked: " + itemClicked ); -->
+			if ( event.button != 0 ) { return; }
+			if (itemClicked !== "") {
+				if (itemClicked !== id ) {
+					undoClick();
+					return;
+				}
+				var selbx = SVGDocument.getElementById(event.target.getAttributeNS(null, "sel"));
+				selbx.setAttributeNS(null, 'd', "");
+				var txt = SVGDocument.getElementById(event.target.getAttributeNS(null, "text")).textContent;
+				var cx = getcurPos(event);
+				var i = getTxtIndex(txt, cx);
+				if (startSel !== -1) if (startSel != i){ doSel(event, i); return;}
+				var x = i * advW;
+				var cursor = SVGDocument.getElementById(event.target.getAttributeNS(null, "cursor"));
+				cursor.setAttributeNS(null, 'transform', "translate(" + x +",0)");
+				cursor.setAttributeNS(null, 'visibility', "visible");
+				chindex = i;
+				itemClicked = "";
+				return;
+			}
+		}
+		
+		function mouseOver(evt) {
+			var cursor = SVGDocument.getElementById("cursor");
+			cursor.setAttributeNS(null, 'visibility', "visible");
+		}
+			
+		function mouseLeft() { // mouse leaves item
+			var id = event.target.id
+			<!-- console.log("left t: " + event.target.id + " id: " + id + " clicked: " + itemClicked ); -->
+			if ( event.button != 0 ) return;
+			if (itemClicked !== "") {
+				undoClick(event);
+				return;
+			}
+		}
+		
+		function focusOut() {
+			undoClick(event);
+		}
+		
+		function undoClick(e) {
+			var selbx = SVGDocument.getElementById(e.target.getAttributeNS(null, "sel"));
+			selbx.setAttributeNS(null, 'd', "");			
+			<!-- var clicked = SVGDocument.getElementById(itemClicked);  // restore item's -->
+			itemClicked = "";
+			move = false;
+			blured(e);
+			<!-- clicked.setAttributeNS(null, 'fill', "#FBFCFB");        // background color -->
+		}
+		
+		
+		function updateCursor(e,i) {
+		    var l = SVGDocument.getElementById(e.target.getAttributeNS(null, "text")).textContent.length;
+			if (i > l) i = l;
+			if (0 > i) i = 0;
+			moveCursor(e,i);
+			chindex = i;
+		}
+		
+		function moveCursor(e,i) {
+			var cursor = SVGDocument.getElementById(e.target.getAttributeNS(null, "cursor"));
+			cursor.setAttributeNS(null, 'transform', "translate(" + (i * advW) + ",0)");
+		}
+		
+		function hideCursor(e) {
+			var cursor = SVGDocument.getElementById(e.target.getAttributeNS(null, "cursor"));
+			cursor.setAttributeNS(null, 'visibility', "hidden");
+		}
+		
+		function blured(e) {
+			e.target.blur();
+			hideCursor(e);
+		}
+		
+		function flashText(e, first, last, blur) {
+			var selbx = SVGDocument.getElementById(e.target.getAttributeNS(null, "sel"));
+			selbx.setAttributeNS(null, 'fill', "rgb(51,146,255)");
+			drawSelected(selbx, xtoff+(first*advW), (last - first)*advW);
+			setTimeout(function(){
+				selbx.setAttributeNS(null, 'd', "");
+				selbx.setAttributeNS(null, 'fill', "rgb(181,172,90)");
+				if (blur) blured(e);
+			},125);
+		}
+		
+		function dlbClick() {
+			event.preventDefault();
+			copyText(event);
+		}
+		
+		function copyText(e) {
+			var text = SVGDocument.getElementById(e.target.getAttributeNS(null, "text")).textContent
+			flashText(e, 0, text.length, false);
+			navigator.clipboard.writeText(text);
+		}
+		
+		async function pasteText(e) {
+			hideCursor(e);
+			text = SVGDocument.getElementById(e.target.getAttributeNS(null, "text"));
+			navigator.clipboard.readText()
+			  .then(txt => {
+				text.textContent = txt;
+				console.log('Pasted content: ', txt);
+				flashText(e, 0, text.textContent.length, true);
+			  })
+			  .catch(err => {
+				console.error('Failed to read clipboard contents: ', err);
+			  });			
+		}
+		
+		
+		function doSel(e, i) {
+			var first = (startSel > i) ? i : startSel;
+			var last = (startSel > i) ? startSel : i;
+			flashText(e, first, last, false);
+			var text = SVGDocument.getElementById(e.target.getAttributeNS(null, "text")).textContent;
+			var sel = text.substring(first,last);
+			navigator.clipboard.writeText(sel);
+			itemClicked = "";
+			move = false;
+			startSel = -1;
+		}
+		
+		function deleteText(e) {
+			SVGDocument.getElementById(e.target.getAttributeNS(null, "text")).textContent = "";
+		}
+		
+		<!-- KEYBOARD KEYS PROCESSING -->
+
+		function enter(e){
+			var item = SVGDocument.getElementById(e.target.getAttributeNS(null, "text"));
+			<!-- console.log("enter pressed "+e.target.id+ " - text: " + item.textContent); -->
+			blured(e);
+			<!-- window[e.target.id+"_entered"](document.getElementById(e.target.id).innerText); -->
+		}
+		function backspace(e) {
+			if ( chindex > 0 ) {
+				var item = SVGDocument.getElementById(e.target.getAttributeNS(null, "text"));
+				var txt = item.textContent;
+				if (chindex == txt.length) {
+					item.textContent = txt.substring(0, txt.length -1);
+				}
+				if (txt.length > chindex) {
+					item.textContent = txt.substring(0, chindex-1) + txt.substring(chindex);
+				}			
+				moveCursor(e,--chindex);
+			}
+		}
+
+		function del(e) {
+			var item = SVGDocument.getElementById(e.target.getAttributeNS(null, "text"));
+			var txt = item.textContent;
+			if ( txt.length > chindex ) {
+				if (chindex == (txt.length -1)) {
+					item.textContent = txt.substring(0, txt.length - 1);
+					return;
+				}
+				if (chindex == 0) { item.textContent = txt.substring(1); return; }
+				item.textContent = txt.substring(0, chindex) + txt.substring(chindex +1);
+			}
+		}
+		
+		
+		function left(e) {
+			updateCursor(e, chindex - 1);
+		}
+		function right(e) {
+			updateCursor(e, chindex + 1);
+		}
+		function home(e) {
+			chindex = 0;
+			var cursor = SVGDocument.getElementById(e.target.getAttributeNS(null, "cursor"));
+			cursor.setAttributeNS(null, 'transform', "translate(0,0)");
+		}
+		function end(e) {
+			updateCursor(e,maxDigs);
+		}
+
+		var keyProcessing = {
+			"Enter" :  enter,
+			"Backspace": backspace,
+			"Delete" : del,
+			"ArrowLeft": left,
+			"ArrowRight" : right,
+			"ArrowDown" : home,
+			"Home" : home,
+			"ArrowUp" : end,
+			"End" : end
+		}
+
+		function editNumber(e){
+			if (e.shiftKey) { e.preventDefault(); return; }
+			var key = e.key;
+			var str = "", i, text;
+			<!-- console.log(a2hex(e.target.innerText) + " = " + e.target.innerText); -->
+			if (key.length > 1) {
+				var f = keyProcessing[key];
+				if ( f !== undefined ) {
+					f(e);
+				}
+				return;
+			}
+			var char = key.charCodeAt(0);
+			if (e.ctrlKey) { 
+				if (char == 99) { copyText(e); e.preventDefault(); return; }
+				if (char == 118) { pasteText(e); e.preventDefault(); return; }
+				if (char == 120) { copyText(e); deleteText(e); e.preventDefault(); return; }
+				
+			}
+			if ((48 > char ) || (char > 57)) { e.preventDefault(); return; }
+			var itemtxt = SVGDocument.getElementById(e.target.getAttributeNS(null, "text"));
+			var txt = itemtxt.textContent;
+			if (txt.length >= maxDigs) { e.preventDefault(); return; }
+			if ( txt.length > chindex ) 
+				itemtxt.textContent = txt.substring(0, chindex) + key + txt.substring(chindex);
+			if ( txt.length == chindex ) { itemtxt.textContent = txt + key; }
+			moveCursor(e, ++chindex);
+			e.preventDefault();
+		}
+		function a2hex(str) {
+			var hex = '';
+			for (var i = 0, l = str.length; 1 > i; i++) {
+				var hexx = Number(str.charCodeAt(i)).toString(16);
+				hex += (hexx.length > 1)? hexx : '0' + hexx;
+				<!-- hex += (hexx.length > 1 && hexx || '0' + hexx); -->
+			}
+			return hex;
+		}
+		
+    </script>
+	
+	<path d="M6,1 h52.890625 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-52.890625 a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="#FBFCFB"></path>
+
+	<path d="M6,0 h52.890625 a6,6 0 0 1 6,6 v8 a6,6 0 0 1 -6,6 h-52.890625 a6,6 0 0 1 -6,-6 v-8 a6,6 0 0 1 6,-6 z
+			M6,2 a4,4 0 0 0 -4,4 v8 a4,4 0 0 0 4,4 h52.890625 a4,4 0 0 0 4,-4 v-8 a4,4 0 0 0 -4,-4 h-52.890625 z"
+	 fill="rgb(135,129,67)"></path> 
+	 <path id="cursor1" transform="translate(6.86133,0)" d="M5,15.5 V5" fill="none" stroke="rgb(135,129,67)" stroke-width="0.25" visibility="hidden" ></path>
+	 <path id="sel1" d="" fill="rgb(181,172,90)"></path>
+	 <text id="text1" font-size= "12" x="5" y="14.5" >0123</text>
+	 <path id="bbox" d="M5,14.5 h6.86133 v-8.7012 h-6.86133z M8.430664,14.5 v-8.7012z" fill="none" stroke="red" stroke-width="0.05" visibility="hidden" ></path>
+	 
+	 <path id="field1" tabindex="1" text="text1" cursor="cursor1" sel="sel1"
+		d="M6,0 h52.890625 a6,6 0 0 1 6,6 v8 a6,6 0 0 1 -6,6 h-52.890625 a6,6 0 0 1 -6,-6 v-8 a6,6 0 0 1 6,-6 z" opacity="0"
+		onmousedown='select()' onmouseup='selected()' onmouseleave='mouseLeft()' ondblclick='dlbClick()'
+		onmousemove='onMove()' onfocusout='focusOut()'
+	 ></path>
+
+
+</svg>
