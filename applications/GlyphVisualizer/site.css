@@ -33,11 +33,11 @@
 
 @font-face {
     font-family: regular;
-    src: url('/resources/OpenSans-Regular.ttf')  format('truetype');
+    src: url('resources/OpenSans-Regular.ttf')  format('truetype');
 }
 @font-face {
     font-family: bold;
-    src: url('/resources/OpenSans-Semibold.ttf')  format('truetype');
+    src: url('resources/OpenSans-Semibold.ttf')  format('truetype');
 }
 
 div {

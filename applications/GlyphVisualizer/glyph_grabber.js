@@ -6,15 +6,29 @@ var wMax, hMax;
 var outlinesFormat;
 var scale = 1.25;
 
+function fontname() {
+	// matches everything following a / or a \ at the end of the string
+	let name = fontFileName.match(/[^\\/]+?$/)[0]; 
+	if ( name == "" ) {
+		if (fontFileName == "") return "none";
+		return fontFileName;
+	}
+	console.log(name);
+	if (18 < name.length) name = name.substring(0, 18);
+	return name;
+}
+
 function onReadFile(e) {
     var file = e.target.files[0];
     fontFileName = e.target.value;
+	console.log(fontFileName);
     var reader = new FileReader();
     reader.onload = function(e) {
         try {
             font = opentype.parse(e.target.result, {lowMemory:true});
             showErrorMessage('');
             onFontLoaded(font);
+			document.getElementById("font").textContent = fontname();
         } catch (err) {
             showErrorMessage(err.toString());
             if (err.stack) console.log(err.stack);
@@ -183,19 +197,24 @@ function zoom() {
     // }
     r.style.setProperty("--s", scale);
     var rs = getComputedStyle(r);
-
+	
+	//
 }
 
 var zoom_inc = 0.125;
 function zoomIn() {
     scale += zoom_inc;
     zoom();
+	document.getElementById("scale").textContent = scale;
+	//console.log(document.getElementById("scale"));
 }
 
 function zoomOut() {
     if (scale == zoom_inc) return;
     scale -= zoom_inc;
     zoom();
+	document.getElementById("scale").textContent = scale;
+	//console.log(document.getElementById("scale"));
 }
 //
 // var f;
@@ -230,12 +249,18 @@ function indexUpdate(value){
         return;
     }
     console.log("new index: " + value + " - old index: " + index);
-    if (value === "") {
-        console.log("value is empty - restoring old value")
-        document.getElementById("index").innerText = index;
-        return;
-    }
-    var myindex = parseInt(value);
+	var myindex;
+	if (typeof value === "string") {
+		if (value.charAt(value.length-1) === " ")  value = value.substring(0, value.length-1);
+		if (value === "") {
+			console.log("value is empty - restoring old value")
+			document.getElementById("index").innerText = index;
+			return;
+		}
+		myindex = parseInt(value);
+	}
+    else myindex = value;
+	if (typeof myindex !== "number") myindex = index;
     if (myindex == index) return; //trying to reenter the same value
     var last = font.numGlyphs -1;
     if ( (myindex > last ) || (myindex < 0) ) {
@@ -281,12 +306,17 @@ function index_reload(){
 function codeUpdate(value){
     var mycode, myindex;
     if (font) {
-        if (value === "") {
-            console.log("value is empty - restoring old value")
-            document.getElementById("code").innerText = code;
-            return;
-        }
-        mycode = parseInt(value);
+		if (typeof value === "string") {
+			if (value.charAt(value.length-1) === " ")  value = value.substring(0, value.length-1);
+			if (value === "") {
+				console.log("value is empty - restoring old value")
+				document.getElementById("code").innerText = code;
+				return;
+			}
+			mycode = parseInt(value);
+		}
+		else mycode = value;
+		if (typeof mycode !== "number") mycode = index;
         if (mycode == code) return;
         myindex = font.tables.cmap.glyphIndexMap[mycode];
         if (myindex == undefined) {
@@ -334,7 +364,7 @@ function clickNumber(e) {
     var id = e.target.id;
     var element = document.getElementById(id.substring(0,id.length-3));
     if (element.innerText == "") {
-        element.innerText = 0;
+        element.innerText = " ";
     };
     setCursor(0, element );
 }
@@ -364,38 +394,39 @@ function setCursor(pos, element) {
 function enter( e ){
     console.log("enter pressed "+e.target.id+ " - text: " + e.target.innerText);
     window[e.target.id+"_entered"](document.getElementById(e.target.id).innerText);
+	window.getSelection().removeAllRanges(); // remove focus
+	document.getElementById(e.target.id).blur();
 }
 function backspace(e) {
     var caretPos = window.getSelection().getRangeAt(0).startOffset;
     console.log("baskspace for "+e.target.id+ " - text: " + e.target.innerText + "at position: " + caretPos);
-    if (cartetPos > 0) {
-        if (caretPos == e.target.innerText.length) {
-            e.target.innerText = e.target.innerText.substring(0, e.target.innerText.length -1);
-            return;
-        }
+    if (caretPos > 0) {
         if (caretPos == 1) {
-            e.target.innerText = e.target.innerText.substring(1);
+			if (e.target.innerText.length == 1) {
+				e.target.innerText = " ";
+			}
+            else e.target.innerText = e.target.innerText.substring(1);
             return;
         }
-        e.target.innerText = e.target.innerText.substring(0,cartetPos-1);
-        e.target.innerText += e.target.innerText.substring(cartetPos);
+        e.target.innerText = e.target.innerText.substring(0,caretPos-1);
+        e.target.innerText += e.target.innerText.substring(caretPos);
+		setCursor(caretPos-1,e.target);
     }
 }
 function del(e) {
     var caretPos = window.getSelection().getRangeAt(0).startOffset;
-    console.log("baskspace for "+e.target.id+ " - text: " + e.target.innerText + "at position: " + caretPos);
+    console.log("delete for "+e.target.id+ " - text: \"" + e.target.innerText + "\" at position: " + caretPos);
     if (caretPos < e.target.innerText.length) {
-        if (caretPos == (e.target.innerText.length -1)) {
-            e.target.innerText = e.target.innerText.substring(0, e.target.innerText.length -1);
-            setCursor(caretPos,e.target);
-            return;
-        }
         if (caretPos == 0) {
-            e.target.innerText = e.target.innerText.substring(1);
+            if (e.target.innerText.length == 1) {
+				e.target.innerText = " ";
+			}
+            else e.target.innerText = e.target.innerText.substring(1);
             return;
         }
-        e.target.innerText = e.target.innerText.substring(0,cartetPos);
-        e.target.innerText += e.target.innerText.substring(cartetPos+1);
+        e.target.innerText = e.target.innerText.substring(0,caretPos);
+        e.target.innerText += e.target.innerText.substring(caretPos+1);
+		setCursor(caretPos,e.target);
     }
 }
 function left(e) {
@@ -404,12 +435,20 @@ function left(e) {
 }
 function right(e) {
     var caretPos = window.getSelection().getRangeAt(0).startOffset;
-    if (caretPos <  e.target.innerText.length) setCursor(caretPos + 1,e.target);
+    if (caretPos <  e.target.innerText.length) {
+		if (e.target.innerText.charAt(caretPos) != " ")
+			setCursor(caretPos + 1,e.target);
+	}
 }
 function home(e) {
     setCursor(0,e.target);
 }
 function end(e) {
+	if (e.target.innerText.charAt(e.target.innerText.length - 1) == " ") {
+		console.log("** found hairspace **");
+		setCursor(e.target.innerText.length - 1,e.target);
+		return;
+	}
     setCursor(e.target.innerText.length,e.target);
 }
 

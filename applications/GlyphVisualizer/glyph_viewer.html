@@ -189,14 +189,19 @@
             </script>
 
             <g id="menu_frame" class="svgtxt" visibility='hidden'>
+				<!-- rounded square frame around the menu and menu background fill -->
                 <path  fill="#FBFCFB" stroke="rgb(135,129,67)" stroke-width="2"
                       d="M6,1 h140 a5,5,0,0,1,5,5 v210 a5,5,0,0,1,-5,5 h-140 a5,5,0,0,1,-5,-5 V6 a5,5,0,0,1, 5,-5 Z"
                 />
+				<!-- menu items -->
                 <g  transform="translate(0, 7)" fill="rgb(135,129,67)" font-size="9" font-family="regular">
-                    <text font-size="11" transform="translate(35, 20)" font-family="'regular'">Options Menu</text>
+					<!-- menu title -->
+                    <text font-size="11" transform="translate(25, 18)" font-family="'regular'">Options/Settings</text>
+					<!-- menu items background - color modified when clicked -->
                     <path id="svg" fill="#FBFCFB" d="M2,32 H150 v33 H2 v-33z" />
                     <path id="ps" fill="#FBFCFB" d="M2,65 H150 v33 H2 v-33z" />
                     <path id="fontin" fill="#FBFCFB" d="M2,98 H150 v33 H2 v-33z" />
+					<!-- menu item 1 - SVG logo -->
                     <g transform="translate(11,30)">
                         <g transform="scale(0.02,0.02)">
                             <g id="stars">
@@ -245,13 +250,7 @@
                             </g>
                         </g>
                     </g>
-                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,32 H151"/>
-                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,65 H151"/>
-                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,98 H151"/>
-                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,131 H151"/>
-                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,164 H151"/>
-                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,197 H151"/>
-
+					<!-- menu item 2 - PostScript logo -->
                     <g transform="translate(8,70) scale(0.55,0.55)" >
                         <path d="M36.807 0c.861.243 1.31.451 1.853.832L28.131 13.095c2.874 1.871 5.89
                         6.528 4.254 10.323.805 -5.147-4.522-9.007-7.653-9.492L36.807 0z" fill="rgb(135,129,67)"/>
@@ -306,6 +305,7 @@
                         l.033.941c-.194.062-.464.1-.825.1-.42 0-.79-.107-1.047-.381-.28-.297-.422-.73-.422-1.627
                         v-3.369h-.745v-.893h.745v-1.066l1.21-.438z"/>
                     </g>
+					<!-- menu item 3 - ABC Font logo -->
                     <g transform="translate(17,105) scale(0.04,0.04)">
                         <path d="M326.626,0.038H155.256c-15.059,0-27.332,12.273-27.332,27.332v171.369c0,15.134,12.273,27.407,27.332,27.407h171.369
                         c15.059,0,27.332-12.273,27.332-27.407V27.369C353.958,12.311,341.685,0.038,326.626,0.038z M277.192,172.984l-11.147-25.879
@@ -329,11 +329,28 @@
                                 <path d="M127.19,381.173c-4.059-1.772-10.546-2.651-19.461-2.651H91.965v27.595h18.345c7.645,0,13.392-0.949,17.214-2.832
                         c3.836-1.883,5.748-5.594,5.748-11.133C133.273,386.6,131.25,382.944,127.19,381.173z"/>
                     </g>
+					<!-- lines separating the options -->
+                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,32 H151"/>
+                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,65 H151"/>
+                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,98 H151"/>
+                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,131 H151"/>
+                    <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,164 H151"/>
+                    <!-- <path stroke="rgb(135,129,67)" stroke-width="0.5" d="M0,197 H151"/> -->
+					<!-- text for each menu option -->
                     <g transform="translate(44,0)" fill="rgb(116,98,51)">
                         <text transform="translate(0,51)">Save glyph as SVG file</text>
                         <text transform="translate(0,84)">Save glyph as EPS file</text>
                         <text transform="translate(0,117)">Read otf or ttf font file</text>
                     </g>
+					<g transform="translate(17,185)">
+						<text font-family="bold">Font:</text>
+						<text transform="translate(0,12)" font-family="bold">Scale:</text>
+						<g transform="translate(30,0)">
+							<text id="font">none</text>
+							<text id="scale" transform="translate(0,12)">1.25</text>
+						</g>
+					</g>
+					<!-- transparent menu items for clicking processing -->
                     <path d="M2,32 H150 v33 H2 v-33z" opacity="0"
                           onmousedown='select(evt,"svg")'
                           onmouseup='selected(evt,"svg")'
@@ -351,7 +368,10 @@
                     />
                 </g>
             </g>
+			<!-- gear - shows up last, background and outline split to change background color -->
             <g transform="matrix(0.38 0 0 0.38 122 5)">
+				<!-- gear background - white but changes to menu background color when menu is shown -->
+				<!--                   toggles menu visibility when user clicks gear's background-->
                 <path id="gearback" fill="rgb(255,255,255)" onclick='ToggleVisibility(evt,"menu_frame")'
                       d="M60.7,38.1l-5.6-3.1c0.2-1.1,0.3-2.2,0.3-3.3c0-1.2-0.1-2.3-0.2-3.4l5.7-3.2c1.3-0.7,1.8-2.3,1.2-3.7l-5.8-9.8
                         c-0.7-1.2-2.3-1.7-3.6-1.2l-6,3.3c-0.3-0.2-0.6-0.5-0.8-0.7c-1.1-0.9-2.1-1.8-3.7-2.6c-0.1,0-0.2-0.1-0.2-0.3V6.5
@@ -362,7 +382,8 @@
                         c0-0.1,0.1-0.2,0.2-0.3c1.5-0.7,2.5-1.6,3.7-2.6c0.3-0.2,0.5-0.4,0.8-0.7l5.3,3c2,1.1,3.6,0.4,4.4-0.8l5.6-9.5
                         c0.4-0.7,0.5-1.5,0.3-2.2S61.4,38.5,60.7,38.1z"
                 />
-                        <g fill="rgb(135,129,67)" onclick='ToggleVisibility(evt,"menu_frame")'>
+				<!-- gear outline - const color, toggles menu visibility when the outline is clicked-->
+				<g fill="rgb(135,129,67)" onclick='ToggleVisibility(evt,"menu_frame")'>
                     <path d="M32.1,19.6c-6.8,0-12.4,5.6-12.4,12.4c0,6.9,5.6,12.4,12.4,12.4S44.5,38.9,44.5,32C44.5,25.2,38.9,19.6,32.1,19.6z
                          M32.1,40c-4.4,0-7.9-3.6-7.9-7.9c0-4.4,3.5-7.9,7.9-7.9S40,27.7,40,32C40,36.4,36.4,40,32.1,40z"/>
                     <path d="M60.7,38.1l-5.6-3.1c0.2-1.1,0.3-2.2,0.3-3.3c0-1.2-0.1-2.3-0.2-3.4l5.7-3.2c1.3-0.7,1.8-2.3,1.2-3.7l-5.8-9.8
@@ -379,7 +400,7 @@
                         c1.4,0.8,3,0.6,4.2-0.4c0.4-0.3,0.8-0.7,1.2-1c1-0.9,1.8-1.5,2.8-2c1.7-0.8,2.7-2.5,2.7-4.3l0-3.9c0-0.2,0.1-0.3,0.3-0.3h10.2
                         c0.2,0,0.3,0.1,0.3,0.3v3.8c0,1.8,1.1,3.5,2.7,4.3c1,0.5,1.7,1.1,2.7,1.9c0.4,0.4,0.8,0.7,1.3,1.1c1.2,1,2.9,1.1,4.2,0.3l4.8-2.7
                         l4,6.8l-4.6,2.6c-1.4,0.8-2.2,2.5-1.9,4.2c0.1,0.9,0.2,1.9,0.2,2.9c0,1-0.1,2-0.3,3c-0.3,1.7,0.5,3.3,2,4.1l4.5,2.5L53.1,48z"
-                            />
+					/>
                 </g>
             </g>
         </svg>
