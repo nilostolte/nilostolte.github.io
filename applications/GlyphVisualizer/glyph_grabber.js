@@ -4,7 +4,7 @@ var font;
 var yMin, yMax;
 var wMax, hMax;
 var outlinesFormat;
-var scale = 3.;
+var scale = 2.;
 
 function onReadFile(e) {
     var file = e.target.files[0];
