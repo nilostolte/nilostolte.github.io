@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.1 95.508 98.1" overflow="visible">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="42 -0.1 95.508 98.1" overflow="visible">
 
 <radialGradient id="ART_GRAD" cx="90" cy="272" r="40" gradientTransform="matrix(1 0 0 -1 0 330.001)" gradientUnits="userSpaceOnUse">
 	<stop  offset="0" style="stop-color:#FFFFFF"/>
