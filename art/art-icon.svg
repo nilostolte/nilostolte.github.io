@@ -2,17 +2,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="42.5 -0.1 95.508 98.1" overflow="visible">
 
-<radialGradient id="ART_GRAD" cx="94" cy="272" r="40" gradientTransform="matrix(1 0 0 -1 0 330.001)" gradientUnits="userSpaceOnUse">
+<radialGradient id="ART_GRAD" cx="94" cy="280" r="55" gradientTransform="matrix(1 0 0 -1 0 330.001)" gradientUnits="userSpaceOnUse">
 	<stop  offset="0" style="stop-color:#FFFFFF"/>
-	<stop  offset="0.1027" style="stop-color:#DBDEE1"/>
-	<stop  offset="0.2704" style="stop-color:#A7AEB6"/>
-	<stop  offset="0.4353" style="stop-color:#7C8692"/>
-	<stop  offset="0.5939" style="stop-color:#5B6675"/>
-	<stop  offset="0.7443" style="stop-color:#435061"/>
-	<stop  offset="0.8833" style="stop-color:#344355"/>
 	<stop  offset="1" style="stop-color:#2F3E51"/>
 </radialGradient>
-                     <path fill="url(#ART_GRAD)" d="M137.1,51.938c0,25.178 -20.411,45.592 -45.589,45.592c-25.178,0 -45.595,-20.414 -45.595,-45.592c0,-25.181 20.417,-45.593 45.595,-45.593c25.178,-0 45.589,20.412 45.589,45.593"/>                     <path fill="#B5AC5A" d="M91.356,1.622c0.984,0,1.969,0.032,2.953,0.097c2.959,0.19,5.906,0.677,8.766,1.45
+                     <path fill="url(#ART_GRAD)" d="M137.1,51.938c0,25.178 -20.411,45.592 -45.589,45.592c-25.178,0 -45.595,-20.414 -45.595,-45.592c0,-25.181 20.417,-45.593 45.595,-45.593c25.178,-0 45.589,20.412 45.589,45.593"/>
+                     <path fill="#B5AC5A" d="M91.356,1.622c0.984,0,1.969,0.032,2.953,0.097c2.959,0.19,5.906,0.677,8.766,1.45
                        c1.436,0.372,2.789,0.841,3.926,1.248l1.846,0.727l0.791,0.36l1.336-0.17l1.523-0.056l0.797,0.009l0.094,0.003l0.732,0.044
                        l0.064,0.006c-1.828-1.04-3.803-1.913-5.889-2.616c-2.807-0.943-5.807-1.564-8.918-1.84c-3.006-0.272-6.141-0.223-9.322,0.146
                        c-2.496,0.287-5.027,0.773-7.547,1.45c0.732-0.135,1.471-0.258,2.215-0.369C86.909,1.786,89.129,1.622,91.356,1.622L91.356,1.622z
