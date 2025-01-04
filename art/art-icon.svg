@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="42.5 -0.1 97.5 98.1" overflow="visible">
+<radialGradient id="TECH_GRAD" cx="91.9" cy="280" r="49" gradientTransform="matrix(1 0 0 -1 0 330)" gradientUnits="userSpaceOnUse">
+     <stop  offset="0"     style="stop-color:#FFFFFF"/>
+     <stop  offset="0.195" style="stop-color:#F7F8F8"/>
+     <stop  offset="0.38"  style="stop-color:#E1E3E6"/>
+     <stop  offset="0.56"  style="stop-color:#BEC2C8"/>
+     <stop  offset="0.707" style="stop-color:#979FA8"/>
+     <stop  offset="0.83"  style="stop-color:#707A87"/>
+     <stop  offset="0.85"  style="stop-color:#697481"/>
+     <stop  offset="0.98"  style="stop-color:#374658"/>
+     <stop  offset="0.996" style="stop-color:#314052"/>
+     <stop  offset="1"     style="stop-color:#2F3E51"/>
+</radialGradient>
+<path fill="url(#TECH_GRAD)" d="M137,50c0,25.178 -20.411,45.592 -45.589,45.592c-25.178,0 -45.595,-20.414 -45.595,-45.592c0,-25.181 20.417,-45.593 45.595,-45.593c25.178,-0 45.589,20.412 45.589,45.593"/>
+
 <!-- begin round wire -->
 <path fill="#B5AC5A" d="M91.034,0.418L91.034,0.418c-3.154,0.367-6.358,1.039-9.524,1.996c-2.546,0.771-5.154,1.756-7.752,2.93
 	l-0.541,0.207l-0.649,0.273l-1.028,0.458l-0.814,0.371c-1.348,0.668-3.094,1.568-4.774,2.675l-1.017,0.628L64.573,10.2l-1.319,0.904
