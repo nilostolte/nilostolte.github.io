@@ -30,7 +30,7 @@
     <!-- ************************************************* -->
     <!-- *        START OF GLYPH INDEX PROCESSING        * -->
     <div>
-        <div title="Click here to type&#10;the glyph index" id="indexbox">
+        <div title="Click here to type the index&#10;of the glyph to display" id="indexbox">
             <!--        <svg viewBox="0 0 62 20">-->
             <!--            <path d="M6,1 h50 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-50 a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="none" stroke="black" stroke-width="2" />-->
             <svg id="indexret" viewBox="0 0 62 20" overflow="visible">
@@ -56,7 +56,7 @@
     <!-- ************************************************* -->
     <!-- *         START OF GLYPH CODE PROCESSING        * -->
     <div>
-        <div title="Click here to type&#10;the glyph code" id="codebox">
+        <div title="Click here to type the code&#10;of the glyph to display" id="codebox">
             <svg id="coderet" viewBox="0 0 62 20" overflow="visible">
                 <path d="M6,0.25 h50 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-50 a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="none" stroke="rgb(135,129,67)" stroke-width="2" />
             </svg>
@@ -67,10 +67,10 @@
         <div id="code_text">
             Code
         </div>
-        <div title="Click here to display&#10;the previous glyph" id="codedown" >
+        <div title="Click here to display the &#10;glyph with previous code" id="codedown" >
             <img src="resources/triangle_left.svg" onclick="prevCode()">
         </div>
-        <div title="Click here to display&#10;the next glyph" id="codeup" >
+        <div title="Click here to display the&#10;glyph with the next code" id="codeup" >
             <img src="resources/triangle_right.svg" onclick="nextCode()" >
         </div>
     </div><!--                                         * -->
@@ -85,7 +85,7 @@
 
     <!-- ************************************************* -->
     <!-- *            START GEAR MENU (SVG)              * -->
-    <div title="Click here to open&#10;the menu" id="menu">
+    <div title="Click the gear to open&#10;or to close the menu" id="menu">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 222" overflow="visible"
                      style="enable-background:new 0 0 152 222;" xml:space="preserve" onload='Init(evt)'>
              <defs>
@@ -121,12 +121,14 @@
                     "ps": {
                         clicked : false,
                         doit : function () {
+                           alert('EPS generation is not yet implemented.&#10;This item is here only to demonstrate how to&#10;implement a list of items in an SVG menu.');
                            //no action for now
                         }               // generates glyph EPS file
                     },
                     "svg": {
                         clicked: false,
                         doit: function () {
+			    alert('SVG generation is not yet implemented.&#10;This item is here only to demonstrate how to&#10;implement a list of items in an SVG menu.');
                             //no action for now
                         }               // generates glyph svg file
                     }
