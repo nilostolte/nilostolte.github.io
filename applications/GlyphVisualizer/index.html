@@ -230,7 +230,6 @@
                                     C866.517,522.808,858.878,539.353,846.95,551.421z"/>
                             </g>
                             <g id="svg-textbox">
-				<title>SVG generation is not yet implemented. This item is here only to demonstrate how to implement a list of items in an SVG menu.</title>
                                 <path id="text-backdrop" fill="rgb(135,129,67)" d="M380.516,801h838.781v375.377c0,31.281-15.642,46.923-46.923,46.923H427.438
                                 c-31.281,0-46.922-15.642-46.922-46.923V801z"/>
                                 <g id="svg-text">
@@ -255,7 +254,6 @@
                     </g>
 					<!-- menu item 2 - PostScript logo -->
                     <g transform="translate(8,70) scale(0.55,0.55)" >
-			<title>PostScript generation is not yet implemented. This item is here only to demonstrate how to implement a list of items in an SVG menu.</title>
                         <path d="M36.807 0c.861.243 1.31.451 1.853.832L28.131 13.095c2.874 1.871 5.89
                         6.528 4.254 10.323.805 -5.147-4.522-9.007-7.653-9.492L36.807 0z" fill="rgb(135,129,67)"/>
 
@@ -355,18 +353,24 @@
 						</g>
 					</g>
 					<!-- transparent menu items for clicking processing -->
-                    <path d="M2,32 H150 v33 H2 v-33z" opacity="0"
+                    <g>
+		    <title>SVG generation is not yet implemented. This item&#10;is here only to demonstrate how to&#10;implement a list of items in an SVG menu.</title>
+		    <path d="M2,32 H150 v33 H2 v-33z" opacity="0"
                           onmousedown='select(evt,"svg")'
                           onmouseup='selected(evt,"svg")'
                           onmouseleave='mouseLeft(evt,"svg")'
                     />
+		    </g>
+		    <g>
+		    <title>PostScript generation is not yet implemented. This&#10;item is here only to demonstrate how to&#10;implement a list of items in an SVG menu.</title>
                     <path d="M2,65 H150 v33 H2 v-33z" opacity="0"
                           onmousedown='select(evt,"ps")'
                           onmouseup='selected(evt,"ps")'
                           onmouseleave='mouseLeft(evt,"ps")'
                     />
+		    </g>
 		    <g>
-		    <title>Click in this item to open the interface to select and upload a font file (".ttf" or ".otf").</title>
+		    <title>Click in this item to open the interface to select&#10;and upload a font file (".ttf" or ".otf").</title>
                     <path d="M2,98 H150 v33 H2 v-33z" opacity="0"
                           onmousedown='select(evt,"fontin")'
                           onmouseup='selected(evt,"fontin")'
@@ -377,7 +381,7 @@
             </g>
 			<!-- gear - shows up last, background and outline split to change background color -->
             <g transform="matrix(0.38 0 0 0.38 122 5)">
-		<title>Click to open or&#10;to close the menu</title>
+		<title>Click here to open or&#10;to close the menu</title>
 				<!-- gear background - white but changes to menu background color when menu is shown -->
 				<!--                   toggles menu visibility when user clicks gear's background-->
                 <path id="gearback" fill="rgb(255,255,255)" onclick='ToggleVisibility(evt,"menu_frame")'
