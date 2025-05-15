@@ -30,7 +30,7 @@
     <!-- ************************************************* -->
     <!-- *        START OF GLYPH INDEX PROCESSING        * -->
     <div>
-        <div id="indexbox">
+        <div title="Click here to type&#10;the glyph index" id="indexbox">
             <!--        <svg viewBox="0 0 62 20">-->
             <!--            <path d="M6,1 h50 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-50 a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="none" stroke="black" stroke-width="2" />-->
             <svg id="indexret" viewBox="0 0 62 20" overflow="visible">
@@ -43,10 +43,10 @@
         <div id="index_text">
             Index
         </div>
-        <div id="indexdown" >
+        <div title="Click here to display&#10;the previous glyph" id="indexdown" >
             <img src="resources/triangle_left.svg" onclick="prevIndex()">
         </div>
-        <div id="indexup" >
+        <div title="Click here to display&#10;the next glyph" id="indexup" >
             <img src="resources/triangle_right.svg" onclick="nextIndex()" >
         </div>
     </div><!--                                         * -->
@@ -56,7 +56,7 @@
     <!-- ************************************************* -->
     <!-- *         START OF GLYPH CODE PROCESSING        * -->
     <div>
-        <div id="codebox">
+        <div title="Click here to type&#10;the glyph code" id="codebox">
             <svg id="coderet" viewBox="0 0 62 20" overflow="visible">
                 <path d="M6,0.25 h50 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-50 a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="none" stroke="rgb(135,129,67)" stroke-width="2" />
             </svg>
@@ -67,10 +67,10 @@
         <div id="code_text">
             Code
         </div>
-        <div id="codedown" >
+        <div title="Click here to display&#10;the previous glyph" id="codedown" >
             <img src="resources/triangle_left.svg" onclick="prevCode()">
         </div>
-        <div id="codeup" >
+        <div title="Click here to display&#10;the next glyph" id="codeup" >
             <img src="resources/triangle_right.svg" onclick="nextCode()" >
         </div>
     </div><!--                                         * -->
@@ -85,7 +85,7 @@
 
     <!-- ************************************************* -->
     <!-- *            START GEAR MENU (SVG)              * -->
-    <div id="menu">
+    <div title="Click here to open&#10;the menu" id="menu">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 222" overflow="visible"
                      style="enable-background:new 0 0 152 222;" xml:space="preserve" onload='Init(evt)'>
              <defs>
@@ -369,7 +369,7 @@
                 </g>
             </g>
 			<!-- gear - shows up last, background and outline split to change background color -->
-            <g title="Click here to open&#10;the menu" transform="matrix(0.38 0 0 0.38 122 5)">
+            <g transform="matrix(0.38 0 0 0.38 122 5)">
 				<!-- gear background - white but changes to menu background color when menu is shown -->
 				<!--                   toggles menu visibility when user clicks gear's background-->
                 <path id="gearback" fill="rgb(255,255,255)" onclick='ToggleVisibility(evt,"menu_frame")'
@@ -410,7 +410,7 @@
 
     <!-- ************************************************* -->
     <!-- *          UPLOAD FONT - DIRECTORY ICON         * -->
-    <label id="up" for="upload">
+    <label title="Click here to select&#10;and upload a font file" id="up" for="upload">
         <img src="resources/folder_high.svg">
         <input id="upload" type="file" hidden>
     </label><!--                  * -->
