@@ -30,7 +30,7 @@
     <!-- ************************************************* -->
     <!-- *        START OF GLYPH INDEX PROCESSING        * -->
     <div>
-        <div title="Click here to type the index&#10;of the glyph to display" id="indexbox">
+        <div title=""Displays the index of the glyph in decimal.&#10;Click here to modify it, and to type the&#10;index of the glyph to display. Press return to exit" id="indexbox">
             <!--        <svg viewBox="0 0 62 20">-->
             <!--            <path d="M6,1 h50 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-50 a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="none" stroke="black" stroke-width="2" />-->
             <svg id="indexret" viewBox="0 0 62 20" overflow="visible">
@@ -56,7 +56,7 @@
     <!-- ************************************************* -->
     <!-- *         START OF GLYPH CODE PROCESSING        * -->
     <div>
-        <div title="Click here to type the code&#10;of the glyph to display" id="codebox">
+        <div title="Displays the ASCII/unicode code of the glyph&#10;in decimal. Click here to modify it, and to type the&#10;code of the glyph to display. Press return to exit" id="codebox">
             <svg id="coderet" viewBox="0 0 62 20" overflow="visible">
                 <path d="M6,0.25 h50 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-50 a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="none" stroke="rgb(135,129,67)" stroke-width="2" />
             </svg>
@@ -85,7 +85,7 @@
 
     <!-- ************************************************* -->
     <!-- *            START GEAR MENU (SVG)              * -->
-    <div title="Click the gear to open&#10;or to close the menu" id="menu">
+    <div id="menu">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 222" overflow="visible"
                      style="enable-background:new 0 0 152 222;" xml:space="preserve" onload='Init(evt)'>
              <defs>
@@ -375,6 +375,7 @@
             </g>
 			<!-- gear - shows up last, background and outline split to change background color -->
             <g transform="matrix(0.38 0 0 0.38 122 5)">
+		<title>Click to open or&#10;to close the menu"</title>
 				<!-- gear background - white but changes to menu background color when menu is shown -->
 				<!--                   toggles menu visibility when user clicks gear's background-->
                 <path id="gearback" fill="rgb(255,255,255)" onclick='ToggleVisibility(evt,"menu_frame")'
