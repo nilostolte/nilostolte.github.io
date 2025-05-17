@@ -132,6 +132,13 @@
                             //no action for now
                         }               // generates glyph svg file
                     }
+                    "test": {
+                        clicked: false,
+                        doit: function () {
+			    alert('test, test, test, test');
+                            //no action for now
+                        } 
+                    }
                 }
                 // METHODS
                 function Init(evt) {
@@ -206,6 +213,7 @@
                     <path id="svg" fill="#FBFCFB" d="M2,32 H150 v33 H2 v-33z" />
                     <path id="ps" fill="#FBFCFB" d="M2,65 H150 v33 H2 v-33z" />
                     <path id="fontin" fill="#FBFCFB" d="M2,98 H150 v33 H2 v-33z" />
+                    <path id="test" fill="#FBFCFB" d="M2,131 H150 v33 H2 v-33z" />
 					<!-- menu item 1 - SVG logo -->
                     <g transform="translate(11,30)">
                         <g transform="scale(0.02,0.02)">
@@ -379,6 +387,14 @@
                           onmousedown='select(evt,"fontin")'
                           onmouseup='selected(evt,"fontin")'
                           onmouseleave='mouseLeft(evt,"fontin")'
+                    />
+		    </g>
+		    <g>
+		    <title>Click on this item to open the interface to&#10;select and upload a font file (".ttf" or ".otf").</title>
+                    <path d="M2,131 H150 v33 H2 v-33z" opacity="0"
+                          onmousedown='select(evt,"test")'
+                          onmouseup='selected(evt,"test")'
+                          onmouseleave='mouseLeft(evt,"test")'
                     />
 		    </g>
                 </g>
