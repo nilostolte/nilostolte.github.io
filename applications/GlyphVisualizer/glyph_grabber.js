@@ -28,7 +28,7 @@ function onReadFile(e) {
             font = opentype.parse(e.target.result, {lowMemory:true});
             showErrorMessage('');
             onFontLoaded(font);
-			document.getElementById("font").textContent = fontname();
+	    document.getElementById("font").textContent = fontname();
         } catch (err) {
             showErrorMessage(err.toString());
             if (err.stack) console.log(err.stack);
@@ -43,7 +43,7 @@ function onReadFile(e) {
 }
 
 async function readFileFromGitHub(filePath) {
-  const fileUrl = window.location.origin + '/' + filePath; // Construct the full URL
+  const fileUrl = window.location.origin + '/' + filePath;
 
   try {
     const response = await fetch(fileUrl);
@@ -52,11 +52,24 @@ async function readFileFromGitHub(filePath) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const githubfile = await response.arrayBuffer(); // Fetch as binary data
+    const arrayBuffer = await response.arrayBuffer();
     console.log("Font data (ArrayBuffer) fetched from GitHub.");
-    onFontLoaded(githubfile); // Pass the ArrayBuffer to onFontLoaded
+
+    try {
+      const font = parse(arrayBuffer, { lowMemory: true }); // Parse the ArrayBuffer
+      console.log("Font parsed successfully from GitHub data.");
+      onFontLoaded(font); // Pass the parsed font object
+      fontFileName = filePath;
+      document.getElementById("font").textContent = fontname(); // Assuming fontname() is accessible here
+    } catch (parseError) {
+      console.error("Error parsing font data from GitHub:", parseError);
+      if (parseError.stack) console.log(parseError.stack);
+      showErrorMessage(parseError.toString());
+      throw parseError;
+    }
   } catch (error) {
     console.error("Error reading file from GitHub:", error);
+    showErrorMessage(error.toString());
     throw error;
   }
 }
