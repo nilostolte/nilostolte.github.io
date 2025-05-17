@@ -56,11 +56,11 @@ async function readFileFromGitHub(filePath) {
     console.log("Font data (ArrayBuffer) fetched from GitHub.");
 
     try {
-      const font = parse(arrayBuffer, { lowMemory: true }); // Parse the ArrayBuffer
+      const font = opentype.parse(arrayBuffer, { lowMemory: true }); // Parse the ArrayBuffer
       console.log("Font parsed successfully from GitHub data.");
       onFontLoaded(font); // Pass the parsed font object
       fontFileName = filePath;
-      document.getElementById("font").textContent = fontname(); // Assuming fontname() is accessible here
+      document.getElementById("font").textContent = fontname();
     } catch (parseError) {
       console.error("Error parsing font data from GitHub:", parseError);
       if (parseError.stack) console.log(parseError.stack);
