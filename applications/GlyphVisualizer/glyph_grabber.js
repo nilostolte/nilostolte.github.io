@@ -42,9 +42,8 @@ function onReadFile(e) {
 }
 
 async function readFileFromGitHub(filePath) {
-  //const fileUrl = window.location.origin + '/' + filePath;
+  const fileUrl = window.location.origin + '/' + filePath;
   //console.log(window.location.origin);
-  const fileUrl = 'https://github.com/nilostolte/' + '/' + 'nilostolte.github.io/tree/main' + '/' + filePath;
   try {
     const response = await fetch(fileUrl);
 
