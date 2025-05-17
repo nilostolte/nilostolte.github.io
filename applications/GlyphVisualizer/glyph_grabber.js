@@ -43,7 +43,7 @@ function onReadFile(e) {
 
 async function readFileFromGitHub(filePath) {
   const fileUrl = window.location.origin + '/' + filePath;
-
+  console.log(window.location.origin);
   try {
     const response = await fetch(fileUrl);
 
