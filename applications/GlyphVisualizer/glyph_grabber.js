@@ -42,6 +42,25 @@ function onReadFile(e) {
     reader.readAsArrayBuffer(file);
 }
 
+async function readFileFromGitHub(filePath) {
+  const fileUrl = window.location.origin + '/' + filePath; // Construct the full URL
+
+  try {
+    const response = await fetch(fileUrl);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const githubfile = await response.arrayBuffer(); // Fetch as binary data
+    console.log("Font data (ArrayBuffer) fetched from GitHub.");
+    onFontLoaded(githubfile); // Pass the ArrayBuffer to onFontLoaded
+  } catch (error) {
+    console.error("Error reading file from GitHub:", error);
+    throw error;
+  }
+}
+
 function onFontLoaded(font) {
     window.font = font;
     var head = font.tables.head;
