@@ -1,6 +1,6 @@
 # GlyphVisualizer
 
-GlyphVisualizer is a web application to visualize the glyphs of a font file. It uses Opentype.js. The novelty is that all the UI is designed mostly with inline SVG, including the display of the glyphs. The SVG widgets that are in external files are: folder ([folder_high.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/folder_high.svg "folder_high.svg")), magnifiers ([zoom-in.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/zoom-in.svg "zoom-in.svg") and [zoom-out.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/zoom-out.svg "zoom-out.svg")),  left and right triangular arrows ([triangle_left.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/triangle_left.svg "triangle_left.svg") and [triangle_right.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/triangle_right.svg "triangle_right.svg")) icons. All other elements are inline SVG.
+[GlyphVisualizer](https://nilostolte.github.io/applications/GlyphVisualizer/) is a web application to visualize the glyphs of a font file. It uses Opentype.js. The novelty is that all the UI is designed mostly with inline SVG, including the display of the glyphs. The SVG widgets that are in external files are: folder ([folder_high.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/folder_high.svg "folder_high.svg")), magnifiers ([zoom-in.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/zoom-in.svg "zoom-in.svg") and [zoom-out.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/zoom-out.svg "zoom-out.svg")),  left and right triangular arrows ([triangle_left.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/triangle_left.svg "triangle_left.svg") and [triangle_right.svg](https://github.com/nilostolte/nilostolte.github.io/blob/main/applications/GlyphVisualizer/resources/triangle_right.svg "triangle_right.svg")) icons. All other elements are inline SVG.
 
 ## Documentation
 
@@ -41,7 +41,7 @@ At the bottom of the menu, the name of the font file (in this case truncated to 
 
 ## Scaling
 
-The figure below shows all messages displayed when stopping the cursor over the magnifiers or the folder 
+The figure below shows all messages displayed when stopping the cursor over the magnifiers or the folder icons. By clicking on either these icons produces a corresponding action. Clicking on the magnifiers changes the scale of the whole interface.
 
 <kbd>
   <img src="https://github.com/user-attachments/assets/5ee57648-98e3-4b73-ae36-482b88442a66">
