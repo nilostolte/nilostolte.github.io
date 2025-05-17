@@ -20,7 +20,7 @@ function fontname(fontFileName) {
 
 function onReadFile(e) {
     var file = e.target.files[0];
-    cont fontFileName = e.target.value;
+    const fontFileName = e.target.value;
 	console.log(fontFileName);
     var reader = new FileReader();
     reader.onload = function(e) {
