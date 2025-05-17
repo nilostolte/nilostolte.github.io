@@ -59,7 +59,7 @@ async function readFileFromGitHub(filePath) {
       console.log("Font parsed successfully from GitHub data.");
       onFontLoaded(font); // Pass the parsed font object
       fontFileName = filePath;
-      document.getElementById("font").textContent = fontname(filePath);
+      document.getElementById("font").textContent = fontname();
     } catch (parseError) {
       console.error("Error parsing font data from GitHub:", parseError);
       if (parseError.stack) console.log(parseError.stack);
