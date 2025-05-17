@@ -28,7 +28,7 @@ function onReadFile(e) {
             font = opentype.parse(e.target.result, {lowMemory:true});
             showErrorMessage('');
             onFontLoaded(font);
-	    document.getElementById("font").textContent = fontname(fontFileName);
+	    document.getElementById("font").textContent = fontname();
         } catch (err) {
             showErrorMessage(err.toString());
             if (err.stack) console.log(err.stack);
