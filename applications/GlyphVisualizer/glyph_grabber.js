@@ -6,7 +6,7 @@ var wMax, hMax;
 var outlinesFormat;
 var scale = 1.25;
 
-function fontname(fontFileName) {
+function fontname() {
 	// matches everything following a / or a \ at the end of the string
 	let name = fontFileName.match(/[^\\/]+?$/)[0]; 
 	if ( name == "" ) {
@@ -20,8 +20,8 @@ function fontname(fontFileName) {
 
 function onReadFile(e) {
     var file = e.target.files[0];
-    const fontFileName = e.target.value;
-	console.log(fontFileName);
+    fontFileName = e.target.value;
+    console.log(fontFileName);
     var reader = new FileReader();
     reader.onload = function(e) {
         try {
@@ -38,7 +38,6 @@ function onReadFile(e) {
     reader.onerror = function(err) {
         showErrorMessage(err.toString());
     };
-
     reader.readAsArrayBuffer(file);
 }
 
@@ -59,7 +58,7 @@ async function readFileFromGitHub(filePath) {
       const font = opentype.parse(arrayBuffer, { lowMemory: true }); // Parse the ArrayBuffer
       console.log("Font parsed successfully from GitHub data.");
       onFontLoaded(font); // Pass the parsed font object
-      //fontFileName = filePath;
+      fontFileName = filePath;
       document.getElementById("font").textContent = fontname(filePath);
     } catch (parseError) {
       console.error("Error parsing font data from GitHub:", parseError);
