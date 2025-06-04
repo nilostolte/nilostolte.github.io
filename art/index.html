@@ -161,6 +161,9 @@
                  designs I have been developing are conceived using Illustrator, a vector graphics editor written by Adobe.
                </div>
             </div>
+            <h1 title="Vectorization and Vector Reconstruction">Vectorization and Vector Reconstruction</h1>
+            <p>
+            </p>
             <a name="octree"></a>
             <h1 title="Technical Illustrations"><a href="https://github.com/nilostolte/Vector-Art#technical-illustrations">Technical Illustrations</a></h1>
             <p>
@@ -195,6 +198,54 @@
             </p>
             <div style="text-align: center; margin: 2% 0 0 0;">
               <img src="phong-shading-3d.svg" width="100%">
+            </div>
+            <h1>Vectorization and Vector Reconstruction</h1>
+            <p>Vector reconstruction and vectorization are popular techniques to reproduce analog or pixelized 
+                artwork in vector format. Although vector reconstruction is a kind of vectorization <i>"per se"</i>, 
+                it is not equivalent to automatic vectorization, which the term <i>vectorization</i> often means. Both 
+                techniques try to reproduce an artwork in vector format but the distinction is that a <i>reconstruction</i> 
+                is not done automatically, or at least not automated in the same way. We can use some kind of automation 
+                in a reconstruction, but that's generally done manually, mostly using programming. On the other hand, a 
+                reconstruction generally starts with some sort of automatic vectorization and/or with a manual stencil 
+                copy of the original pixelized artwork using the image as a template in a vector graphics editor.
+            </p>
+            <h2 title="Automatic Vectorization">Automatic Vectorization</h2>
+            <p>In order to obtain a high quality automatic vectorization one needs an image with pure colors, that is, 
+                with no antialiasing, with no smooth color transitions, and with clear contours. That's obviously extremely 
+                difficult to find. For this reason, the images to be vectorized normally have to be 
+                <a href="https://en.wikipedia.org/wiki/Image_segmentation">segmented</a> first. A simple way to do that is 
+                to transform a color image into a <a href="https://grayscale.imageonline.co/">grayscale</a> image, and then 
+                transforming the grayscale image into a <a href="https://monochrome.imageonline.co/">monochrome</a> image. 
+                Different results can be obtained by modifying the contrast, brightness and gamma (aka balance) of the grayscale 
+                image. In many cases these manipulations produce interesting results, but often they are not at all satisfying.
+            </p>
+            <p>For example, this image on the left was segmented on the right using these manipulations but it had to be heavily 
+                refined by hand.
+            </p>
+            <div style="text-align: center; margin: 2% 0 2% 0">
+               <img src="yes-roger-dean-cropped.jpg" width="40%" style="margin: 0 2% 0 0;"><img src="yes-roger-dean-seg-cropped.png" width="40%" style="margin: 0 0 0 2%;">
+            </div>
+            <p>This segmented file was then automatically vectorized using <a href="https://vectorizer.com/">vectorizer</a> and slightly 
+                refined by hand. The resulting vectorization is shown below:
+            </p>
+            <div style="text-align: center; margin: 2% 0 2% 0"><img src="yes.svg"  width="60%"></div>
+            <h2 title="Vector Reconstruction">Vector Reconstruction</h2>
+            <p>Below is a perfect example of artwork vector reconstruction. Some elements, such as the facial features, have been 
+                vectorized and heavily modified by hand. The other elements were all recreated vectorially, either by hand on Illustrator, 
+                either procedurally in PostScript. In the original analog artwork which is pixelized in the image on the left all the 
+                flames are slightly different from each other, while in the vector reproduction on the right they are all identical since
+                the same flame shape was rotated to produce a single closed vector path.
+            </p>
+            <div style="text-align: center; margin: 0 0 0 0"><img src="king-crimson-larks.svg"  width="90%"></div>
+            <p>The process to produce this reconstruction is discussed in detail here.</p>
+            <h2 title="Stencil Copy">Stencil Copy</h2>
+            <p>Here's an example of vector reconstruction using <i>stencil copy</i> technique. The image is imported on Illustrator or any 
+                other vector graphics editor and the artwork is reconstructed piece by piece manually.
+            </p>
+            <div title="Example of realistic illustration
+            from Tintin's comic book used
+            to create the icon on the left" style="text-align: center; margin: 0 0 2% 0">
+              <img src="tintin-rocket-icon.svg" width="50%" style="margin: 0 0 0 0;"><img src="tintin-rocket.jpg" width="45%" style="margin: 0 0 0 0;">
             </div>
             <h1 title="Realistic designs">Realistic designs</h1>
             <p>
