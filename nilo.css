@@ -47,6 +47,13 @@ h1 {
 	padding-top: 1.5%;
 	padding-bottom: 0.8%;
 }
+h2 {
+	font-family: semibold; 
+	text-align: left;
+	font-size: 1.73vw;
+	padding-top: 1.5%;
+	padding-bottom: 0.8%;
+}
 p + p {
 	padding-top: 0.8%;
 }
