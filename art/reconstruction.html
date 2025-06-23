@@ -65,26 +65,6 @@
                 template or as a visual guide in a vector graphics editor, using some vector graphics language (such as 
                 PostScript or Java's Graphics2D), or a vector graphics file format (such as SVG).
             </p>
-            <h2 title="Automatic Vectorization">Automatic Vectorization</h2>
-            <p>In order to obtain a high quality automatic vectorization one needs an image with pure colors, that is, 
-                with no antialiasing, with no smooth color transitions, and with clear contours. That's obviously extremely 
-                difficult to find. For this reason, the images to be vectorized normally have to be 
-                <a href="https://en.wikipedia.org/wiki/Image_segmentation" style="font-family: semibold;">segmented</a> first. A simple way to do that is 
-                to transform a color image into a <a href="https://grayscale.imageonline.co/" style="font-family: semibold;">grayscale</a> image, and then 
-                transforming the grayscale image into a <a href="https://monochrome.imageonline.co/"style="font-family: semibold;">monochrome</a> image. 
-                Different results can be obtained by modifying the contrast, brightness and gamma (aka balance) of the grayscale 
-                image. In many cases these manipulations produce interesting results, but often they are not at all satisfying.
-            </p>
-            <p>For example, this image on the left was segmented using these manipulations but it had to be heavily refined by 
-		hand to obtain the resulting image on the right.
-            </p>
-            <div style="text-align: center; margin: 4% 0 4% 0">
-               <img src="yes-roger-dean-cropped.jpg" width="45%" style="margin: 0 2% 0 0;"><img src="yes-roger-dean-seg-cropped.png" width="45%" style="margin: 0 0 0 2%;">
-            </div>
-            <p>This segmented file was then automatically vectorized using <a href="https://vectorizer.com/" style="font-family: semibold;">vectorizer</a>  
-               website and slightly refined by hand. The resulting vectorization is shown below:
-            </p>
-            <div style="text-align: center; margin: 3% 0 3% 0"><img src="yes.svg"  width="70%"></div>
             <h2 title="Vector Reconstruction">Vector Reconstruction</h2>
             <p>Below is a perfect example of artwork vector reconstruction. Some elements, such as the facial features, have been
                 vectorized and heavily modified by hand. The other elements were all recreated vectorially, either by hand on Illustrator, 
