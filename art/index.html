@@ -196,15 +196,17 @@
             <div style="text-align: center; margin: 2% 0 0 0;">
               <img src="phong-shading-3d.svg" width="100%">
             </div>
-            <h1>Vectorization and Vector Reconstruction</h1>
+            <h1>Vectorization, Vector Reconstruction, and Vector Reproduction</h1>
             <p>Vector reconstruction and vectorization are popular techniques to reproduce analog or pixelized 
                 artwork in vector format. Although vector reconstruction is a kind of vectorization <i>"per se"</i>, 
                 it is not equivalent to automatic vectorization, which the term <i>vectorization</i> often means. Both 
                 techniques try to reproduce an artwork in vector format but the distinction is that a <i>reconstruction</i> 
                 is not done automatically, or at least not automated in the same way. We can use some kind of automation 
                 in a reconstruction, but that's generally done manually, mostly using programming. On the other hand, a 
-                reconstruction generally starts with some sort of automatic vectorization and/or with a manual stencil 
-                copy of the original pixelized artwork using the image as a template in a vector graphics editor.
+                reconstruction generally starts with some sort of automatic vectorization, with a manual stencil copy,
+                or with a total handcrafted <i>reproduction</i> of the original pixelized artwork using the image as a
+                template or as a visual guide in a vector graphics editor, using some vector graphics language (such as 
+                PostScript or Java's Graphics2D), or a vector graphics file format (such as SVG).
             </p>
             <h2 title="Automatic Vectorization">Automatic Vectorization</h2>
             <p>In order to obtain a high quality automatic vectorization one needs an image with pure colors, that is, 
@@ -227,7 +229,7 @@
             </p>
             <div style="text-align: center; margin: 3% 0 3% 0"><img src="yes.svg"  width="70%"></div>
             <h2 title="Vector Reconstruction">Vector Reconstruction</h2>
-            <p>Below is a perfect example of artwork vector reconstruction. Some elements, such as the facial features, have been 
+            <p>Below is a perfect example of artwork vector reconstruction. Some elements, such as the facial features, have been
                 vectorized and heavily modified by hand. The other elements were all recreated vectorially, either by hand on Illustrator, 
                 either procedurally in <a href="underdevelopment.txt" style="font-family: semibold;">PostScript</a>. In the original analog  
                 artwork which is pixelized in the image on the left all the flames are slightly different from each other, while in the vector 
@@ -241,7 +243,16 @@
             </p>
             <div title="Example of realistic illustration&#10;from Tintin's comic book using&#10;stencil copy technique" style="text-align: center; margin: 2% 0 2% 0">
                <img src="tintin-rocket-icon.svg" width="40%" style="margin: 0 2% 5% 0;"><img src="tintin-rocket.jpg" width="50%" style="margin: 0 0 0 2%;">
-            </div>
+            </div> <a name="reproduction"></a>
+	    <h2 title="Vector Reproduction">Vector Reproduction</h2>
+            <p>A vector reproduction is a vector reconstruction where no original element was used to obtain the reproduction besides its original
+                visual appearance. The example below is a vector reconstruction departing from an image, but actually starting entirely from
+                scratch to generate the vector information. It's a typical example where automatic vectorization doesn't work. Here, PostScript
+                was used from start to finish. Since the geometric definition of the original design is self-evident, and there are quite a few
+                repeated patterns, PostScript is ideal tool to automate its generation. The process to obtain this reproduction is discussed in
+                detail <a href="underdevelopment.txt" style="font-family: semibold;">here</a>.
+            </p>
+            <div style="text-align: center; margin: 0 0 0 0"><img src="ternary-plot.svg"  width="90%"></div>
             <a name="icons"></a>
             <h1 title="Some icon designs">Icons</h1>
             <p>
