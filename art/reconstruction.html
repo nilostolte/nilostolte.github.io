@@ -53,28 +53,75 @@
             </p>
          </div>
          <div id="rightside">
-            <h1>Vectorization, Vector Reconstruction, and Vector Reproduction</h1>
-            <p>Vector reconstruction and vectorization are popular techniques to reproduce analog or pixelized 
-                artwork in vector format. Although vector reconstruction is a kind of vectorization <i>"per se"</i>, 
-                it is not equivalent to automatic vectorization, which the term <i>vectorization</i> often means. Both 
-                techniques try to reproduce an artwork in vector format but the distinction is that a <i>reconstruction</i> 
-                is not done automatically, or at least not automated in the same way. We can use some kind of automation 
-                in a reconstruction, but that's generally done manually, mostly using programming. On the other hand, a 
-                reconstruction generally starts with some sort of automatic vectorization, with a manual stencil copy,
-                or with a total handcrafted <i>reproduction</i> of the original pixelized artwork using the image as a
-                template or as a visual guide in a vector graphics editor, using some vector graphics language (such as 
-                PostScript or Java's Graphics2D), or a vector graphics file format (such as SVG).
+            <h1>Vector Reconstruction Example</h1>
+            <p> In the vector reconstruction example below the flames generation was semi-automated using PostScript and the flame shape refined
+                in Illustrator. In the original design the flames don't have all the same shape, as expected in a handmade artwork like this. The
+                first thought was to "easily" generate the path for all the flames in PostScript, just picking one flame from one position and
+                trying to redraw and close the circle by rotating it by 40°/3 at each step.
             </p>
-            <h2 title="Vector Reconstruction">Vector Reconstruction</h2>
-            <p>Below is a perfect example of artwork vector reconstruction. Some elements, such as the facial features, have been
-                vectorized and heavily modified by hand. The other elements were all recreated vectorially, either by hand on Illustrator, 
-                either procedurally in <a href="underdevelopment.txt" style="font-family: semibold;">PostScript</a>. In the original analog  
-                artwork which is pixelized in the image on the left all the flames are slightly different from each other, while in the vector 
-                reproduction on the right they are all identical since the same flame shape was rotated to produce a single closed vector path.
+            <div style="text-align: center; margin: 0 0 2% 0"><img src="king-crimson-larks-original.svg"  width="90%"></div>
+            <p> Obviously, there is a particular translation to be done after rotating each flame to make the next flame to fit in the
+                predetermined circular trajectory. Instead of calculating this exact translation one can use a near binary search trial and error
+                approach to find the x and y components of this translation. In addition, the fact that the interior part of the pattern must fit
+                in a predetermined circle with a certain radius serves as a feedback loop refinement to quickly find the answers. 
+	    </p>
+	    <p> Once the endpoint and the starting point are real close to each other this iteration can stop, but the initial point don't actually
+                coincide with the endpoint. The black point and its coordinates (213.686, 37.8411) correspond to the initial flame coordinate,
+                and those in red color with corredinates <span style="color: #FF0000">(206.373, 35.5591)</span> correspond to the endpoint:	    
+	    </p>
+	    <div style="text-align: center; margin: 0 0 0 0"><img src="sun-endpoint.svg"  width="70%"></div>
+            <p> Observing that from the second flame forward each flame's first point actually coincides with the endpoint of the previous one by
+                design (because we chain the rest of the path in a loop - see the program below), we conclude that we have to do the same with the
+                initial flame's first point, that is, we simply make it equal to the endpoint. In other words, we modify its initial coordinates in
+                the program with coordinates shown in black above. The result is shown in the figure below: 
             </p>
-            <div style="text-align: center; margin: 0 0 2% 0"><img src="king-crimson-larks.svg"  width="90%"></div>
-            <p>The process to produce this reconstruction is discussed in detail <a href="underdevelopment.txt" style="font-family: semibold;">here</a>.</p><a name="reproduction"></a>
-	    <h2 title="Vector Reproduction">Vector Reproduction</h2>
+	    <div style="text-align: center; margin: 0 0 0 0"><img src="sun-error.svg"  width="90%"></div>
+            <p>Finally, this is the PostScript code that produces this closed path:</p>
+            <div style="text-align: center; margin: 0 0 0 0"><img src="sun-algorithm.svg"  width="90%"></div>
+	    <p>This a very simple way to obtain shapes that are composed by a template shape rotated until the endpoints meet. What's interesting is
+                that we can use templates with their original absolute coordinates. These coordinates will only affect the values of the x and y
+                components of the translation vector. The incremental angle for each rotation only affects the number of template copies, which in
+                this case is known in advance to be 27 thanks to the original artwork.
+            </p>
+            <p >Most of the PostScript code is just for the template (the flame). The first point set before the for loop is the same as the last
+                point. The initial translation and scale is just to adjust to the page. The pop deletes the for counter. Finally:
+            </p>
+            <p> 13.333333° ≅ 360° ÷ 27</p>
+            <p>The template shape was first obtained by using one of the flames of the original artwork that was automatically vectorized. Once this
+               shape was extracted it was tried by pasting it within the program above. It was actually interesting to see that this shape didn't
+               look correct when it was used for all the flames. That's the reason why it was refined by hand using Illustrator.
+            </p>
+            <p>The problem of using Illustrator in this process was that even though only few outer points were modified the resulting EPS file
+               generated by Illustrator revealed significant differences in every point coordinate. This is because Illustrator surprisingly
+               applies a different translation to the shape at each time it was modified. This means that all the points in the curves needed to
+               be translated back in such a way that the first and final point would be the same as in the initial shape.
+            </p> 
+            <p> In order to avoid rounding error fixed point integer arithmetic was used instead of floating point arithmetic. This was done
+               manually by placing the numbers in an array in the C program below:
+            </p>
+            <div style="text-align: center; margin: 0 0 0 0"><img src="c-code.svg"  width="90%"></div>
+            <p> The first line in the array is just the initial point of the template shape. The other four coordinates are just zeros, since they
+               only make sense to represent the Bézier curves of the shape in the following lines uniformly.
+            </p>
+            <p> The program first determines the translation vector by subtracting the original coordinates of the first point of the template
+               shape by the obtained points in the EPS file generated by illustrator after modifying the shape. These modifications never alter
+               the initial point. Therefore, since no other transformations such as scaling or translations are ever applied, both points must
+               be always identical. That's why it's used to determine the automatic translation done by Illustration.
+            </p>
+            <p> Then, the program applies the translation to all the other points as shown in the code above, and prints the result, which are
+               the following, after manually aligning them:
+            </p>
+            <div style="text-align: center; margin: 0 0 0 0"><img src="translated-points.svg"  width="90%"></div>
+            <p> The initial point and the first Bézier curve are eliminated from the template since it actually corresponds to a part of the
+               previous flame, resulting in only the six following Bézier curves and the new initial point, which is the last point of the
+               eliminated Bézier curve: <span style="color: #FF8000">(206.373, 35.5591)</span>. Even this initial point is eliminated and
+               substituted by the endpoint of the path (213.68, 37.8411) after the entire pattern is generated with the PostScript program
+               above as explained previously.
+            </p>
+		 <a name="reproduction"></a>
+
+		 
+	    <h1 title="Vector Reproduction">Vector Reproduction Example</h1>
             <p>A vector reproduction is a vector reconstruction where no original element was used to obtain the reproduction besides its original
                 visual appearance. The example below is a vector reconstruction departing from an image, but actually starting entirely from
                 scratch to generate the vector information. It's a typical example where automatic vectorization doesn't work. Here, PostScript
