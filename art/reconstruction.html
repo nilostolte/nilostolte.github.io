@@ -62,33 +62,33 @@
             <div style="text-align: center; margin: 0 0 2% 0"><img src="king-crimson-larks-original.svg"  width="90%"></div>
             <p> Obviously, there is a particular translation to be done after rotating each flame to make the next flame fit in the predetermined
                 circular trajectory. Instead of calculating this exact translation one can use a near binary search trial and error approach to
-                find the <i>x</i> and <i>y</i> components of this translation. In addition, the fact that the interior part of the pattern must
+                find the <span style="font-family: italic;">x</i> and <span style="font-family: italic;">y</span> components of this translation. In addition, the fact that the interior part of the pattern must
                 fit in a predetermined circle with a certain radius serves as a feedback loop refinement to quickly find the answers. 
 	    </p>
 	    <p> Once the endpoint and the starting point are real close to each other this iteration can stop, but the initial point don't actually
-                coincide with the endpoint. The black point and its coordinates <i>(213.686, 37.8411)</i> correspond to the path endpoint, and
-                those in red color with coordinates <span style="color: #FF0000"><i>(206.373, 35.5591)</i></span> correspond to the initial flame
+                coincide with the endpoint. The black point and its coordinates <span style="font-family: italic;">(213.686, 37.8411)</span> correspond to the path endpoint, and
+                those in red color with coordinates <span style="font-family: italic; color: #FF0000">(206.373, 35.5591)</span> correspond to the initial flame
                 point coordinates:	    
 	    </p>
 	    <div style="text-align: center; margin: 0 0 0 0"><img src="sun-endpoint.svg"  width="70%"></div><br>
             <p> Observing that from the second flame forward each flame's first point actually coincides with the endpoint of the previous one by
                 design (because we chain the rest of the path in a loop - see the PostScript program below), we conclude that we have to do the
                 same with the initial flame's first point, that is, we simply make it equal to the endpoint. In other words, we modify its initial
-                coordinates in the program to <i>(213.686, 37.8411)</i>. The result is shown in the figure below: 
+                coordinates in the program to <span style="font-family: italic;">(213.686, 37.8411)</span>. The result is shown in the figure below: 
             </p>
 	    <div style="text-align: center; margin: 0 0 0 0"><img src="sun-error.svg"  width="90%"></div>
             <p>Finally, this is the PostScript code that produces this closed path:</p><br>
             <div style="text-align: center; margin: 0 0 0 0"><img src="sun-algorithm.svg"  width="90%"></div><br>
 	    <p>This a very simple way to obtain shapes that are composed by a template shape rotated until the endpoints meet. What's interesting is
-                that we can use templates with their original absolute coordinates. These coordinates will only affect the values of the <i>x</i> and
-                <i>y</i> components of the translation vector. The incremental angle for each rotation only affects the number of template copies,
+                that we can use templates with their original absolute coordinates. These coordinates will only affect the values of the <span style="font-family: italic;">x</span> and
+                <span style="font-family: italic;">y</span> components of the translation vector. The incremental angle for each rotation only affects the number of template copies,
                 which in this case is known in advance to be 27 thanks to the original artwork.
             </p>
             <p >Most of the PostScript code is just for the template (the flame). The first point set before the for loop is the same as the last
-                point <i>(206.373, 35.5591)</i>. The initial translation and scale is just to adjust to the page. The pop deletes the for counter.
+                point <span style="font-family: italic;">(206.373, 35.5591)</span>. The initial translation and scale is just to adjust to the page. The pop deletes the for counter.
                 Finally:
             </p><br>
-            <p> <i>13.333333° ≅ 360° ÷ 27</i></p><br>
+            <p style="font-family: italic;"> 13.333333° ≅ 360° ÷ 27</p><br>
             <p>The template shape was first obtained by using one of the flames of the original artwork that was automatically vectorized. Once this
                shape was extracted it was tried by pasting it within the program above. It was actually interesting to see that this shape didn't
                look correct when it was used for all the flames. That's the reason why it was refined by hand using Illustrator.
@@ -106,9 +106,9 @@
                only make sense to represent the Bézier curves of the shape in the following lines uniformly.
             </p>
             <p> The program first determines the translation vector by subtracting the original coordinates of the first point of the template
-               shape by the obtained points in the EPS file generated by illustrator after modifying the shape. These modifications never alter
-               the initial point. Therefore, since no other transformations such as scaling or translations are ever applied, both points must
-               be always identical. That's why it's used to determine the automatic translation done by Illustrator.
+              shape from the coordinates of the obtained points in the EPS file generated by illustrator after modifying the shape. These
+              modifications never alter the initial point. Therefore, since no other transformations such as scaling or translations are ever
+              applied, both points must be always identical. That's why it's used to determine the automatic translation done by Illustrator.
             </p>
             <p> Then, the program applies the translation to all the other points as shown in the code above, and prints the result, which are
                the following, after manually aligning them:
@@ -116,8 +116,8 @@
             <div style="text-align: center; margin: 0 0 0 0"><img src="translated-points.svg"  width="90%"></div><br>
             <p> The initial point and the first Bézier curve are eliminated from the template since it actually corresponds to a part of the
                previous flame, resulting in only six following Bézier curves and the new initial point, which is the last point of the
-               eliminated Bézier curve: <span style="color: #FF8000"><i>(206.373, 35.5591)</i></span>. Even this initial point is eliminated and
-               substituted by the endpoint of the path <i>(213.68, 37.8411)</i> after the entire pattern is generated with the PostScript program
+               eliminated Bézier curve: <span style="font-family: italic; color: #FF8000">(206.373, 35.5591)</span>. Even this initial point is eliminated and
+               substituted by the endpoint of the path <span style="font-family: italic;">(213.68, 37.8411)</span> after the entire pattern is generated with the PostScript program
                above as explained previously.
             </p><br>
 		 <a name="reproduction"></a><br>
