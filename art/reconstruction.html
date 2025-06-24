@@ -57,12 +57,12 @@
             <p> In the vector reconstruction example below the flames generation was semi-automated using PostScript and the flame shape refined
                 in Illustrator. In the original design the flames don't have all the same shape, as expected in a handmade artwork like this. The
                 first thought was to "easily" generate the path for all the flames in PostScript, just picking one flame from one position and
-                trying to redraw and close the circle by rotating it by 40°÷3 at each step.
+                trying to redraw and close the circle by rotating it by <span style="font-family: italic;">40°÷3</span> at each step.
             </p>
             <div style="text-align: center; margin: 0 0 2% 0"><img src="king-crimson-larks-original.svg"  width="90%"></div>
             <p> Obviously, there is a particular translation to be done after rotating each flame to make the next flame fit in the predetermined
                 circular trajectory. Instead of calculating this exact translation one can use a near binary search trial and error approach to
-                find the <span style="font-family: italic;">x</i> and <span style="font-family: italic;">y</span> components of this translation. In addition, the fact that the interior part of the pattern must
+                find the <span style="font-family: italic;">x</span> and <span style="font-family: italic;">y</span> components of this translation. In addition, the fact that the interior part of the pattern must
                 fit in a predetermined circle with a certain radius serves as a feedback loop refinement to quickly find the answers. 
 	    </p>
 	    <p> Once the endpoint and the starting point are real close to each other this iteration can stop, but the initial point don't actually
@@ -77,8 +77,8 @@
                 coordinates in the program to <span style="font-family: italic;">(213.686, 37.8411)</span>. The result is shown in the figure below: 
             </p>
 	    <div style="text-align: center; margin: 0 0 0 0"><img src="sun-error.svg"  width="90%"></div>
-            <p>Finally, this is the PostScript code that produces this closed path:</p><br>
-            <div style="text-align: center; margin: 0 0 0 0"><img src="sun-algorithm.svg"  width="90%"></div><br>
+            <p>Finally, this is the <a style="font-family: semibold;" href="sun-algorithm.ps">PostScript code</a> that produces this closed path:</p><br>
+            <div style="text-align: center; margin: 0 0 0 0"><a href="sun-algorithm.ps"><img src="sun-algorithm.svg"  width="90%"></a></div><br>
 	    <p>This a very simple way to obtain shapes that are composed by a template shape rotated until the endpoints meet. What's interesting is
                 that we can use templates with their original absolute coordinates. These coordinates will only affect the values of the <span style="font-family: italic;">x</span> and
                 <span style="font-family: italic;">y</span> components of the translation vector. The incremental angle for each rotation only affects the number of template copies,
@@ -99,9 +99,9 @@
                be translated back in such a way that the first and final point would be the same as in the initial shape.
             </p> 
             <p> In order to avoid rounding error fixed point integer arithmetic was used instead of floating point arithmetic. This was done
-               manually by placing the numbers in an array in the C program below:
+               manually by placing the numbers in an array in the <a style="font-family: semibold;" href="flame3-to-sun.c">C program</a> below:
             </p><br>
-            <div style="text-align: center; margin: 0 0 0 0"><img src="c-code.svg"  width="90%"></div><br>
+            <div style="text-align: center; margin: 0 0 0 0"><a href="flame3-to-sun.c"><img src="c-code.svg"  width="90%"></a></div><br>
             <p> The first line in the array is just the initial point of the template shape. The other four coordinates are just zeros, since they
                only make sense to represent the Bézier curves of the shape in the following lines uniformly.
             </p>
