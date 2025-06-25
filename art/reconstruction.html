@@ -154,18 +154,18 @@
             </p><br>
             <div style="text-align: center; margin: 0 0 0 0"><img src="inside-lines.svg"  width="90%"></div><br>
             <p> The main idea from this point on is to use PostScript as a script language. The <span style="font-family: italic;">repeat</span>
-               commands for example, greatly simplifies loops. There was not too much concern with structure here. Simple and often repeated
+               commands for example, greatly simplify loops. There was not too much concern with structure here. Simple and often repeated
                statements are actually what makes this and the following parts easy to write. Opportunism is clearly intentional. The addition
                of the text in this and the other pieces of code is proof of this concept. The use of <span style="font-family: italic;">gsave
                </span> and <span style="font-family: italic;">grestore</span> allows taking advantage of the current point set by the <span 
                style="font-family: italic;">moveto</span> (or <span style="font-family: italic;">lineto</span> in other parts) commands in
-               the loop and to use rotations without the concern of affecting what comes afterwards the <span style="font-family: italic;"
+               the loop and to use rotations without the concern of affecting what comes after the <span style="font-family: italic;"
                >grestore</span>. The use of a special index (<span style="font-family: italic;">indx</span>) for the text makes it easy to
                use the correct string for each interaction without interfering with the <span style="font-family: italic;">repeat</span> loop.
                Code is highly informal, quite improvised, you write as you go. It not only works, but one can also copy, paste and modify the
                code according to the needs of the other parts that follow.
             </p>
-            <p> The small lines that set the little measures around the triangle is generated in this part below. Again, this code is for
+            <p> The small lines making the little measures around the triangle is generated in this part below. Again, this code is for
                the bottom part of the triangle. The other sides use a similar logic.
             </p><br>
             <div style="text-align: center; margin: 0 0 0 0"><img src="small-lines.svg"  width="90%"></div><br>
@@ -175,16 +175,16 @@
                same values reappearing quite often. That's the reason why some values used so far are pre-calculated. The structure here, though,
                is more obvious, thanks to the repetition. The exterior <span style="font-family: italic;">repeat</span> loop is responsible for
                making the measure marks at each one of the ten subdivisions. The two interior loops deal with the four lines before and after the
-               middles lines, which are drawn between these both loops.
+               middles lines, which are themselves drawn between these both loops.
             </p>
             <p> The size of the lines are parameterized by the variable <span style="font-family: italic;">subl</span> which is set here with a
                5 pt size. The middle lines are twice as long (<span style="font-family: italic;">msub</span>). The sub increments (<span style
                ="font-family: italic;">iinc</span>) are a tenth of the size of the large lines original increment, which is quite expected. The
-               <span style="font-family: italic;">x</span> and <span style="font-family: italic;">y</span> coordinates of the starting points is
-               stored in the stack (starting with "0 0", the origin) and at each line the <span style="font-family: italic;">x</span> coordinate
-               is incremented (<span style="font-family: italic;">exch iinc add exch</span>) and both coordinates are copied for each <span style
-               ="font-family: italic;">moveto</span>. The lines are drawn using a relative <span style="font-family: italic;">lineto</span> to
-               simplify the logic, by being independent of the absolute coordinates stored in the stack.
+               <span style="font-family: italic;">x</span> and <span style="font-family: italic;">y</span> coordinates of the lines starting
+               points are stored in the stack (starting with "0 0", the origin) and at each new line the <span style="font-family: italic;">x
+               </span>coordinate is incremented (<span style="font-family: italic;">exch iinc add exch</span>) and both coordinates are copied
+               for each <span style="font-family: italic;">moveto</span>. The lines are drawn using a relative <span style="font-family: italic;"
+               >lineto</span> to simplify the logic, by being independent of the absolute coordinates stored in the stack.
             </p>
             <p> The final part of the code is for drawing the arrows. The <span style="font-family: italic;">arr</span> procedure was reused from
                previous projects and the values are directly written in it except for the dimensions of the arrow head that are twice the original
