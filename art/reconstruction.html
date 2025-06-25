@@ -147,9 +147,9 @@
                the side size.
             </p>
             <p> The large gray lines inside the triangle are generated in the following part below, together with the texts. The array <span style=
-               "font-family: italic;">num</span> contains the strings (Its definition is shown at the end of this section) and <span style=
+               "font-family: italic;">num</span> contains the strings (its definition is shown at the end of this section) and <span style=
                "font-family: italic;">indx</span> is used to index it. <span style="font-family: italic;">inc</span> is the increment for the <span
-               style="font-family: italic;">x</span> coordinates of the lines. This part is for the bottom part of the triangle. The other sides use
+               style="font-family: italic;">x</span> coordinates of the lines. This code is for the bottom part of the triangle. The other sides use
                a similar logic.
             </p><br>
             <div style="text-align: center; margin: 0 0 0 0"><img src="inside-lines.svg"  width="90%"></div><br>
@@ -161,7 +161,7 @@
                style="font-family: italic;">moveto</span> (or <span style="font-family: italic;">lineto</span> in other parts) commands in
                the loop and to use rotations without the concern of affecting what comes after the <span style="font-family: italic;"
                >grestore</span>. The use of a special index (<span style="font-family: italic;">indx</span>) for the text makes it easy to
-               use the correct string for each interaction without interfering with the <span style="font-family: italic;">repeat</span> loop.
+               use the correct string for each iteration without interfering with the <span style="font-family: italic;">repeat</span> loop.
                Code is highly informal, quite improvised, you write as you go. It not only works, but one can also copy, paste and modify the
                code according to the needs of the other parts that follow.
             </p>
@@ -172,9 +172,9 @@
             <p> We can see here an extremely straightforward code, highly inspired in the style of the previous part but with even less concern
                in repeating code. Actually the repetition here is even intentional to give more clarity to the code. Notice that all the code so
                far is heavily reliant on the triangle definition as seen in <span style="font-family: italic;">trig</span> function. We see the
-               same values reappearing quite often. That's the reason why some values used so far are pre-calculated. The structure here, though,
-               is more obvious, thanks to the repetition. The exterior <span style="font-family: italic;">repeat</span> loop is responsible for
-               making the measure marks at each one of the ten subdivisions. The two interior loops deal with the four lines before and after the
+               same values reappearing quite often. That's the reason why some values are pre-calculated. The structure here, though, is more
+               obvious, thanks to the repetition. The exterior <span style="font-family: italic;">repeat</span> loop is responsible for making
+               the measure marks at each one of the ten subdivisions. The two interior loops deal with the four lines before and after the
                middles lines, which are themselves drawn between these both loops.
             </p>
             <p> The size of the lines are parameterized by the variable <span style="font-family: italic;">subl</span> which is set here with a
